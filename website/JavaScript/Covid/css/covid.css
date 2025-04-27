@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../img/realistic-coronavirus-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 50px;
+    color: #dfe8ec;
+}
+
+#date {
+    padding: 10px;
+    border: 2px solid #0c2c3d;
+    background: linear-gradient(to right, #0c2c3d, #266987);
+    border-radius: 8px;
+    color: white;
+    margin-right: 10px;
+    font-size: 22px;
+}
+
+#btn {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #0c2c3d, #266987);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+#btn:hover {
+    background: linear-gradient(to right, #175360, #2d3751);
+    transform: scale(1.1);
+}
+
+#showModel {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: linear-gradient(to bottom, #5bcceb, #3a92b8);
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 5px solid transparent;
+}
+
+.card:nth-child(odd) {
+    border-top-color: #2e89b1;
+}
+
+.card:nth-child(even) {
+    border-top-color: #0288d1;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    color: #0c2c3d;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.card p {
+    margin: 10px 0;
+    color: #101f5a;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    #showModel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 350px;
+    }
+}

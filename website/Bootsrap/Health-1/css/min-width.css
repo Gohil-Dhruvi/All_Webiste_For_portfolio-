@@ -1,0 +1,126 @@
+/* SM*/
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+
+    /* MENU */
+    .ri-menu-line {
+        display: block;
+        color: black;
+        font-size: 25px;
+        position: absolute;
+        top: 65px;
+        right: 40px;
+    }
+
+    .menu li a,
+    .appointment-btn .button {
+        display: none;
+    }
+}
+
+/* MD*/
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .col-md-6 {
+        width: 50%;
+    }
+
+    /* MENU */
+    .ri-menu-line {
+        display: block;
+        color: black;
+        font-size: 25px;
+        position: absolute;
+        top: 65px;
+        right: 40px;
+    }
+
+    .menu li a,
+    .appointment-btn .button {
+        display: none;
+    }
+}
+
+/* LG*/
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .col-lg-12 {
+        width: 100%;
+    }
+
+    /* MENU */
+    .ri-menu-line {
+        display: block;
+        color: black;
+        font-size: 25px;
+        position: absolute;
+        top: 65px;
+        right: 40px;
+    }
+
+    .menu li a,
+    .appointment-btn .button {
+        display: none;
+    }
+}
+
+/* XL*/
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .col-xl-4 {
+        width: 33.33%;
+    }
+
+    .col-xl-6 {
+        width: 50%;
+    }
+
+    /* MENU */
+    .ri-menu-line {
+        display: none;
+    }
+
+    .menu-info nav,
+    .menu li a,
+    .appointment-btn .button {
+        display: block;
+    }
+
+}
+
+/* XXL*/
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+
+    /* MENU */
+    .ri-menu-line {
+        display: none;
+        color: black;
+        font-size: 25px;
+        position: absolute;
+        top: 65px;
+        right: 40px;
+    }
+
+    .menu-info nav {
+        display: block;
+    }
+
+    .menu li a,
+    .appointment-btn .button {
+        display: block;
+    }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/all.min.css">
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <h1>Fill this Form</h1>
+    <form id="dataForm">
+        <div class="input-group contact-form-bg">
+            <i class="fas fa-user"></i>
+            <input type="text" id="fullName" class="form-control" placeholder="Your Full Name" required>
+        </div>
+        <div class="input-group contact-form-bg">
+            <i class="fa-regular fa-envelope"></i>
+            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+        </div>
+        <textarea id="message" placeholder="Write Message Here" name="message" rows="4" cols="50" required></textarea>
+        <button type="button" id="submitBtn" class="border text-light text-center mt-3">Send
+            Message</button>
+    </form>
+
+    <h3>Stored Data</h3>
+    <table border="1" id="dataTable" style="width: 100%; text-align: left;">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script src="js/From.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

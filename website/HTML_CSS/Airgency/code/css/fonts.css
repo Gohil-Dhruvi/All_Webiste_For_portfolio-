@@ -1,0 +1,20 @@
+/* @font-face {
+    font-family: satoshi;
+    src: url("../fonts/Satoshi-Black.otf");
+} */
+@font-face {
+    font-family: satoshi variable;
+    src: url("../fonts/Satoshi-Variable.ttf");
+}
+/* @font-face {
+    font-family: satoshi;
+    src: url("../fonts/Satoshi-Light.otf");
+}
+@font-face {
+    font-family: satoshi;
+    src: url("../fonts/Satoshi-Medium.otf");
+}
+@font-face {
+    font-family: satoshi;
+    src: url("../fonts/Satoshi-Regular.otf");
+} */

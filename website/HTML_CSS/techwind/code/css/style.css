@@ -1,0 +1,755 @@
+/* ====================default/common css============================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    margin: 12px 12px;
+}
+
+body {
+    font-family: Nunito;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -12px;
+    margin-left: -12px;
+}
+
+.col-1 {
+    width: 8.33%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.col-2 {
+    width: 16.66%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.col-3 {
+    width: 25%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.col-4 {
+    width: 33.33%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.col-5 {
+    width: 41.66%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.col-6 {
+    width: 50%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.col-7 {
+    width: 58.33%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.col-8 {
+    width: 66.66%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.col-9 {
+    width: 75%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.col-10 {
+    width: 83.33%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.col-11 {
+    width: 91.66%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.col-12 {
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+/* ==================================VARIABLES============================== */
+:root {
+    --primary: #4F46E5;
+    --head-text: rgb(22, 28, 45);
+    --info-text: #94A3B8;
+    
+    --black: #000;
+    --white: #fff;
+}
+
+/* =====================components=========================== */
+.btn {
+    background-color: var(--primary);
+    border-radius: 6px;
+    border: transparent;
+    padding: 8px 20px;
+    margin: 0 auto;
+    margin-top: 5px;
+    ;
+    font-size: 16px;
+    font-family: Nunito;
+    color: var(--white);
+    letter-spacing: 0.4px;
+}
+
+/* ======================haeder==================== */
+header {
+    background-color:var(--head-text);
+    padding-top: 20px;
+    z-index: 9999;
+    position: absolute;
+    width: 100%;
+    display: inline-block;
+}
+
+header ul {
+    list-style: none;
+
+}
+
+header nav ul a {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: var(--white);
+    opacity: 0.3;
+    font-weight: 500;
+    transition: 0.5s;
+}
+header nav ul a.active,
+header nav ul a:hover {
+    transition: 0.5s;
+    opacity: 1;
+}
+
+header .row {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-icon ul a i {
+    display: inline-block;
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    color: rgba(22, 28, 45);
+    border-radius: 50%;
+    background-color: var(--white);
+    text-align: center;
+}
+
+/* ========================banner=============================== */
+.banner {
+    min-height: 100vh;
+    background-image: url("../images/bg01.jpg");
+    background-size: cover;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+}
+
+.banner .banner-data {
+    text-align: center;
+}
+
+.banner .banner-data h1 {
+    color: var(--white);
+    font-size: 60px;
+    font-weight: 700;
+    max-width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.banner .banner-data p {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 500;
+    max-width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0.45;
+    margin-bottom: 25px;
+}
+
+.banner-data .btn i {
+    margin-right: 5px;
+}
+
+/* =====================================experience==================================================== */
+.experience {
+    padding: 100px 0px;
+}
+
+.experience .row {
+    align-items: center;
+}
+
+.experience .exp-img img {
+    border-radius: 6px;
+
+}
+
+.exp-data {
+    margin-left: 30px;
+
+}
+
+.exp-data h2 {
+    font-size: 30px;
+    line-height: 45px;
+    font-weight: 600;
+    margin: 24px 0px;
+    max-width: 65%;
+    color: var(--head-text);
+}
+
+.exp-data p {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+    color: var(--info-text);
+    max-width: 100%;
+}
+
+.exp-data h2+p {
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--info-text);
+    max-width: 100%;
+    margin-bottom: 24px;
+}
+
+/* ===========================services================================= */
+.services-card {
+    margin: 0 auto;
+}
+
+.services-card .serv-icon {
+    margin: 0 auto;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    border-radius: 12px;
+    background-color: #f6f6fe;
+    text-align: center;
+    color: var(--primary);
+    font-size: 30px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.45);
+}
+
+.serv-data {
+    text-align: center;
+}
+
+.serv-data h3 {
+    text-align: center;
+    font-size: 18px;
+    color: var(--head-text);
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.serv-data p {
+    text-align: center;
+    font-size: 16px;
+    color: var(--info-text);
+    font-weight: 500;
+    margin: 20px;
+    max-width: 80%;
+}
+
+.services-card .serv-data a i {
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+.services-card .serv-data>a {
+    display: inline-block;
+    position: relative;
+}
+
+.services-card .serv-data>a::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--primary);
+    width: 0;
+    transition: all 0.5s;
+}
+
+.services-card .serv-data>a:hover::after {
+    width: 100%;
+}
+
+/* =============================menu=============================== */
+.menu {
+    padding-top: 96px;
+}
+
+.menu .heading {
+    background-image: url(../images/menu.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 250px;
+    position: relative;
+    z-index: 0;
+    text-align: center;
+}
+
+.menu .heading ::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(22, 28, 45, 0.5), rgb(22, 28, 45));
+    z-index: -1;
+}
+
+.menu .heading h4 {
+    color: var(--info-text);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+
+}
+
+.menu .heading h2 {
+    color: var(--white);
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.f-menu{
+    position: relative;
+}
+.bg{
+    position: absolute;
+    background-repeat:no-repeat;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.2);
+    z-index:-10;
+}
+.bgimg1{
+    background-image:url(../images/chilly.png);
+    top: 140px;
+    left: -150px;
+}
+.bgimg2{
+    background-image: url(../images/pav.png);
+    left: 91%;
+    top: 55%;
+}
+.f-menu .menu-list ul {
+    justify-content: center;
+    padding-top: 48px;
+
+}
+
+.f-menu .menu-list ul a {
+    color: var(--info-text);
+    font-size: 14px;
+    text-transform: uppercase;
+
+    transition: 0.5s;
+}
+
+.f-menu .menu-list ul a.active,
+.f-menu .menu-list ul a:hover {
+    color: var(--head-text);
+    text-decoration: underline;
+}
+.bg{
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.2);
+    z-index:-10;
+}
+.menu-bgimg1{
+    background-image: url(../images/chilly.png);
+    left: -150px;
+    top:140px;
+}
+.menu-bgimg2{
+    background-image: url(../images/pav.png);
+    left: 91%;
+    top:55%;
+}
+.f-menu .menu-item {
+    padding-bottom: 100px;
+}
+
+.f-menu .menu-item .dish {
+    width: 20%;
+    margin-top: 50px;
+    /* margin-left:30px; */
+    text-align: center;
+}
+
+.f-menu .dish .dish-img img {
+    border-radius: 50%;
+    width: 55%;
+    margin: 0 auto 20px;
+}
+
+.f-menu .dish .dish-img img:hover {
+    animation: round 10s linear infinite;
+}
+
+@keyframes round {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.f-menu .dish .dish-info h3 {
+    font-size: 18px;
+    color: var(--head-text);
+    padding-top: 10px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.f-menu .dish .dish-info h3:hover {
+    color: var(--primary);
+}
+
+.f-menu .dish .dish-info p {
+    font-size: 16px;
+    padding-top: 8px;
+    max-width: 90%;
+    color: var(--info-text);
+}
+
+.f-menu .dish .dish-info h5 {
+    color: var(--primary);
+    padding: 16px 0px;
+    font-size: 16px;
+}
+
+.menu-item  {
+    /* background-image: url(../images/chilly.png); */
+    top:1px;
+    left:2px;
+    background-position:top left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index:0;
+}
+
+.menu-item::after{
+    content:"";
+    background-image: url(../images/pav.png);
+    top:0;
+    z-index:-1;
+}
+/* =================================book============================== */
+.book{
+    background-image: url(../images/cta.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 0;
+    padding: 100px 0;
+    
+}
+.book::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(22 28 45 /0.5);
+    z-index: -1;
+}
+ .book .book-head{
+    margin-left: auto;    
+}
+.book-head{
+    background-color: var(--white);
+    max-width: 50%;
+    border-radius:10px;
+    padding: 48px;
+    padding-top: 50px;
+    margin-bottom: 48px;
+}
+.form-info span{
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    padding: 2px 10px;
+    background-color: rgba(79,70,229,0.05);
+    text-align: left;
+}
+.form-info h3{
+    font-size: 36px;
+    line-height:40px;
+    font-weight: 700;
+    margin: 16px 0;
+    text-transform: uppercase;
+    text-align:left;
+}
+.form-info p{
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--info-text);
+}
+.book .form-info{
+    margin-bottom: 20px;
+}
+.book form .field{
+    margin-bottom: 20px;
+}
+.book form .field input{
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid rgb(229, 231, 235);
+    border-radius: 5px;
+}
+.book form .field input::placeholder{
+    color: var(--info-text);
+    font-size: 16px;
+    font-family: Nunito;
+}
+.book form .field label{
+    display: inline-block;
+    margin-bottom: 7px;
+}
+.book form .form-btn button{
+    width: 100%;
+}
+
+
+/* ================================client========================== */
+.client{
+    background-color: #f6f6fe;
+    padding:96px;
+    text-align: center;
+}
+.client h4{
+    font-size:30px;
+    font-weight:600 ;
+    line-height:45px ;
+    margin-bottom:16px;
+    color:var(--head-text);
+}
+.client p{
+    font-size: 16px;
+    color: var(--info-text);
+    line-height: 26px;
+    max-width:53%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.col-4{
+    margin: 0 auto;
+    }
+
+.client .review{
+    border:1px solid rgb(229, 231, 235);
+    padding:12px;
+    margin:2px;
+    background-color: var(--white);
+    
+}
+.review .fa-quote-left{
+    color:var(--primary);
+    margin-top: 10px;
+    font-size:48px;
+    line-height:24px;
+}
+ .review p{
+    color: var(--info-text);
+    line-height: 26px;
+    font-size: 16px;
+    max-width:100%;
+}
+ .review .fa-star{
+    color:rgb(251, 191, 36);
+    font-size:14px;
+    line-height:24px;
+    margin-bottom:10px;
+}
+.photo img{
+    width: 56px;
+    height:56px;
+    margin:10px auto;
+    border-radius: 50%;
+}
+.photo h3{
+    font-size: 16px;
+    font-weight:600;
+    line-height:24px;
+}
+.client .photo p{
+    font-size: 14px;
+    color: var(--info-text);
+    line-height:20px;
+    margin-bottom: 100px;
+}
+/* --------------------------follow-now--------------------- */
+.follow .follow-img div{
+    width:9%;
+   
+}
+.follow{
+    position: relative;
+}
+.food-btn button{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        padding: 8px 20px;
+        border-radius:6px;
+        font-size:16px;
+        font-weight: 400;
+        line-height: 24px;
+        border:1px solid transparent;
+        color:var(--white);
+        background-color:var(--primary);
+        letter-spacing:0.4px;
+        transition: all 0.5s;
+        cursor: pointer;
+       
+}
+    .food-btn button:hover{
+    cursor: pointer;
+}
+   
+    /* ------------------------footer------------------------------ */
+footer{
+    background-color: var(--head-text);
+}
+.foot-info{
+    justify-content: center;
+    padding: 60px 0px;
+    text-align: center;
+}
+ .foot-data h5{
+    color:rgb(243, 244, 246);
+    font-size:16px;
+    font-weight: 600;
+    letter-spacing:1px;
+    line-height:24px;
+}
+.foot-data p{
+    color: rgb(229, 231, 235);
+    font-size: 16px;
+    line-height:26px;
+    margin-top:10px;
+}
+ .foot-logo img{
+    margin:0 auto;
+    margin-top: 50px;
+}
+ .foot-logo p{
+    color: rgb(229, 231, 235);
+   line-height: 26px;
+   max-width:52%;
+   margin:30px  auto;
+}
+ .foot-logo i{
+    border: 1px solid rgb(31, 41, 55);
+    border-radius:6px;
+    color: var(--white);
+    height:32px;
+    line-height: 32px;
+    width:32px;
+    text-align: center;
+    letter-spacing:0.4px;
+    /* font-weight:500; */
+    transition: all 0.5s;
+}
+ .foot-logo i:hover{
+    background-color: var(--primary);
+
+}
+.copyryt-info{
+    border:1px solid #1a2133;
+}
+.copyryt{
+    padding: 30px 0px;
+    margin-top:50px;
+}
+
+.copyryt .fa-heart{
+    color: red;
+    border: none;
+} 

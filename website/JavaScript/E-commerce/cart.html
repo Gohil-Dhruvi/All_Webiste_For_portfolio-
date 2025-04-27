@@ -1,0 +1,1183 @@
+<!-- https://themewagon.github.io/organic/  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Farm - Premium Quality Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Prata&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #7fad39;
+            --secondary-color: #1c1c1c;
+            --text-color: #6f6f6f;
+            --light-color: #f5f5f5;
+            --white-color: #ffffff;
+            --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--white-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow);
+            padding: 10px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled .header-container {
+            padding: 5px 0;
+        }
+
+        .logo {
+            font-family: 'Prata', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-icon {
+            margin-left: 20px;
+            font-size: 18px;
+            color: var(--secondary-color);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .header-icon:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://themewagon.github.io/organic/img/hero/banner.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            display: inline-block;
+            position: relative;
+            padding-left: 70px;
+        }
+
+        .hero-subtitle::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .hero-title {
+            font-size: 60px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-family: 'Prata', serif;
+        }
+
+        .hero-text {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 10px 20px rgba(127, 173, 57, 0.2);
+        }
+
+        .hero-btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(127, 173, 57, 0.3);
+        }
+
+        /* Categories Section */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-family: 'Prata', serif;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .category-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .category-img img {
+            transform: scale(1.1);
+        }
+
+        .category-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .category-content p {
+            font-size: 14px;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .category-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .category-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Featured Products */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 500;
+            z-index: 1;
+        }
+
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-actions {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+            transform: translateY(20px);
+        }
+
+        .product-card:hover .product-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-action {
+            width: 40px;
+            height: 40px;
+            background-color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            color: var(--secondary-color);
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-action:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-category {
+            font-size: 14px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .product-title:hover {
+            color: var(--primary-color);
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--text-color);
+            font-size: 14px;
+            margin-left: 5px;
+            opacity: 0.7;
+        }
+
+        .add-to-cart {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Banner Section */
+        .banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://themewagon.github.io/organic/img/banner/banner-1.jpg') no-repeat center center/cover;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .banner h2 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: 'Prata', serif;
+        }
+
+        .banner p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 16px;
+        }
+
+        .banner-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+        }
+
+        .banner-btn:hover {
+            background-color: transparent;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Blog Section */
+        .blog-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .blog-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-img img {
+            transform: scale(1.1);
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-meta {
+            display: flex;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .blog-meta span {
+            margin-right: 15px;
+            color: var(--text-color);
+        }
+
+        .blog-meta i {
+            color: var(--primary-color);
+            margin-right: 5px;
+        }
+
+        .blog-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .blog-title:hover {
+            color: var(--primary-color);
+        }
+
+        .blog-text {
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .read-more i {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--secondary-color);
+        }
+
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f3f6fa;
+            padding: 70px 0 0;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-col p {
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            margin-right: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+        .footer-social {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background-color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: var(--secondary-color);
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 50px;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--white-color);
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .header-icons .header-icon:not(:last-child) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 600px;
+            }
+            
+            .hero-title {
+                font-size: 40px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .hero-btn, .banner-btn {
+                padding: 12px 25px;
+            }
+            
+            .banner h2 {
+                font-size: 30px;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="#" class="logo">
+                    <i class="fas fa-seedling"></i>
+                    Organic
+                </a>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Pages</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-icons">
+                    <div class="header-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="header-icon">
+                        <i class="fas fa-heart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <div class="header-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </div>
+                    <div class="header-icon mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content slide-up">
+                <span class="hero-subtitle">FRESH & ORGANIC</span>
+                <h1 class="hero-title">Delicious Seasonal Fruits</h1>
+                <p class="hero-text">Free shipping on all your order, we deliver, you enjoy. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#" class="hero-btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Categories</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            
+            <div class="categories">
+                <div class="category-card fade-in delay-1">
+                    <div class="category-img">
+                        <img src="https://themewagon.github.io/organic/img/categories/cat-1.jpg" alt="Fruits">
+                    </div>
+                    <div class="category-content">
+                        <h3>Fresh Fruits</h3>
+                        <p>Upto 50% Off</p>
+                        <a href="#" class="category-btn">Shop Now</a>
+                    </div>
+                </div>
+                
+                <div class="category-card fade-in delay-2">
+                    <div class="category-img">
+                        <img src="https://themewagon.github.io/organic/img/categories/cat-2.jpg" alt="Vegetables">
+                    </div>
+                    <div class="category-content">
+                        <h3>Vegetables</h3>
+                        <p>Upto 25% Off</p>
+                        <a href="#" class="category-btn">Shop Now</a>
+                    </div>
+                </div>
+                
+                <div class="category-card fade-in delay-3">
+                    <div class="category-img">
+                        <img src="https://themewagon.github.io/organic/img/categories/cat-3.jpg" alt="Dairy">
+                    </div>
+                    <div class="category-content">
+                        <h3>Dairy Products</h3>
+                        <p>Upto 15% Off</p>
+                        <a href="#" class="category-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Featured Products</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            
+            <div class="products">
+                <div class="product-card slide-up">
+                    <span class="product-badge">-25%</span>
+                    <div class="product-img">
+                        <img src="https://themewagon.github.io/organic/img/featured/feature-1.jpg" alt="Product">
+                        <div class="product-actions">
+                            <a href="#" class="product-action"><i class="fas fa-heart"></i></a>
+                            <a href="#" class="product-action"><i class="fas fa-shopping-cart"></i></a>
+                            <a href="#" class="product-action"><i class="fas fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Fruits</span>
+                        <a href="#" class="product-title">Organic Strawberry</a>
+                        <div class="product-price">
+                            <div class="price">$12.85 <span class="old-price">$17.50</span></div>
+                            <div class="add-to-cart"><i class="fas fa-plus"></i></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card slide-up delay-1">
+                    <div class="product-img">
+                        <img src="https://themewagon.github.io/organic/img/featured/feature-2.jpg" alt="Product">
+                        <div class="product-actions">
+                            <a href="#" class="product-action"><i class="fas fa-heart"></i></a>
+                            <a href="#" class="product-action"><i class="fas fa-shopping-cart"></i></a>
+                            <a href="#" class="product-action"><i class="fas fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Vegetables</span>
+                        <a href="#" class="product-title">Fresh Tomato</a>
+                        <div class="product-price">
+                            <div class="price">$8.50</div>
+                            <div class="add-to-cart"><i class="fas fa-plus"></i></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card slide-up delay-2">
+                    <span class="product-badge">New</span>
+                    <div class="product-img">
+                        <img src="https://themewagon.github.io/organic/img/featured/feature-3.jpg" alt="Product">
+                        <div class="product-actions">
+                            <a href="#" class="product-action"><i class="fas fa-heart"></i></a>
+                            <a href="#" class="product-action"><i class="fas fa-shopping-cart"></i></a>
+                            <a href="#" class="product-action"><i class="fas fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Vegetables</span>
+                        <a href="#" class="product-title">Organic Broccoli</a>
+                        <div class="product-price">
+                            <div class="price">$9.45</div>
+                            <div class="add-to-cart"><i class="fas fa-plus"></i></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card slide-up delay-3">
+                    <div class="product-img">
+                        <img src="https://themewagon.github.io/organic/img/featured/feature-4.jpg" alt="Product">
+                        <div class="product-actions">
+                            <a href="#" class="product-action"><i class="fas fa-heart"></i></a>
+                            <a href="#" class="product-action"><i class="fas fa-shopping-cart"></i></a>
+                            <a href="#" class="product-action"><i class="fas fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Fruits</span>
+                        <a href="#" class="product-title">Organic Orange</a>
+                        <div class="product-price">
+                            <div class="price">$7.95</div>
+                            <div class="add-to-cart"><i class="fas fa-plus"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="container">
+            <div class="slide-up">
+                <h2>100% Organic</h2>
+                <p>Free shipping on all your order, we deliver, you enjoy. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#" class="banner-btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Latest News</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            
+            <div class="products">
+                <div class="blog-card slide-up">
+                    <div class="blog-img">
+                        <img src="https://themewagon.github.io/organic/img/blog/blog-1.jpg" alt="Blog Post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> June 10, 2023</span>
+                            <span><i class="far fa-comments"></i> 5 Comments</span>
+                        </div>
+                        <a href="#" class="blog-title">The Benefits of Organic Food for Your Health</a>
+                        <p class="blog-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-card slide-up delay-1">
+                    <div class="blog-img">
+                        <img src="https://themewagon.github.io/organic/img/blog/blog-2.jpg" alt="Blog Post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> May 15, 2023</span>
+                            <span><i class="far fa-comments"></i> 12 Comments</span>
+                        </div>
+                        <a href="#" class="blog-title">How to Grow Your Own Organic Vegetables</a>
+                        <p class="blog-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-card slide-up delay-2">
+                    <div class="blog-img">
+                        <img src="https://themewagon.github.io/organic/img/blog/blog-3.jpg" alt="Blog Post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> April 20, 2023</span>
+                            <span><i class="far fa-comments"></i> 8 Comments</span>
+                        </div>
+                        <a href="#" class="blog-title">The Importance of Eating Seasonal Fruits</a>
+                        <p class="blog-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Our Products</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> My Account</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Order Tracking</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Wishlist</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Delivery Information</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Returns Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Street, City, Country</p>
+                        <p><i class="fas fa-phone-alt"></i> +123 456 7890</p>
+                        <p><i class="fas fa-envelope"></i> info@example.com</p>
+                        <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 - 18:00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Organic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Toggle mobile menu visibility
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Search icon functionality (toggle search input visibility)
+        const searchIcon = document.querySelector('.header-icon .fa-search');
+        const searchInput = document.createElement('input');
+        searchInput.setAttribute('type', 'text');
+        searchInput.setAttribute('placeholder', 'Search...');
+        
+        searchIcon.addEventListener('click', () => {
+            // Toggle the search input
+            if (searchInput.style.display === '' || searchInput.style.display === 'none') {
+                searchInput.style.display = 'inline-block';
+                searchIcon.parentNode.appendChild(searchInput);
+            } else {
+                searchInput.style.display = 'none';
+            }
+        });
+        
+        // Update cart count dynamically (can be hooked up to backend or local storage)
+        const cartCount = document.querySelectorAll('.cart-count');
+        cartCount.forEach((cart) => {
+            cart.innerHTML = getCartCount(); // Replace with actual cart count logic (e.g., from localStorage)
+        });
+        
+        // Function to simulate retrieving cart count (can be updated with real logic)
+        function getCartCount() {
+            // Replace this with logic to fetch actual cart item count from backend or local storage
+            return 3; // Example: 3 items in the cart
+        }
+        
+        // Adding product to cart (simulating this for now)
+        const addToCartBtns = document.querySelectorAll('.add-to-cart');
+        addToCartBtns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                // Here we would increase the cart item count in your backend or local storage
+                alert('Product added to cart!');
+                updateCartCount();
+            });
+        });
+        
+        // Update cart count after adding a product
+        function updateCartCount() {
+            const currentCount = parseInt(getCartCount()) + 1; // Example logic: increment by 1
+            cartCount.forEach((cart) => {
+                cart.innerHTML = currentCount;
+            });
+        }
+        </script>
+        
+</body>

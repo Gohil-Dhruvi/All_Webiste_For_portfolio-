@@ -1,0 +1,392 @@
+@media(max-width:992px){ 
+    /* header */
+    .navbar{
+    max-width: none;
+    }
+    .container {
+    padding-top: 1.875rem;
+    padding-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    }
+    /* banner */
+    .heading{
+    width: 915px;
+    height: 140px;
+    font-size: 56px;
+    }
+    .demo{
+    font-size: 14.4px;
+    width: 915px;
+    }
+    .button{
+    width: 310px;
+    height: 47px;
+    font-size: 14.4px;
+    }
+    .hand-img-1 {
+    width: 500px;
+    height: 613px;
+    padding-left: 20px;
+    }
+    .hand-img-2 {
+    width: 650px;
+    height: 530px;
+    padding-left: 20px;
+    margin-top: 200px;
+    padding-left: 250px;
+    }
+    .hand-img-3{
+        opacity: 0;
+    }
+    /* diamond */
+    .flos-img img{
+    padding-top: 50px;
+    padding-left: 20px;
+    max-width: 897px;
+    height: 637px;
+    }
+    .col-4{
+    width: 915px;
+    height: 320px;
+    margin-top: 690px;
+    }
+    .about-content{
+     font-size: 38px;
+     height: 38px;
+     margin-bottom: 20px;
+    }
+   .diamon-data{
+    font-size: 14.4px;
+    height: 96px;
+    max-width: 818px;
+    padding-top: 90px;
+    }
+    .learn{
+    margin-top: 120px;
+    font-size: 14.4px;
+    margin-left: 50px;
+    letter-spacing: 4px;
+    }
+    /* explore */
+    .explore{
+    font-size: 34px;
+    height: 42px;
+    margin-top: 220px;
+    }
+    .expl img{
+    max-width: 446px;
+    height:790px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    }
+    /* crafting */
+    .container-4{
+    background-image: url(../images/65a25e07bb221c165d4fb4b2_Bg.png);
+    max-width: 915px;
+    height: 350px;
+    margin-top: 1200px;
+    }
+    .crafting-diamond h4{
+    width: 915px;
+    height: 42px;
+    color: #fff;
+    font-size: 34px;
+    padding-top: 80px;
+    }
+    .crafting-diamond-data{
+    font-size: 14.4px;
+    width: 915px;
+    height:72px;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 60px;
+    }
+    /* jewelery */
+    .container-5{
+    width: 915px;
+    height: 1297px;
+    }
+    .head-access h2{
+    font-size: 34px;
+    max-width: 708px;
+    height: 42px;
+    margin-top: 980px;
+    }
+    .prod-img{
+    height: 501px;
+    width: 384px;
+    margin-top: 400px;
+    }
+    .prod-img{
+    height: 501px;
+    width: 384px;
+    margin-top: 400px;
+    }
+    .prod-img-1{
+    height: 501px;
+    width: 384px;
+    margin-top: 50px;
+    }
+    /* client */
+    .client-head{
+    font-size: 34px;
+    margin-bottom: 20px;
+    }
+    .client-detail{
+    font-size: 14.4px;
+    width: 870px;
+    height: 24px;
+    }
+    .container-8{
+        height: 500px;
+    }
+    .line{
+    height: 1px;
+    width: 50px;
+    margin: 0 auto;
+    margin-top: 20px;
+    }
+    .client-deta{
+    max-width: 915px;
+    height: 96px;
+    font-size: 16px;
+    }
+    .tengan-img{
+    padding-top: 40px;
+    margin-left: 450px;
+    }
+    /* ask questions */
+    .ask-ques{
+    font-size: 30px;
+    height: 38px;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+    margin-top: 80px;   
+    }
+    .ask-data{
+    width: 915px;
+    height: 48px;
+    font-size: 14.4px;
+    }
+    .que-data{
+    font-size: 14.4px;
+    letter-spacing: 4px;
+    margin-top: 40px;
+    }
+    .accordion-item-1{
+    width: 915px;
+    height: 77px;
+    margin-top: 120px;
+    }
+    .accordion-item{
+    width: 915px;
+    height: 77px;
+    }
+    /* inform */
+    .inform-img{
+    height: 319px;
+    max-width: 385px;
+    /* margin-right: 500px; */
+    }
+    .inform{
+        opacity: 0;
+    }
+    .card{
+    width: 930px;
+    height: 1048px;
+    }
+    .info{
+    font-size: 34px;
+    width: 436px;
+    height: 84px;
+    opacity: 0;
+    }
+    .container{
+    width: 929px;
+    }
+}
+@media(max-width:768px){ 
+    /* header */
+    .navbar{
+    max-width: none;
+    width: 702px;
+    height: 88px;
+    }
+    .container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    }
+    /* banner */
+    .heading{
+    width: 702px;
+    height: 112px;
+    font-size: 48px;
+    }
+    .demo{
+    font-size: 14.4px;
+    width: 702px;
+    height: 80px;
+    }
+    .button{
+    width: 291px;
+    height: 47px;
+    font-size: 14.4px;
+    padding: 11.2px 38px;
+    }
+    .hand-img-1 {
+    width: 338px;
+    height: 469px;
+    }
+    .hand-img-2 {
+    width:500px;
+    height: 450px;
+    padding-bottom: 100px;
+    }
+    .hand-img-3{
+    opacity: 0;
+    visibility: hidden;
+    }
+    /* diamond */
+    .flos-img img{
+    padding-top: 50px;
+    width: 780px;
+    height: 504px;
+    }
+    .col-4{
+    width: 712px;
+    height: 380px;
+    }
+    .about-content{
+     font-size: 30px;
+     margin-bottom: 50px;
+    }
+   .diamon-data{
+    font-size: 14.4px;
+    height: 96px;
+    max-width: 818px;
+    padding-top: 90px;
+    }
+    .learn{
+    font-size: 14.4px;
+    margin-left: 50px;
+    letter-spacing: 4px;
+    }
+    /* explore */
+    .explore{
+    font-size: 30px;
+    height: 30px;
+    margin-top: 250px;
+    }
+    .container-3{
+    width: 100%;
+    height: 1000px;
+    }
+    .expl img{
+    max-width: 345px;
+    height:611px;
+    }
+    /* crafting */
+    .container-4{
+    background-image: url(../images/65a25e07bb221c165d4fb4b2_Bg.png);
+    max-width: 850px;
+    height: 300px;
+    }
+    .crafting-diamond h4{
+    width: 915px;
+    height: 42px;
+    color: #fff;
+    font-size: 34px;
+    padding-top: 80px;
+    }
+    .crafting-diamond-data{
+    font-size: 14.4px;
+    width: 915px;
+    height:72px;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 60px;
+    }
+    /* jewelery */
+    .container-5{
+    width: 915px;
+    height: 1297px;
+    }
+    .head-access h2{
+    font-size: 34px;
+    max-width: 708px;
+    height: 42px;
+    margin-top: 980px;
+    }
+    .prod-img{
+    height: 501px;
+    width: 384px;
+    margin-top: 400px;
+    }
+    .prod-img{
+    height: 501px;
+    width: 384px;
+    margin-top: 400px;
+    }
+    .prod-img-1{
+    height: 501px;
+    width: 384px;
+    margin-top: 50px;
+    }
+    /* client */
+    .client-head{
+    font-size: 34px;
+    margin-bottom: 20px;
+    }
+    .client-detail{
+    font-size: 14.4px;
+    width: 870px;
+    height: 24px;
+    }
+    .container-8{
+        height: 500px;
+    }
+    .line{
+    height: 1px;
+    width: 50px;
+    margin: 0 auto;
+    margin-top: 20px;
+    }
+    .client-deta{
+    max-width: 915px;
+    height: 96px;
+    font-size: 16px;
+    }
+    .tengan-img{
+    padding-top: 40px;
+    margin-left: 450px;
+    } 
+    /* ask questions */
+   .ask-ques{
+    font-size: 30px;
+    height: 38px;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+    margin-top: 80px;   
+    }
+    .ask-data{
+    width: 915px;
+    height: 48px;
+    font-size: 14.4px;
+    }
+    .que-data{
+    font-size: 14.4px;
+    letter-spacing: 4px;
+    margin-top: 40px;
+    }
+    .accordion-item-1{
+    width: 915px;
+    height: 77px;
+    margin-top: 120px;
+    }
+    .accordion-item{
+    width: 915px;
+    height: 77px;
+    }
+}

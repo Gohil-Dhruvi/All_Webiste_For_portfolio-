@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sign Up - PinkTheme</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(to right, #ffe6f0, #ffc0cb);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .signup-container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .signup-box {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 20, 147, 0.2);
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .signup-box h2 {
+      text-align: center;
+      color: #d63384;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    .form-control {
+      border-radius: 10px;
+      border: 2px solid #ffc0cb;
+      background-color: #fff0f5;
+    }
+
+    .form-control:focus {
+      border-color: #ff69b4;
+      box-shadow: 0 0 0 0.2rem rgba(255, 105, 180, 0.3);
+    }
+
+    .btn-pink {
+      background-color: #ff69b4;
+      color: white;
+      font-weight: 500;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
+
+    .btn-pink:hover {
+      background-color: #ff1493;
+    }
+
+    .form-check-input:checked {
+      background-color: #ec407a;
+      border-color: #ec407a;
+    }
+
+    a {
+      color: #d63384;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #c2185b;
+    }
+
+    .footer-text {
+      text-align: center;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="signup-container">
+    <div class="signup-box">
+
+      <h2>Create your Account</h2>
+
+      <% if (typeof messages !== 'undefined' && messages.error && messages.error.length > 0) { %>
+        <div class="alert alert-danger text-center">
+          <%= messages.error[0] %>
+        </div>
+      <% } %>
+
+      <form action="/user/register" method="POST">
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input type="text" name="username" class="form-control" placeholder="Enter your username" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
+        </div>
+
+        <div class="form-check mb-3">
+          <input type="checkbox" class="form-check-input" id="rememberMe">
+          <label class="form-check-label" for="rememberMe">Remember me</label>
+        </div>
+
+        <button type="submit" class="btn btn-pink w-100 py-2">Sign Up</button>
+      </form>
+
+      <p class="footer-text mt-4">Already have an account? <a href="/user/loginUser">Sign in</a></p>
+    </div>
+  </div>
+
+</body>
+
+</html>

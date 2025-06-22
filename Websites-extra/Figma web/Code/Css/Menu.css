@@ -1,0 +1,232 @@
+/*---------deafault/comoon/resetcss*/
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 20px 20px;
+}
+
+body {
+    font-family: Sofia;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.subheading {
+    font-size: 13px;
+    font-family: "Nunito", Arial, sans-serif;
+    display: block;
+    margin-bottom: 5px;
+    color: rgb(194, 168, 126);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    z-index: 0;
+}
+
+:root {
+    --fontFamily: "Overpass", sans-serif;
+    --mainColor: #0000ff;
+    --optionalColor: #ad343e;
+    --whiteColor: #ffffff;
+    --text-color: #f1efd5;
+    --blackColor: #474747;
+    --paragraphColor: #656a80;
+    --color: #0e0f0f;
+    --grayColor: #b9bec7;
+    --fontSize: 16px;
+    --transition: .5s;
+}
+
+
+/* ==========================Header========================== */
+
+header {
+    /* border-bottom: 1px solid var(--text-color); */
+    top: 0;
+    bottom: 0;
+}
+
+.navbar-brand img {
+    width: 100%;
+}
+
+.navbar h2 {
+    color: var(--text-color);
+}
+
+.navbar-nav span h3 {
+    font-family: 'Nunito', Arial, sans-serif;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.navbar-nav span p {
+    display: block;
+    color: var(--text-color);
+    font-size: 12px;
+    font-family: 'Nunito', Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.navbar li a {
+    color: var(--blackColor);
+    font-size: 16px;
+    font-family: 'Nunito', Arial, sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.dtr-header-btn {
+    color: var(--blackColor);
+    border: 2px solid var(--color);
+    text-decoration: none;
+    border-radius: 50PX;
+    font-family: 'Nunito', Arial, sans-serif;
+    line-height: 22px;
+    padding: 10px 10px;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+}
+
+
+/* -------- banner =========== */
+
+.banner{
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+.components h1{
+    font-size: 100px;
+    font-style: normal;
+    font-family: 'Playfair Display';
+}
+
+.components p{
+    font-size: 18px;
+    font-family: 'DM Sans',sans-serif;
+    font-style: normal;
+}
+
+.Book {
+    background-color: #ad343e;
+    color: var(--whiteColor);
+    border: none;
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    line-height: 22px;
+    padding: 13px 18px;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.Explor {
+    color: var(--blackColor);
+    border: 2px solid var(--color);
+    text-decoration: none;
+    border-radius: 50PX;
+    font-family: 'DM Sans',sans-serif;
+    line-height: 22px;
+    padding: 13px 18px;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.card button {
+    border: none;
+    font-size: 24px;
+    background-color: var(--whiteColor);
+    color: rgb(158, 21, 21);
+    font-weight: 600;
+}
+
+
+/* <!-- Through-apps --> */
+
+
+.through-apps h1{
+   font-size: 55px;
+   font-family: 'Playfair Display';
+   font-style: normal;
+   max-width: 400px;
+}
+
+.through-apps p{
+   max-width: 300px;
+   font-size: 16px;
+   font-family: 'DM Sans',sans-serif;
+
+}
+
+.Just-Eat img{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 15px;
+}
+
+/* .Just-Eat img:nth-child(2){
+    margin-top: 20px;
+} */
+
+/* ====== footer ======= */
+
+
+footer{
+    background-color: var(--blackColor);
+    padding: 80px;
+}
+
+.Bistro p{
+     color: #adb29e;
+     font-size: 16px;
+     font-family: 'DM snas',sans-serif;
+     max-width: 280px;
+}
+
+.Bistro ul li:nth-child(1){
+    margin-left: 0px;
+}
+
+.Bistro ul li{
+    list-style: none;
+    margin-left: 15px;
+}
+
+.Menu ul li:nth-child(1){
+    list-style: none;
+    color: var(--whiteColor);
+}
+
+.Menu ul li{
+    padding: 10px;
+    list-style: none;
+     color: #dbdfd0;
+}
+
+.Menu ul li a {
+    padding: 10px;
+    padding-left: 0%;
+    color: var(--whiteColor);
+    text-decoration: none;
+}
+

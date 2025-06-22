@@ -1,171 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dhruvi Gohil - Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/style.css"/>
-</head>
-<body>
-  <!-- Header Section -->
-  <header class="header">
-    <a href="#home" class="logo">Dhruvi Gohil</a>
 
-    <i class="bx bx-menu" id="menu-icon"></i>
-    <nav class="navbar">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#testimonial">Testimonial</a>
-      <a href="#contact">Contact</a>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Boxicons CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <header class="header fixed-top bg-white shadow-sm">
+    <nav class="container d-flex justify-content-between align-items-center py-3">
+      <a href="#home" class="logo fs-3 fw-bold text-main">Dhruvi Gohil</a>
+
+      <button class="btn d-md-none" id="menu-icon">
+        <i class="bx bx-menu fs-3"></i>
+      </button>
+
+      <nav class="navbar d-none d-md-flex gap-4">
+        <a href="#home" class="nav-link text-dark">Home</a>
+        <a href="#about" class="nav-link text-dark">About</a>
+        <a href="#services" class="nav-link text-dark">Services</a>
+        <a href="#portfolio" class="nav-link text-dark">Portfolio</a>
+        <a href="#testimonial" class="nav-link text-dark">Testimonial</a>
+        <a href="#contact" class="nav-link text-dark">Contact</a>
+      </nav>
     </nav>
   </header>
 
-  <!-- Home Section -->
-  <section class="home" id="home">
-    <div class="home-img">
-      <img src="img/Dhruvi.png" alt="Dhruvi Gohil" />
-    </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="d-md-none bg-white shadow p-3 d-none position-fixed top-0 start-0 w-75 h-100">
+    <button id="close-menu" class="btn btn-close float-end"></button>
+    <nav class="d-flex flex-column gap-3 mt-4">
+      <a href="#home" class="nav-link text-dark">Home</a>
+      <a href="#about" class="nav-link text-dark">About</a>
+      <a href="#services" class="nav-link text-dark">Services</a>
+      <a href="#portfolio" class="nav-link text-dark">Portfolio</a>
+      <a href="#testimonial" class="nav-link text-dark">Testimonial</a>
+      <a href="#contact" class="nav-link text-dark">Contact</a>
+    </nav>
+  </div>
 
-    <div class="home-content">
-      <h3>Hello, Myself</h3>
-      <h1>Dhruvi Gohil</h1>
-      <h3>And I'm a <span class="multiple-text"></span></h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, cum possimus vel corporis modi saepe repellat tempora tempore doloribus? Ipsam doloremque esse similique impedit adipisci.</p>
-      <div class="social-media">
-        <a href="#"><i class="bx bxl-facebook"></i></a>
-        <a href="#"><i class="bx bxl-twitter"></i></a>
-        <a href="#"><i class="bx bxl-instagram"></i></a>
-        <a href="#"><i class="bx bxl-linkedin"></i></a>
+  <!-- Home Section -->
+  <section class="home py-5" id="home">
+    <div class="container d-flex flex-column flex-md-row align-items-center gap-4">
+      <div class="home-img flex-shrink-0">
+        <img src="img/Dhruvi.png" alt="Dhruvi Gohil" class="img-fluid rounded" style="max-width: 300px" />
       </div>
-      <a href="#" class="btn">Download CV</a>
+      <div class="home-content">
+        <h3>Hello, Myself</h3>
+        <h1 class="display-4 fw-bold">Dhruvi Gohil</h1>
+        <h3>And I'm a <span class="multiple-text text-main fw-semibold"></span></h3>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, cum possimus vel corporis modi
+          saepe repellat tempora tempore doloribus?</p>
+        <div class="social-media mb-3">
+          <a href="#" class="text-main fs-4 me-3"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="text-main fs-4 me-3"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="text-main fs-4 me-3"><i class="bx bxl-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/gohil-dhruvi-161466303/" target="_blank" class="text-main fs-4"><i
+              class="bx bxl-linkedin"></i></a>
+        </div>
+        <a href="#" class="btn btn-main btn-lg">Download CV</a>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section class="about" id="about">
-    <div class="about-content">
-      <h2 class="heading">About <span>Me</span></h2>
-      <h3>I'm a <span>Full Stack Developer</span></h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, beatae.</p>
-      <a href="#" class="btn">Read More</a>
-    </div>
-    <div class="about-img">
-      <img src="img/Dhruvi.png" alt="About Image" />
+  <section class="about py-5 bg-snd" id="about">
+    <div class="container d-flex flex-column flex-md-row align-items-center gap-4">
+      <div class="about-content flex-grow-1">
+        <h2 class="heading mb-3">About <span class="text-main">Me</span></h2>
+        <h3>I'm a <span class="text-main">Full Stack Developer</span></h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, beatae.</p>
+        <a href="#" class="btn btn-outline-main mt-3">Read More</a>
+      </div>
+      <div class="about-img flex-shrink-0">
+        <img src="img/Dhruvi.png" alt="About Image" class="img-fluid rounded" style="max-width: 300px" />
+      </div>
     </div>
   </section>
 
   <!-- Services Section -->
-   <section class="services" id="services">
-    <h2 class="heading">My <span>Services</span></h2>
+  <section class="services py-5" id="services">
+    <div class="container">
+      <h2 class="heading text-center mb-5">My <span class="text-main">Services</span></h2>
 
-    <div class="services-container">
-        <div class="services-box">
-            <i class="bx bx-code"></i>
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0 h-100 text-center p-4">
+            <i class="bx bx-code fs-1 text-main mb-3"></i>
             <h3>Web Development</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque facere numquam beatae quam eius praesentium deleniti libero vero aut dignissimos.</p>
-            <a href="#" class="btn">Read More</a>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque facere numquam beatae quam eius
+              praesentium deleniti libero vero aut dignissimos.</p>
+            <a href="#" class="btn btn-outline-main">Read More</a>
+          </div>
         </div>
-        <div class="services-box">
-            <i class="bx bx-palette"></i>
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0 h-100 text-center p-4">
+            <i class="bx bx-palette fs-1 text-main mb-3"></i>
             <h3>UI/UX Development</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque facere numquam beatae quam eius praesentium deleniti libero vero aut dignissimos.</p>
-            <a href="#" class="btn">Read More</a>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque facere numquam beatae quam eius
+              praesentium deleniti libero vero aut dignissimos.</p>
+            <a href="#" class="btn btn-outline-main">Read More</a>
+          </div>
         </div>
-        <div class="services-box">
-            <i class="bx bxl-android"></i>
+        <div class="col-md-4">
+          <div class="card shadow-sm border-0 h-100 text-center p-4">
+            <i class="bx bxl-android fs-1 text-main mb-3"></i>
             <h3>App Development</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque facere numquam beatae quam eius praesentium deleniti libero vero aut dignissimos.</p>
-            <a href="#" class="btn">Read More</a>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque facere numquam beatae quam eius
+              praesentium deleniti libero vero aut dignissimos.</p>
+            <a href="#" class="btn btn-outline-main">Read More</a>
+          </div>
         </div>
-    </div>
-   </section>
-   <!-- Testionial Section -->
-    <section class="testimonial" id="testimonial">
-      
-  <div class="testimonial-box">
-    <h2 class="heading">Testimonial</h2>
-
-    <div class="wrapper">
-      <div class="testimonial-item">
-        <img src="img/Dhruvi.png" alt="Marilyn">
-
-        <h3>Marilyn</h3>
-        <div class="rating">
-          <i class="bx bxs-star" id="star"></i>
-          <i class="bx bxs-star" id="star"></i>
-          <i class="bx bxs-star" id="star"></i>
-          <i class="bx bxs-star" id="star"></i>
-          <i class="bx bxs-star" id="star"></i>
-        </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, labore iste. Quas exercitationem consequuntur aliquam impedit tenetur alias tempore sapiente.</p>
-      </div>
-
-      <div class="testimonial-item">
-        <img src="img/Dhruvi.png" alt="Marilyn">
-
-        <h3>Marilyn</h3>
-        <div class="rating">
-          <i class="bx bxs-star" id="star"></i>
-          <i class="bx bxs-star" id="star"></i>
-          <i class="bx bxs-star" id="star"></i>
-          <i class="bx bxs-star" id="star"></i>
-          <i class="bx bxs-star" id="star"></i>
-        </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, labore iste. Quas exercitationem consequuntur aliquam impedit tenetur alias tempore sapiente.</p>
-      </div>
-
-      <div class="testimonial-item">
-        <img src="img/Dhruvi.png" alt="Marilyn">
-
-        <h3>Marilyn</h3>
-        <div class="rating">
-          <i class="bx bxs-star" id="star"></i>
-          <i class="bx bxs-star" id="star"></i>
-          <i class="bx bxs-star" id="star"></i>
-          <i class="bx bxs-star" id="star"></i>
-          <i class="bx bxs-star" id="star"></i>
-        </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, labore iste. Quas exercitationem consequuntur aliquam impedit tenetur alias tempore sapiente.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Contact Section -->
- <section class="contact" id="contact">
-  <h2 class="heading">Conatct <span>Me</span></h2>
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section py-5 bg-snd">
+    <div class="container">
+      <div class="portfolio-header text-center mb-5">
+        <h2 class="section-title">My Portfolio</h2>
+        <p class="section-subtitle">My Excellent Portfolio</p>
+      </div>
 
-  <form action="#">
-    <div class="input-box">
-      <input type="text" placeholder="Full Name">
-      <input type="email" name="Email" placeholder="Email Address">
-    </div>
-    <div class="input-box">
-      <input type="number" placeholder="Phone Number">
-      <input type="text" placeholder="Email Subject">
-    </div>
-    <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-    <input type="submit" value="Send Message" class="btn">
-  </form>
- </section>
+      <!-- Filter Buttons -->
+      <div class="portfolio-filter d-flex justify-content-center gap-3 mb-4">
+        <button class="btn btn-main filter-btn active" data-filter="*">All</button>
+        <button class="btn btn-outline-main filter-btn" data-filter=".web-design">Web Design</button>
+        <button class="btn btn-outline-main filter-btn" data-filter=".mobile-apps">Mobile Apps</button>
+        <button class="btn btn-outline-main filter-btn" data-filter=".game-dev">Game Dev</button>
+      </div>
 
- <!-- Footer Section-->
-  <footer class="footer">
-    <div class="social">
-       <a href="#"><i class="bx bxl-facebook"></i></a>
-        <a href="#"><i class="bx bxl-twitter"></i></a>
-        <a href="#"><i class="bx bxl-instagram"></i></a>
-        <a href="#"><i class="bx bxl-linkedin"></i></a>
+      <!-- Portfolio Items -->
+      <div class="portfolio-container row g-4">
+        <div class="portfolio-item web-design col-md-6 col-lg-4">
+          <div class="card portfolio-wrap shadow-sm">
+            <img src="https://via.placeholder.com/400x300" class="card-img-top portfolio-img" alt="eCommerce Website" />
+            <div class="card-body portfolio-overlay">
+              <h4 class="card-title">eCommerce Website</h4>
+              <p class="card-text">Web Design</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item web-design col-md-6 col-lg-4">
+          <div class="card portfolio-wrap shadow-sm">
+            <img src="https://via.placeholder.com/400x300" class="card-img-top portfolio-img" alt="Product Landing Page" />
+            <div class="card-body portfolio-overlay">
+              <h4 class="card-title">Product Landing Page</h4>
+              <p class="card-text">Web Design</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item mobile-apps col-md-6 col-lg-4">
+          <div class="card portfolio-wrap shadow-sm">
+            <img src="https://via.placeholder.com/400x300" class="card-img-top portfolio-img" alt="Mobile App" />
+            <div class="card-body portfolio-overlay">
+              <h4 class="card-title">Mobile App</h4>
+              <p class="card-text">Mobile Apps</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item game-dev col-md-6 col-lg-4">
+          <div class="card portfolio-wrap shadow-sm">
+            <img src="https://via.placeholder.com/400x300" class="card-img-top portfolio-img" alt="JavaScript Quiz Game" />
+            <div class="card-body portfolio-overlay">
+              <h4 class="card-title">JavaScript Quiz Game</h4>
+              <p class="card-text">Game Dev</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="copyright">
-      &copy; Dhruvi Gohil - All Rights Reserved
-    </p>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="testimonial py-5">
+    <div class="container">
+      <h2 class="heading text-center mb-5">Testimonial</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="testimonial-item col-md-6 col-lg-4 text-center p-4 shadow-sm rounded bg-white">
+          <img src="img/Dhruvi.png" alt="Marilyn" class="rounded-circle mb-3" style="width: 100px; height: 100px;" />
+          <h3>Marilyn</h3>
+          <div class="rating text-main mb-3">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nostrum voluptatem deserunt dolore,
+            minima reprehenderit optio amet molestiae.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact py-5 bg-snd" id="contact">
+    <div class="container">
+      <h2 class="heading text-center mb-4">Contact Me</h2>
+      <form class="mx-auto" style="max-width: 600px;">
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter Your Full Name" required />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter Your Email" required />
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Your Message</label>
+          <textarea id="message" rows="5" class="form-control" placeholder="Write Your Message Here" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-main">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center py-3 bg-white text-main">
+    <p>© 2025 Dhruvi Gohil. All Rights Reserved.</p>
   </footer>
 
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <!-- Typed.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- Custom JS -->
   <script src="js/script.js"></script>
 
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

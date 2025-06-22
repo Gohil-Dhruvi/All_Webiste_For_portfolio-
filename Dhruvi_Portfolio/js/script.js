@@ -1,20 +1,42 @@
-let menu = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+// Mobile menu toggle
+const menuIcon = document.getElementById('menu-icon');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMenuBtn = document.getElementById('close-menu');
 
-menu.onclick = () => {
-    menu.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-}
+menuIcon.addEventListener('click', () => {
+  mobileMenu.classList.add('active');
+});
 
-window.onscroll = () => {
-    menu.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-}
+closeMenuBtn.addEventListener('click', () => {
+  mobileMenu.classList.remove('active');
+});
 
+// Typed.js for animated multiple text
 const typed = new Typed('.multiple-text', {
-      strings: ['Frontend Developer', 'Backend Developer','Website Developer', 'Full Stack Developer', 'Web Developer'],
-      typeSpeed: 80,
-      backSpeed: 80,
-      BackDelay: 1200,
-      loop: true ,
+  strings: ['Web Developer', 'Full Stack Developer', 'React Developer'],
+  typeSpeed: 100,
+  backSpeed: 60,
+  loop: true
+});
+
+// Portfolio filter (simple version)
+const filterBtns = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Remove active class from all buttons
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.getAttribute('data-filter');
+
+    portfolioItems.forEach(item => {
+      if (filter === '*' || item.classList.contains(filter.slice(1))) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
 });

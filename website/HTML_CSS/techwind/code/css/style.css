@@ -11,7 +11,7 @@ a {
 }
 
 body {
-    font-family: Nunito;
+    font-family: 'Nunito', sans-serif;
 }
 
 img {
@@ -131,16 +131,22 @@ ul li {
     padding: 8px 20px;
     margin: 0 auto;
     margin-top: 5px;
-    ;
     font-size: 16px;
-    font-family: Nunito;
+    font-family: 'Nunito', sans-serif;
     color: var(--white);
     letter-spacing: 0.4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
 }
 
 /* ======================haeder==================== */
 header {
-    background-color:var(--head-text);
+    background-color: var(--head-text);
     padding-top: 20px;
     z-index: 9999;
     position: absolute;
@@ -150,7 +156,6 @@ header {
 
 header ul {
     list-style: none;
-
 }
 
 header nav ul a {
@@ -161,6 +166,7 @@ header nav ul a {
     font-weight: 500;
     transition: 0.5s;
 }
+
 header nav ul a.active,
 header nav ul a:hover {
     transition: 0.5s;
@@ -182,6 +188,12 @@ header .row {
     border-radius: 50%;
     background-color: var(--white);
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+.header-icon ul a i:hover {
+    background-color: var(--primary);
+    color: var(--white);
 }
 
 /* ========================banner=============================== */
@@ -189,6 +201,7 @@ header .row {
     min-height: 100vh;
     background-image: url("../images/bg01.jpg");
     background-size: cover;
+    background-position: center;
     z-index: 1;
     position: relative;
     display: flex;
@@ -218,7 +231,7 @@ header .row {
     margin: 0 auto;
     text-align: center;
     margin-bottom: 20px;
-
+    line-height: 1.2;
 }
 
 .banner .banner-data p {
@@ -230,6 +243,7 @@ header .row {
     text-align: center;
     opacity: 0.45;
     margin-bottom: 25px;
+    line-height: 1.6;
 }
 
 .banner-data .btn i {
@@ -247,12 +261,11 @@ header .row {
 
 .experience .exp-img img {
     border-radius: 6px;
-
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .exp-data {
     margin-left: 30px;
-
 }
 
 .exp-data h2 {
@@ -280,9 +293,28 @@ header .row {
     margin-bottom: 24px;
 }
 
+.exp-data img {
+    margin-top: 20px;
+}
+
 /* ===========================services================================= */
+.services {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
 .services-card {
     margin: 0 auto;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.services-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .services-card .serv-icon {
@@ -295,11 +327,12 @@ header .row {
     text-align: center;
     color: var(--primary);
     font-size: 30px;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 .serv-data {
     text-align: center;
+    padding-top: 20px;
 }
 
 .serv-data h3 {
@@ -315,13 +348,20 @@ header .row {
     font-size: 16px;
     color: var(--info-text);
     font-weight: 500;
-    margin: 20px;
+    margin: 20px 0;
     max-width: 80%;
+}
+
+.services-card .serv-data a {
+    color: var(--primary);
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .services-card .serv-data a i {
     font-size: 12px;
     margin-left: 6px;
+    transition: all 0.3s ease;
 }
 
 .services-card .serv-data>a {
@@ -345,6 +385,10 @@ header .row {
     width: 100%;
 }
 
+.services-card .serv-data>a:hover i {
+    transform: translateX(3px);
+}
+
 /* =============================menu=============================== */
 .menu {
     padding-top: 96px;
@@ -354,13 +398,15 @@ header .row {
     background-image: url(../images/menu.jpg);
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;
     padding-top: 250px;
+    padding-bottom: 150px;
     position: relative;
     z-index: 0;
     text-align: center;
 }
 
-.menu .heading ::after {
+.menu .heading::after {
     content: "";
     position: absolute;
     top: 0;
@@ -376,7 +422,7 @@ header .row {
     font-size: 20px;
     font-weight: 600;
     line-height: 30px;
-
+    margin-bottom: 15px;
 }
 
 .menu .heading h2 {
@@ -385,83 +431,105 @@ header .row {
     font-weight: 600;
     margin-bottom: 20px;
 }
-.f-menu{
+
+.f-menu {
     position: relative;
+    padding-bottom: 80px;
 }
-.bg{
+
+.bg {
     position: absolute;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
     transform: scale(1.2);
-    z-index:-10;
+    z-index: -10;
+    opacity: 0.2;
 }
-.bgimg1{
-    background-image:url(../images/chilly.png);
-    top: 140px;
-    left: -150px;
+
+.bgimg1,
+.bgimg2 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-size: contain;
 }
-.bgimg2{
+
+.bgimg1 {
+    background-image: url(../images/chilly.png);
+    top: 7%;
+    left: 5px;
+}
+
+.bgimg2 {
     background-image: url(../images/pav.png);
-    left: 91%;
-    top: 55%;
+    top: 75%;
+    right: 2%;
 }
+
+
 .f-menu .menu-list ul {
     justify-content: center;
     padding-top: 48px;
+}
 
+.f-menu .menu-list ul li {
+    margin: 0 15px;
 }
 
 .f-menu .menu-list ul a {
     color: var(--info-text);
     font-size: 14px;
     text-transform: uppercase;
-
-    transition: 0.5s;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding-bottom: 5px;
+    position: relative;
 }
 
 .f-menu .menu-list ul a.active,
 .f-menu .menu-list ul a:hover {
-    color: var(--head-text);
-    text-decoration: underline;
+    color: var(--primary);
+    text-decoration: none;
 }
-.bg{
+
+.f-menu .menu-list ul a.active::after,
+.f-menu .menu-list ul a:hover::after {
+    content: "";
     position: absolute;
-    background-repeat: no-repeat;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    transform: scale(1.2);
-    z-index:-10;
+    height: 2px;
+    background-color: var(--primary);
 }
-.menu-bgimg1{
-    background-image: url(../images/chilly.png);
-    left: -150px;
-    top:140px;
-}
-.menu-bgimg2{
-    background-image: url(../images/pav.png);
-    left: 91%;
-    top:55%;
-}
+
 .f-menu .menu-item {
     padding-bottom: 100px;
+}
+
+.f-menu .menu-item .row {
+    justify-content: center;
 }
 
 .f-menu .menu-item .dish {
     width: 20%;
     margin-top: 50px;
-    /* margin-left:30px; */
     text-align: center;
+    padding: 0 15px;
+    transition: all 0.3s ease;
 }
 
 .f-menu .dish .dish-img img {
     border-radius: 50%;
     width: 55%;
     margin: 0 auto 20px;
+    transition: all 0.5s ease;
 }
 
 .f-menu .dish .dish-img img:hover {
     animation: round 10s linear infinite;
+    transform: scale(1.1);
 }
 
 @keyframes round {
@@ -479,7 +547,7 @@ header .row {
     color: var(--head-text);
     padding-top: 10px;
     font-weight: 500;
-    transition: 0.5s;
+    transition: all 0.3s ease;
 }
 
 .f-menu .dish .dish-info h3:hover {
@@ -491,40 +559,28 @@ header .row {
     padding-top: 8px;
     max-width: 90%;
     color: var(--info-text);
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
 .f-menu .dish .dish-info h5 {
     color: var(--primary);
     padding: 16px 0px;
     font-size: 16px;
+    font-weight: 600;
 }
 
-.menu-item  {
-    /* background-image: url(../images/chilly.png); */
-    top:1px;
-    left:2px;
-    background-position:top left;
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index:0;
-}
-
-.menu-item::after{
-    content:"";
-    background-image: url(../images/pav.png);
-    top:0;
-    z-index:-1;
-}
 /* =================================book============================== */
-.book{
+.book {
     background-image: url(../images/cta.jpg);
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;
     position: relative;
     z-index: 0;
     padding: 100px 0;
-    
 }
+
 .book::after {
     content: "";
     position: absolute;
@@ -532,28 +588,30 @@ header .row {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(22 28 45 /0.5);
+    background-color: rgba(22, 28, 45, 0.5);
     z-index: -1;
 }
- .book .book-head{
-    margin-left: auto;    
-}
-.book-head{
+
+.book .book-head {
+    margin-left: auto;
     background-color: var(--white);
     max-width: 50%;
-    border-radius:10px;
+    border-radius: 10px;
     padding: 48px;
     padding-top: 50px;
     margin-bottom: 48px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-.form-info span{
+
+.form-info span {
     color: var(--primary);
     font-size: 12px;
     font-weight: 700;
     line-height: 16px;
     padding: 2px 10px;
-    background-color: rgba(79,70,229,0.05);
+    background-color: rgba(79, 70, 229, 0.05);
     text-align: left;
+    display: inline
 }
 .form-info h3{
     font-size: 36px;

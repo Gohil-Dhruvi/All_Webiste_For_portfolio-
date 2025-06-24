@@ -146,16 +146,22 @@ ul li {
 
 /* ======================haeder==================== */
 header {
-    background-color: var(--head-text);
-    padding-top: 20px;
-    z-index: 9999;
-    position: absolute;
+    padding: 10px 0;
     width: 100%;
-    display: inline-block;
+    position: fixed;
+    z-index: 9999;
+    transition: background-color 0.3s ease;
+    background-color: transparent; /* Default transparent */
+}
+
+header.scrolled {
+    background-color: var(--head-text); 
 }
 
 header ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 header nav ul a {
@@ -169,17 +175,21 @@ header nav ul a {
 
 header nav ul a.active,
 header nav ul a:hover {
-    transition: 0.5s;
     opacity: 1;
 }
 
 header .row {
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+.header-icon ul {
+    list-style: none;
+    display: flex;
+}
+
 .header-icon ul a i {
-    display: inline-block;
     height: 36px;
     width: 36px;
     line-height: 36px;
@@ -195,10 +205,9 @@ header .row {
     background-color: var(--primary);
     color: var(--white);
 }
-
 /* ========================banner=============================== */
 .banner {
-    min-height: 100vh;
+    height: 100vh;
     background-image: url("../images/bg01.jpg");
     background-size: cover;
     background-position: center;
@@ -338,7 +347,7 @@ header .row {
 .serv-data h3 {
     text-align: center;
     font-size: 18px;
-    color: var(--head-text);
+    color: var(--black);
     font-weight: 500;
     margin-top: 20px;
 }
@@ -348,8 +357,8 @@ header .row {
     font-size: 16px;
     color: var(--info-text);
     font-weight: 500;
-    margin: 20px 0;
-    max-width: 80%;
+    margin: 20px;
+    width: 90%;
 }
 
 .services-card .serv-data a {
@@ -679,8 +688,10 @@ header .row {
 
 .client .review{
     border:1px solid rgb(229, 231, 235);
-    padding:12px;
-    margin:2px;
+    margin-top:20px;
+    padding: 10%;
+    height: 80%;
+    border-radius: 5%;
     background-color: var(--white);
     
 }
@@ -791,7 +802,7 @@ footer{
     width:32px;
     text-align: center;
     letter-spacing:0.4px;
-    /* font-weight:500; */
+    font-weight:500;
     transition: all 0.5s;
 }
  .foot-logo i:hover{
@@ -800,10 +811,7 @@ footer{
 }
 .copyryt-info{
     border:1px solid #1a2133;
-}
-.copyryt{
-    padding: 30px 0px;
-    margin-top:50px;
+    margin: 30px;
 }
 
 .copyryt .fa-heart{

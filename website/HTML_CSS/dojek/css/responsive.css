@@ -1,0 +1,302 @@
+ /* Responsive Styles */
+ @media (min-width: 576px) {
+     .col-sm-1 {
+         width: 8.33%;
+     }
+
+     .col-sm-2 {
+         width: 16.66%;
+     }
+
+     .col-sm-3 {
+         width: 25%;
+     }
+
+     .col-sm-4 {
+         width: 33.33%;
+     }
+
+     .col-sm-5 {
+         width: 41.66%;
+     }
+
+     .col-sm-6 {
+         width: 50%;
+     }
+
+     .col-sm-7 {
+         width: 58.33%;
+     }
+
+     .col-sm-8 {
+         width: 66.66%;
+     }
+
+     .col-sm-9 {
+         width: 75%;
+     }
+
+     .col-sm-10 {
+         width: 83.33%;
+     }
+
+     .col-sm-11 {
+         width: 91.66%;
+     }
+
+     .col-sm-12 {
+         width: 100%;
+     }
+ }
+
+ @media (min-width: 768px) {
+     .col-md-1 {
+         width: 8.33%;
+     }
+
+     .col-md-2 {
+         width: 16.66%;
+     }
+
+     .col-md-3 {
+         width: 25%;
+     }
+
+     .col-md-4 {
+         width: 33.33%;
+     }
+
+     .col-md-5 {
+         width: 41.66%;
+     }
+
+     .col-md-6 {
+         width: 50%;
+     }
+
+     .col-md-7 {
+         width: 58.33%;
+     }
+
+     .col-md-8 {
+         width: 66.66%;
+     }
+
+     .col-md-9 {
+         width: 75%;
+     }
+
+     .col-md-10 {
+         width: 83.33%;
+     }
+
+     .col-md-11 {
+         width: 91.66%;
+     }
+
+     .col-md-12 {
+         width: 100%;
+     }
+
+     .hero-content h1 {
+         font-size: 48px;
+     }
+
+     .hero-content p {
+         max-width: 450px;
+     }
+ }
+
+ @media (min-width: 992px) {
+     .col-lg-1 {
+         width: 8.33%;
+     }
+
+     .col-lg-2 {
+         width: 16.66%;
+     }
+
+     .col-lg-3 {
+         width: 25%;
+     }
+
+     .col-lg-4 {
+         width: 33.33%;
+     }
+
+     .col-lg-5 {
+         width: 41.66%;
+     }
+
+     .col-lg-6 {
+         width: 50%;
+     }
+
+     .col-lg-7 {
+         width: 58.33%;
+     }
+
+     .col-lg-8 {
+         width: 66.66%;
+     }
+
+     .col-lg-9 {
+         width: 75%;
+     }
+
+     .col-lg-10 {
+         width: 83.33%;
+     }
+
+     .col-lg-11 {
+         width: 91.66%;
+     }
+
+     .col-lg-12 {
+         width: 100%;
+     }
+
+     .hero {
+         padding: 200px 0 120px;
+     }
+
+     .hero-content h1 {
+         font-size: 52px;
+     }
+ }
+
+ @media (min-width: 1200px) {
+     .col-xl-1 {
+         width: 8.33%;
+     }
+
+     .col-xl-2 {
+         width: 16.66%;
+     }
+
+     .col-xl-3 {
+         width: 25%;
+     }
+
+     .col-xl-4 {
+         width: 33.33%;
+     }
+
+     .col-xl-5 {
+         width: 41.66%;
+     }
+
+     .col-xl-6 {
+         width: 50%;
+     }
+
+     .col-xl-7 {
+         width: 58.33%;
+     }
+
+     .col-xl-8 {
+         width: 66.66%;
+     }
+
+     .col-xl-9 {
+         width: 75%;
+     }
+
+     .col-xl-10 {
+         width: 83.33%;
+     }
+
+     .col-xl-11 {
+         width: 91.66%;
+     }
+
+     .col-xl-12 {
+         width: 100%;
+     }
+ }
+
+ /* Mobile Menu */
+ @media (max-width: 991px) {
+     header {
+         padding: 15px 0;
+     }
+
+     nav {
+         position: fixed;
+         top: 70px;
+         left: -100%;
+         width: 80%;
+         height: calc(100vh - 70px);
+         background-color: #000;
+         transition: all 0.3s ease;
+         z-index: 999;
+     }
+
+     nav.active {
+         left: 0;
+     }
+
+     nav ul {
+         flex-direction: column;
+         padding: 20px;
+     }
+
+     nav ul li {
+         margin: 10px 0;
+     }
+
+     .menu-toggle {
+         display: block;
+         cursor: pointer;
+         font-size: 24px;
+         color: #fff;
+     }
+
+     .hero {
+         padding-top: 120px;
+     }
+
+     .hero-content {
+         padding-left: 0;
+         text-align: center;
+     }
+
+     .hero-content p {
+         margin-left: auto;
+         margin-right: auto;
+     }
+ }
+
+ /* Small devices */
+ @media (max-width: 767px) {
+     .hero-content h1 {
+         font-size: 36px;
+     }
+
+     .hero-rocket {
+         font-size: 12px;
+     }
+
+     .service-item h2,
+     .project-item h2,
+     .reviews .title,
+     .team-item h2 {
+         font-size: 24px;
+     }
+
+     .counter-content h2 {
+         font-size: 28px;
+     }
+
+     .newsletter {
+         text-align: center;
+     }
+
+     .newsletter-form {
+         margin-top: 20px;
+     }
+
+     .footer-widget {
+         text-align: center;
+     }
+ }

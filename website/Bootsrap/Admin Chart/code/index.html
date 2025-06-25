@@ -3,869 +3,1046 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Admin Panel</title>
+    <title>Valex - Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-bg-color: #ffffff;
+            --sidebar-bg-color: #1c273c;
+            --sidebar-width: 240px;
+            --header-height: 70px;
+            --primary-color: #705ec8;
+            --secondary-color: #f0f2f6;
+            --text-color: #495057;
+            --text-light: #6c757d;
+        }
 
-    <link rel="stylesheet"  type="text/css"  href="css/all.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet"  type="text/css"  href="css/fonts.css"/>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="css/responsive.css"/>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Main Layout */
+        .main-wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--sidebar-bg-color);
+            color: white;
+            position: fixed;
+            height: 100vh;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .sidebar-brand {
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-brand img {
+            height: 30px;
+        }
+
+        .sidebar-menu {
+            padding: 20px 0;
+        }
+
+        .sidebar-menu .menu-title {
+            color: #76839a;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+            padding: 0 20px;
+            font-weight: 600;
+        }
+
+        .sidebar-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-menu li {
+            position: relative;
+        }
+
+        .sidebar-menu li a {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: #b8c2d4;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .sidebar-menu li a:hover, 
+        .sidebar-menu li a.active {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-menu li a i {
+            margin-right: 10px;
+            font-size: 18px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar-menu li a .menu-arrow {
+            margin-left: auto;
+            transition: transform 0.3s;
+        }
+
+        .sidebar-menu li.active > a .menu-arrow {
+            transform: rotate(90deg);
+        }
+
+        .sidebar-menu .submenu {
+            padding-left: 20px;
+            display: none;
+        }
+
+        .sidebar-menu .submenu li a {
+            padding: 8px 20px;
+            font-size: 13px;
+        }
+
+        .sidebar-menu li.active > .submenu {
+            display: block;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            transition: all 0.3s;
+        }
+
+        /* Header Styles */
+        .header {
+            height: var(--header-height);
+            background-color: var(--primary-bg-color);
+            box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04);
+            display: flex;
+            align-items: center;
+            padding: 0 25px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .toggle-sidebar {
+            font-size: 20px;
+            color: var(--text-color);
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .search-bar {
+            position: relative;
+            width: 300px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 8px 15px 8px 40px;
+            border-radius: 5px;
+            border: 1px solid #e1e6f1;
+            background-color: #f5f6fa;
+            font-size: 14px;
+        }
+
+        .search-bar i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+
+        .header-right {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-right .notification-dropdown,
+        .header-right .message-dropdown,
+        .header-right .profile-dropdown {
+            position: relative;
+            margin-left: 15px;
+        }
+
+        .header-right .dropdown-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 18px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .header-right .dropdown-toggle .count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-right .dropdown-menu {
+            position: absolute;
+            right: 0;
+            top: 100%;
+            min-width: 280px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            border: none;
+            padding: 0;
+            margin-top: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .header-right .dropdown-header {
+            padding: 10px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .header-right .dropdown-body {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .header-right .dropdown-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid #f1f1f1;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-right .dropdown-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .header-right .dropdown-item .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(112, 94, 200, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .header-right .dropdown-item .content {
+            flex: 1;
+        }
+
+        .header-right .dropdown-item .content p {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .header-right .dropdown-item .content .time {
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        .header-right .dropdown-footer {
+            padding: 10px 15px;
+            text-align: center;
+            border-top: 1px solid #f1f1f1;
+        }
+
+        .header-right .dropdown-footer a {
+            color: var(--primary-color);
+            font-size: 13px;
+        }
+
+        .header-right .profile-dropdown img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .header-right .profile-dropdown .user-info {
+            display: flex;
+            margin-top: 10px;
+            align-items: center;
+        }
+
+        .header-right .profile-dropdown .user-info .name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .header-right .profile-dropdown .user-info .role {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Page Content */
+        .page-content {
+            padding: 25px;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .page-title h3 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .breadcrumb {
+            background: none;
+            padding: 0;
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .breadcrumb-item a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: var(--primary-color);
+        }
+
+        /* Cards */
+        .card {
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04);
+            margin-bottom: 25px;
+        }
+
+        .card-header {
+            background-color: white;
+            border-bottom: 1px solid #f1f1f1;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-header h5 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .card-header .card-options {
+            display: flex;
+            align-items: center;
+        }
+
+        .card-header .card-options a {
+            color: var(--text-light);
+            margin-left: 10px;
+            font-size: 14px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        /* Stats Cards */
+        .stats-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-card .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 20px;
+        }
+
+        .stats-card .icon i {
+            color: white;
+        }
+
+        .stats-card h3 {
+            margin: 0 0 5px;
+            font-weight: 600;
+        }
+
+        .stats-card p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        .stats-card .progress {
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin-top: 15px;
+            border-radius: 0;
+        }
+
+        .stats-card .progress-bar {
+            background-color: white;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+
+        /* Table */
+        .table th {
+            border-top: none;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            border-bottom-width: 1px;
+        }
+
+        .table td {
+            vertical-align: middle;
+        }
+
+        .table .user-img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Activity Timeline */
+        .activity-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .activity-timeline:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #f1f1f1;
+        }
+
+        .activity-item {
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .activity-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .activity-item:before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 2px solid white;
+        }
+
+        .activity-item .activity-date {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+
+        .activity-item .activity-text {
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-
-
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=++++++++++, initial-scale=1.0">
-    <title>Document</title>
-  </head>
-  <body>
-    
-  </body>
-  <h6>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-  </h6>
-  </html>
-    <!-- =================================== Header ===================================== -->
-    <header class="header-container fixed-top justify-content-between d-flex">
-        <div class="header-data d-flex">
-            <div class="logo">
-                <img src="images/logo.png" class="logo-img mb-2" alt=""/>
+    <div class="main-wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-brand">
+                <img src="images/logo-white.png" alt="Valex Logo">
             </div>
-            <ul class="d-flex flex-row ml-auto">
-                <li class="nav-item dropdown uper-profile-dropdown"><a href="javascript:void(0);" class="nav-link user"><i class="bar fa-solid fa-bars-staggered"></i></a>
-                    <li>
-                        <a href="javascript:void(0);">
-                            <input type="search" class="search" placeholder="Search for anything.." />
-                            <i class="sear fa-solid fa-magnifying-glass"></i>
+            <div class="sidebar-menu">
+                <div class="menu-title">Main</div>
+                <ul>
+                    <li class="active">
+                        <a href="#">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
                         </a>
                     </li>
-                </li>
-            </ul>
-            <ul class="features">
-                <li>
-                    <a href="javascript:void(0);" class="dropdown-item message-item">
-                        <i class="moon fa-regular fa-moon"></i>
-                    </a> 
-                </li> 
-                <li class="nav-item dropdown uper-profile-dropdown">
-                    <a href="javascript:void(0);" class="nav-link user" id="notify" data-bs-toggle="dropdown">
-                        <i class="email fa-regular fa-envelope"></i>
-                    </a>
-                </li>
-                <li class="nav-item dropdown uper-profile-dropdown">
-                    <a href="javascript:void(0);" class="nav-link user" id="notify" data-bs-toggle="dropdown">
-                        <i class="notify fa-regular fa-bell"></i>
-                    </a>
-                </li>
-                <li class="nav-item dropdown uper-profile-dropdown">
-                    <a href="javascript:void(0);" class="nav-link user" id="notify" data-bs-toggle="dropdown">
-                        <i class="scan fa-solid fa-expand"></i>
-                    </a>
-                </li>
-                <li class="nav-item dropdown uper-profile-dropdown">
-                    <a href="javascript:void(0);" class="nav-link user" id="notify" data-bs-toggle="dropdown">
-                        <img src="images/6.jpg" class="profile-lady" alt=""/>
-                    </a>
-                </li>
-                <li class="nav-item dropdown uper-profile-dropdown">
-                    <a href="javascript:void(0);" class="nav-link user" id="notify" data-bs-toggle="dropdown">
-                        <i class="bars fa-solid fa-bars"></i>
-                    </a>
-                </li>
-                <li class="nav-item dropdown uper-profile-dropdown">
-                    <a href="javascript:void(0);" class="nav-link user" id="notify" data-bs-toggle="dropdown">
-                        <i class="settings fa-solid fa-gear"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </header>
-    <!-- ========================================== Aside ======================================== -->
-    <aside>
-        <section class="aside">
-            <div class="logo-data">
-                <div class="aside-data">
-                    <img class="profile-lady-img" src="images/6.jpg" alt="">
-                    <h4 class="petey text-capitalize">Petey Cruiser</h4>
-                    <h5 class="premium">Premium Member</h5>
-                </div>
-                <div class="details">
-                    <p class="main">main</p>
-                    <h6><a href="javascript:void(0);"><i class=" index-icon fa-brands fa-windows me-3 text-capitalize"></i><span class="index">index</span></a><span class="one">1</span></h6>
-                </div>
-                <p class="general fw-bold mt-3">general</p>
-                <div class="accordion" id="icon">
-                    <div class="accordion-item">
-                        <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#box"><h6 class="fw-normal"><a href="javascript:void(0);"><i class="fa-solid fa-face-smile"></i><span class="icon fw-normal">icons</span></a></h6></div>
-                        <div class="accordion-collapse collapse" id="box" data-bs-parent="#icon">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><i class="fa-solid fa-chevron-right"></i>font awesome</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>material design icons</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>simple line icons</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>feather icons</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>ionic icons</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>flag icons</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>pe7 icons</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>themify icons</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>typicons icons</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>weather icons</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>material icons</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>bootstrap icons</li>
-                                </ul>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-item" id="chart-2">
-                        <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#box"><h6 class="fw-normal"><a href="javascript:void(0);"><i class="fa-solid fa-square-poll-vertical"></i><span class="icon fw-normal">charts</span></a></h6></div>
-                        <div class="accordion-collapse collapse" id="box" data-bs-parent="#chart">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><i class="fa-solid fa-chevron-right"></i>morris charts</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>flot chart</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>chart js</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>echart</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>sparkline</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>chart-peity</li>
-                                </ul>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-        
-                <p class="general fw-bold mt-3">web apps</p>
-                <div class="accordion">
-                    <div class="accordion-item" id="app">
-                        <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#box"><h6 class="fw-normal"><a href="javascript:void(0);"><i class="fa-solid fa-circle-half-stroke"></i><span class="icon fw-normal">apps</span></a></h6></div>
-                        <div class="accordion-collapse collapse" id="box" data-bs-parent="#app">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><i class="fa-solid fa-chevron-right"></i>card</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>draggablecards</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>range-slider</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>calendar</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>contacts</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>image-compare</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>notification</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>widgets</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>widget-notification</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>treeview</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>file-manager</li>
-                                </ul>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-item" id="element">
-                        <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#box"><h6 class="fw-normal"><a href="javascript:void(0);"><i class="fa-solid fa-layer-group"></i><span class="icon fw-normal">elements</span></a></h6></div>
-                        <div class="accordion-collapse collapse" id="box" data-bs-parent="#element">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><i class="fa-solid fa-chevron-right"></i>alerts</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>avatar</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>breadcrumbs</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>button</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>badge</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>dropdown</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>thumbnails</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>list group</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>navigation</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>images</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>pagination</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>popover</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>progress</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>spinners</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>media object</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>typography</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>tooltip</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>toast</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>tags</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>tabs</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>scrollspy</li>
-                                </ul>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-item" id="ui">
-                        <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#box"><h6 class="fw-normal"><a href="javascript:void(0);"><i class="fa-solid fa-palette"></i><span class="icon fw-normal">advanced ui</span></a></h6></div>
-                        <div class="accordion-collapse collapse" id="box" data-bs-parent="#ui">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><i class="fa-solid fa-chevron-right"></i>accordion</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>carousel</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>collapse</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>modals</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>timeline</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>sweet alert</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>ratings</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>counters</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>search</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>userlist</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>blog-pages</li>
-                                </ul>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-                <p class="general fw-bold mt-3">multi level</p>
-                <div class="accordion">
-                    <div class="accordion-item" id="menu">
-                        <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#box"><h6 class="fw-normal"><a href="javascript:void(0);"><i class="fa-brands fa-elementor"></i><span class="icon fw-normal">menu-levels</span></a></h6></div>
-                        <div class="accordion-collapse collapse" id="box" data-bs-parent="#menu">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><i class="fa-solid fa-chevron-right">level-1</i></li>
-                                    <li><i class="fa-solid fa-chevron-right">level-2</i></li>
-                                </ul>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-                <p class="general fw-bold mt-3">components</p>
-                <div class="accordion">
-                    <div class="accordion-item" id="form">
-                        <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#box"><h6 class="fw-normal"><a href="javascript:void(0);"><i class="fa-solid fa-file-lines"></i><span class="icon fw-normal">forms</span></a></h6></div>
-                        <div class="accordion-collapse collapse" id="box" data-bs-parent="#form">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><i class="fa-solid fa-chevron-right"></i>form elements</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>advanced forms</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>form layouts</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>form validation</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>form wizards</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>WYSIWYG Editor</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>form-sizes</li>
-                                </ul>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-item" id="table">
-                        <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#box"><h6 class="fw-normal"><a href="javascript:void(0);"><i class="fa-solid fa-table"></i><span class="icon fw-normal">tables</span></a></h6></div>
-                        <div class="accordion-collapse collapse" id="box" data-bs-parent="#table">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><i class="fa-solid fa-chevron-right"></i>basic tables</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>data tables</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>edit tables</li>
-                                </ul>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-item" id="ui">
-                        <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#box"><h6 class="fw-normal"><a href="javascript:void(0);"><i class="fa-solid fa-bolt"></i><span class="icon fw-normal">landing page</span></a></h6></div>
-                        <div class="accordion-collapse collapse" id="box" data-bs-parent="#ui">
-                            <div class="accordion-body">
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-item" id="maps">
-                        <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#box"><h6 class="fw-normal"><a href="javascript:void(0);"><i class="fa-solid fa-location-dot"></i><span class="icon fw-normal">maps</span></a></h6></div>
-                            <div class="accordion-collapse collapse" id="box" data-bs-parent="#maps">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><i class="fa-solid fa-chevron-right"></i>basic maps</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>data maps</li>
-                                </ul>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-                <p class="general fw-bold mt-3">pages</p>
-                <div class="accordion">
-                    <div class="accordion-item" id="pages">
-                        <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#box"><h6 class="fw-normal"><a href="javascript:void(0);"><i class="fa-brands fa-readme"></i><span class="icon fw-normal">pages</span></a></h6></div>
-                        <div class="accordion-collapse collapse" id="box" data-bs-parent="#pages">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><i class="fa-solid fa-chevron-right"></i>profile</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>edit-profile</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>about-us</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>settings</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>invoice</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>pricing</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>gallery</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>todotask</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>faqs</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>empty page</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>switcher</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>mail</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>ecommerce</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>custom pages</li>
-                                </ul>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-item" id="utilitites">
-                        <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#box"><h6 class="fw-normal"><a href="javascript:void(0);"><i class="fa-solid fa-layer-group"></i><span class="icon fw-normal">utilitites</span></a></h6></div>
-                        <div class="accordion-collapse collapse" id="box" data-bs-parent="#utilitites">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><i class="fa-solid fa-chevron-right"></i>background</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>border</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>display</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>flex</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>height</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>margin</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>padding</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>position</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>width</li>
-                                    <li><i class="fa-solid fa-chevron-right"></i>extras</li>
-                                </ul>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>E-Commerce</span>
+                            <span class="menu-arrow"><i class="fas fa-angle-right"></i></span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Product Details</a></li>
+                            <li><a href="#">Cart</a></li>
+                            <li><a href="#">Checkout</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Calendar</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="menu-title">UI Components</div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-box"></i>
+                            <span>Elements</span>
+                            <span class="menu-arrow"><i class="fas fa-angle-right"></i></span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#">Alerts</a></li>
+                            <li><a href="#">Buttons</a></li>
+                            <li><a href="#">Cards</a></li>
+                            <li><a href="#">Dropdowns</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Forms</span>
+                            <span class="menu-arrow"><i class="fas fa-angle-right"></i></span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#">Form Elements</a></li>
+                            <li><a href="#">Form Layouts</a></li>
+                            <li><a href="#">Form Validation</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-table"></i>
+                            <span>Tables</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Charts</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="menu-title">Pages</div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-user"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Login</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Register</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-lock"></i>
+                            <span>Forgot Password</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </section>
-    </aside> 
-    <!-- ==================================== Welcome ====================================== -->
-    <main>
-        <section class="welcome">
-            <div class="welcome-info">
-                <div class="welcome-data">
-                    <div class="content">
-                        <div class="content-data">
-                            <h3 class="back">hi, welcome back!</h3>
-                            <p class="hii">Sales monitoring dashboard template.</p>
-                        </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-left">
+                    <div class="toggle-sidebar">
+                        <i class="fas fa-bars"></i>
                     </div>
-                    <div class="customer">
-                        <div class="customer-data">
-                            <h6 class="ratings">customer ratings</h6>
-                            <div class="custom ">
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star fa-solid fa-star"></i>
-                                <i class="star-1 fa-solid fa-star"></i>
-                                <span class="num">(14,873)</span>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="notification-dropdown">
+                        <button class="dropdown-toggle">
+                            <i class="far fa-bell"></i>
+                            <span class="count">3</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-header">
+                                <span>Notifications</span>
+                            </div>
+                            <div class="dropdown-body">
+                                <a href="#" class="dropdown-item">
+                                    <div class="icon">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                    <div class="content">
+                                        <p>New user registered</p>
+                                        <span class="time">Just now</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <div class="icon">
+                                        <i class="fas fa-comment-dots"></i>
+                                    </div>
+                                    <div class="content">
+                                        <p>You have 3 new messages</p>
+                                        <span class="time">5 mins ago</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <div class="icon">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                    <div class="content">
+                                        <p>New order received</p>
+                                        <span class="time">30 mins ago</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="dropdown-footer">
+                                <a href="#">View all notifications</a>
                             </div>
                         </div>
-                        <div class="online">
-                            <h4 class="sales">online sales</h4>
-                            <h5 class="number">563,275</h5>
+                    </div>
+                    <div class="message-dropdown">
+                        <button class="dropdown-toggle">
+                            <i class="far fa-envelope"></i>
+                            <span class="count">2</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-header">
+                                <span>Messages</span>
+                            </div>
+                            <div class="dropdown-body">
+                                <a href="#" class="dropdown-item">
+                                    <img src="images/5.jpg" alt="User">
+                                    <div class="content">
+                                        <p>John Doe sent you a message</p>
+                                        <span class="time">2 hours ago</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <img src="images/12.jpg" alt="User">
+                                    <div class="content">
+                                        <p>Jane Smith sent you a message</p>
+                                        <span class="time">Yesterday</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="dropdown-footer">
+                                <a href="#">View all messages</a>
+                            </div>
                         </div>
-                        <div class="offline">
-                            <h4 class="sales">offline sales</h4>
-                            <h5 class="number">783,675</h5>
+                    </div>
+                    <div class="profile-dropdown">
+                        <button class="dropdown-toggle">
+                            <div class="user-info">
+                                <img src="images/6.jpg" alt="User">
+                                <div>
+                                    <div class="name">John Doe</div>
+                                    <div class="role">Administrator</div>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-user"></i> Profile
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-cog"></i> Settings
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
                         </div>
                     </div>
-<!-- ================================== card ================================== -->
-                    <div class="row">
-                        <div class="col-3">
-                          <div class="order">
-                          <h6 class="today">today orders</h6>
-                          <h4 class="order-num">$5,74.12</h4>
-                          <p class="order-nu">Compared to last week<span class="or">+427</span></p>
-                          <img src="images/download.png" alt="" class="ord"/>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="orders">
-                            <h6 class="today">today earnings</h6>
-                            <h4 class="order-num">$1,230.17</h4>
-                            <p class="order-nu">Compared to last week<span class="or">-23.09%</span></p>
-                            <img src="images/download (1).png" alt="" class="ords"/>
-                    </div>
-                    </div>
-                    <div class="col-3">
-                      <div class="order2">
-                          <h6 class="today">today earnings</h6>
-                          <h4 class="order-num">$7,125.70</h4>
-                          <p class="order-nu">Compared to last week
-                              <span class="or">52.09%</span>
-                          </p>
-                          <img src="images/download (2).png" alt="" class="ord"/>
-                    </div>
-                    </div>
-                    <div class="col-3">
-                      <div class="order3">
-                          <h6 class="today">today earnings</h6>
-                          <h4 class="order-num">$4,820.50</h4>
-                          <p class="order-nu">Compared to last week
-                              <span class="or">-152.3</span>
-                          </p>
-                          <img src="images/download (3).png" alt="" class="ord"/>
-                    </div>
-                    </div>
                 </div>
-<!-- ================================ map ============================== -->
-                <div class="char">
-                  <div class="row you">
-                    <div class="col-8">
-                      <div class="chart">
-                        <h4 class="status">Order status</h4>
-                        <p class="track">Order Status and Tracking. Track your order from ship date to arrival. To begin, enter your order number.</p>
-                        <!-- <div>
-                          <h4 class="bg-num">120,750</h4>
-                          <label>
-                            <span class="bg"></span>
-                            <span class="dot"></span> success
-                          </label>
-                        </div>
-                        <div>
-                          <h4 class="bg-num">120,750</h4>
-                          <label>
-                            <span class="bg"></span>
-                            <span class="dots"></span> Pending
-                          </label>
-                        </div>
-                        <div>
-                          <h4 class="bg-num">120,750</h4>
-                          <label>
-                            <span class="bg"></span>
-                            <span class="doted"></span> failed
-                          </label>
-                        </div> -->
-                        <div id="chart" class="charts"></div>
-                      </div>
-                    </div>
-                    <div class="col-4 usa">
-                      <div class="map-1">
-                        <h4 class="reven">Sales Revenue by Customers in USA</h4>
-                        <p class="perform">Sales Performance of all states in the United States</p>
-                        <title class="style">US Map Demo</title>
-                        <div id="map" style="width: 362px; height: 272px; "></div>
-                        <div id="map" style="width: 362px; height: 272px;"></div><div id="clicked-state"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    <!-- ============================= Customer =============================== -->
-     <div class="row">
-        <div class="col-xl-4 col-md-12 col-lg-12">
-          <div class="Customer">
-              <h4 class="recent">recent Customers</h4>
-              <p class="individual">A customer is an individual or business that purchases the goods service has evolved to include real-time</p>
-              <div>
-                <div class="list">
-                  <div class="group d-flex">
-                    <img src="images/3.jpg" alt="" class="business-profile"/>
-                  <div class="list-group">
-                    <h5 class="melon">samantha melon</h5>
-                    <p class="user">user ID: #1234 
-                    </p>
-                    <span class="paid">paid</span>
-                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="border-bottom"></div>
-              <div class="list">
-                <div class="group d-flex">
-                  <img src="images/11.jpg" alt="" class="business-profile"/>
-                  <div class="list-group ms-3">
-                    <h5 class="melon">jimmy changa</h5>
-                    <p class="user">user ID: #1234 
-                    </p>
-                    <span class="paids">Pending</span>
-                  </div>
-                </div>
-              </div>
-              <div class="border-bottom"></div>
-              <div class="list">
-                <div class="group d-flex">
-                  <img src="images/17.jpg" alt="" class="business-profile"/>
-                  <div class="list-group">
-                    <h5 class="melon">Gabe Lackmen</h5>
-                    <p class="user">user ID: #1234 
-                    </p>
-                    <span class="paids">Pending</span>
-                  </div>
-                </div>
-              </div>
-              <div class="border-bottom"></div>
-              <div class="list">
-                <div class="group d-flex">
-                  <img src="images/15.jpg" alt="" class="business-profile"/>
-                  <div class="list-group">
-                    <h5 class="melon">manuel labor</h5>
-                    <p class="user">user ID: #1234 
-                    </p>
-                    <span class="paid">paid</span>
-                  </div>
-                </div>
-              </div>
-              <div class="border-bottom"></div>
-              <div class="list">
-                <div class="group d-flex">
-                  <img src="images/6.jpg" alt="" class="business-profile"/>
-                  <div class="list-group ms-3">
-                    <h5 class="melon">sharon needles</h5>
-                    <p class="user">user ID: #1234 
-                    </p>
-                    <span class="paid">paid</span>
-                  </div>
-                </div>
-              </div>
-          </div>
-          </div>
-<!-- ================================ Activity ===================================== -->
-          <div class="col-xl-4 col-md-12 col-lg-6">
-            <div class="activity">
-            <h4 class="goal">Sales Activity</h4>
-            <p class="goal-data">Sales activities are the tactics that salespeople use to achieve their goals and objective</p>
-            <div class="total d-flex">
-              <i class="fa-solid fa-chart-pie"></i>
-              <div class="total-product">
-                <h5 class="product">Total Products</h5>
-                <p class="new">1.3k New Products</p>
-              </div>
-              <p class="day">3 days ago</p>
             </div>
-            <div class="shopping d-flex">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <div class="total-sale">
-                <h5 class="product">Total Sales</h5>
-                <p class="new">1k New Sales</p>
-              </div>
-              <p class="day1">35 mins ago</p>
-            </div>
-            <div class="simple d-flex">
-              <i class="fa-solid fa-chart-simple"></i>
-              <div class="recent-data">
-                <h5 class="product">Toatal Revenue</h5>
-                <p class="new">23.5K New Revenue</p>
-              </div>
-              <p class="day2">50 mins ago</p>
-            </div>
-            <div class="wallet d-flex">
-              <i class="fa-solid fa-wallet"></i>
-              <div class="wallet-data">
-                <h5 class="product">Toatal Profit</h5>
-                <p class="new">3k New profit</p>
-              </div>
-              <p class="day3">1 hour ago</p>
-            </div>
-            <div class="eye d-flex">
-              <i class="fa-regular fa-eye"></i>
-              <div class="eye-data">
-                <h5 class="products">Customer Visits</h5>
-                <p  class="news">15% increased</p>
-              </div>
-              <p class="day4">1 days ago</p>
-            </div>
-            <div class="sticky d-flex">
-              <i class="fa-regular fa-note-sticky"></i>
-              <div class="sticky-data">
-                <h5 class="products">Customer Reviews</h5>
-                <p class="news">1.5k reviews</p>
-              </div>
-              <p class="day5">1 days ago</p>
-            </div>
-          </div>
-        </div>
-<!-- ======================================= Order ========================================== -->
-        <div class="col-xl-4 col-md-12 col-lg-6">
-          <div class="brokeres">
-             <h4>Recent Orders</h4>
-             <p>An order is an investor's instructions to a broker or brokerage firm to purchase or sell</p>
-             <div id="apexchartsb6pv0xmh" class="apexcharts-canvas apexchartsb6pv0xmh apexcharts-theme-light" style="width: 200px; height: 156.9px;"><svg id="SvgjsSvg2082" width="200" height="156.89999999999998" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><g id="SvgjsG2084" class="apexcharts-inner apexcharts-graphical" transform="translate(10.5, 0)"><defs id="SvgjsDefs2083"><clipPath id="gridRectMaskb6pv0xmh"><rect id="SvgjsRect2086" width="187" height="205" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMaskb6pv0xmh"></clipPath><clipPath id="nonForecastMaskb6pv0xmh"></clipPath><clipPath id="gridRectMarkerMaskb6pv0xmh"><rect id="SvgjsRect2087" width="185" height="207" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><linearGradient id="SvgjsLinearGradient2092" x1="0" y1="1" x2="1" y2="1"><stop id="SvgjsStop2093" stop-opacity="1" stop-color="rgba(1,98,232,1)" offset="0"></stop><stop id="SvgjsStop2094" stop-opacity="1" stop-color="rgba(236,240,250,1)" offset="1"></stop><stop id="SvgjsStop2095" stop-opacity="1" stop-color="rgba(236,240,250,1)" offset="1"></stop></linearGradient><linearGradient id="SvgjsLinearGradient2103" x1="0" y1="1" x2="1" y2="1"><stop id="SvgjsStop2104" stop-opacity="1" stop-color="rgba(1,98,232,1)" offset="0"></stop><stop id="SvgjsStop2105" stop-opacity="1" stop-color="rgba(13,178,222,1)" offset="1"></stop><stop id="SvgjsStop2106" stop-opacity="1" stop-color="rgba(13,178,222,1)" offset="1"></stop></linearGradient></defs><g id="SvgjsG2088" class="apexcharts-radialbar"><g id="SvgjsG2089"><g id="SvgjsG2090" class="apexcharts-tracks"><g id="SvgjsG2091" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 52.3636617097865 128.6363382902135 A 53.9329268292683 53.9329268292683 0 1 1 128.6363382902135 128.6363382902135" fill="none" fill-opacity="1" stroke="rgba(236,240,250,0.85)" stroke-opacity="1" stroke-linecap="butt" stroke-width="12.458536585365856" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 52.3636617097865 128.6363382902135 A 53.9329268292683 53.9329268292683 0 1 1 128.6363382902135 128.6363382902135"></path></g></g><g id="SvgjsG2097"><g id="SvgjsG2102" class="apexcharts-series apexcharts-radial-series" seriesName="" rel="1" data:realIndex="0"><path id="SvgjsPath2107" d="M 52.3636617097865 128.6363382902135 A 53.9329268292683 53.9329268292683 0 1 1 144.4247125832822 89.55874064062334" fill="none" fill-opacity="0.85" stroke="url(#SvgjsLinearGradient2103)" stroke-opacity="1" stroke-linecap="butt" stroke-width="15.573170731707318" stroke-dasharray="4" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="224" data:value="83" index="0" j="0" data:pathOrig="M 52.3636617097865 128.6363382902135 A 53.9329268292683 53.9329268292683 0 1 1 144.4247125832822 89.55874064062334"></path></g><circle id="SvgjsCircle2098" r="42.703658536585365" cx="90.5" cy="90.5" class="apexcharts-radialbar-hollow" fill="transparent"></circle><g id="SvgjsG2099" class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)" style="opacity: 1;"><text id="SvgjsText2100" font-family="Helvetica, Arial, sans-serif" x="90.5" y="120.5" text-anchor="middle" dominant-baseline="auto" font-size="16px" font-weight="600" fill="#0db2de" class="apexcharts-text apexcharts-datalabel-label" style="font-family: Helvetica, Arial, sans-serif;"></text><text id="SvgjsText2101" font-family="Helvetica, Arial, sans-serif" x="90.5" y="96.5" text-anchor="middle" dominant-baseline="auto" font-size="22px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-datalabel-value" style="font-family: Helvetica, Arial, sans-serif;">83%</text></g></g></g></g><line id="SvgjsLine2108" x1="0" y1="0" x2="181" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine2109" x1="0" y1="0" x2="181" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g><g id="SvgjsG2085" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend"></div></div>
-             <div class="brokered-data ">
-              <h6> Delivered</h6>
-              <h3>5238</h3>
-              <p class="d-flex month">Last 6 months</p>
-            </div>
-            <div class="brokered-data ">
-              <h6> Delivered</h6>
-              <h3>5238</h3>
-              <p class="d-flex month">Last 6 months</p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card-body">
-                <h6>total sales</h6>
-                <h3>$7,590</h3>
-              </div>
-              <div class="card-body">
-                <h6>total sales</h6>
-                <h3>$7,460</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <section class="country">
-        <div class="country-fluid">
-          <div class="row">
-            <div class="col-lg-4 4 col-md-12 col-lg-6">
-              <h6 class="top-country">your top countries</h6>
-              <p class="based-country">Sales performance revenue based by country</p>
-            <ul class="list-group">
-              <li class="list-group-item">
-                <h5 class="states">united states</h5><span class="state-num">$1,671.10</span>
-              </li>
-              <li class="list-group-item">
-                <h5 class="states">Netherlands</h5><span class="state-num">$1,064.75</span>
-              </li>
-              <li class="list-group-item">
-                <h5 class="states">United Kingdom</h5><span class="state-num">$1,055.98</span>
-              </li>
-              <li class="list-group-item">
-                <h5 class="states">Canada</h5><span class="state-num">$1,045.49</span>
-              </li>
-              <li class="list-group-item">
-                <h5 class="states">India</h5><span class="state-num">$1,930.12</span>
-              </li>
-              <li class="list-group-item">
-                <h5 class="states">Australia</h5><span class="state-num">$1,042.00</span>
-              </li>
-            </ul>
-            </div>
-            <div class="col-lg-8">
-              <div class="earning">
-                <h6>Your Most Recent Earnings</h6>
-                <p>This is your most recent earnings for today's date.</p>
-                <table>
-                  <tr>
-                    <th>date</th>
-                    <th>sale count</th>
-                    <th>earning</th>
-                    <th>tax witheld</th>
-                  </tr>
-                  <tr>
-                    <th>05 dec 2019</th>
-                    <th>34</th>
-                    <th>	$658.20</th>
-                    <th>	-$45.10</th>
-                  </tr>
-                  <tr>
-                    <th>06 Dec 2019</th>
-                    <th>26</th>
-                    <th>$453.25</th>
-                    <th>	-$15.02</th>
-                  </tr>
-                  <tr>
-                    <th>07 Dec 2019</th>
-                    <th>34</th>
-                    <th>$653.12	</th>
-                    <th>	-$13.45</th>
-                  </tr>
-                  <tr>
-                    <th>08 Dec 2019</th>
-                    <th>45</th>
-                    <th>$546.47</th>
-                    <th>-$24.22</th>
-                  </tr>
-                  <tr>
-                    <th>09 Dec 2019</th>
-                    <th>31</th>
-                    <th>$425.72</th>
-                    <th>	-$25.01</th>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>          
-  </div>
-</div>
-</section>
 
-    </main>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="js/apex.js"></script>
-    <script type="text/javascript" src="js/jquery.usmap.js"></script>
-    <script type="text/javascript" src="js/raphael.js"></script>
-    <script type="text/javascript" src="js/us-map.js"></script>
-    <script type="text/javascript">
-        var options = {
-          series: [{
-          name: 'Impression',
-          data: [74, 85, 57, 56, 76, 35, 61, 98, 36, 50, 48, 29]
-        }, {
-          name: 'Turnover',
-          data: [46, 35, 101 , 98, 44, 55, 57, 56, 55, 34, 79, 46]
-        }, {
-          name: 'In progress',
-          data: [26, 35, 41, 78, 34, 65, 27, 46, 37, 65, 49, 23]
-        }],
-          chart: {
-          type: 'bar',
-          height: 249
-        },
-        plotOptions: {
-          bar: {
-            horizontal: false,
-            columnWidth: '50%',
-            endingShape: 'rounded'
-          },
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          show: true,
-          width: 3,
-          colors: ['transparent']
-        },
-        xaxis: {
-          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov','Dec'],
-        },
-        yaxis: {
-          title: {
-          }
-        },
-        fill: {
-          opacity: 1
-        },
-        tooltip: {
-          y: {
-            formatter: function (val) {
-              return "$ " + val + " thousands"
-            }
-          }
-        }
-        };
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
-    </script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('#map').usmap({
-          'stateSpecificStyles': {
-            'AK' : {fill: '#f00'}
-          },
-          'stateSpecificHoverStyles': {
-            'HI' : {fill: '#ff0'}
-          },
-          
-          'mouseoverState': {
-            'HI' : function(event, data) {
-              //return false;
-            }
-          },
-          
-          
-          'click' : function(event, data) {
-            $('#alert')
-              .text('Click '+data.name+' on map 1')
-              .stop()
-              .css('backgroundColor', '#ff0')
-              .animate({backgroundColor: '#ddd'}, 1000);
-          }
-        });
-        
-        $('#map2').usmap({
-          'stateStyles': {
-            fill: '#025', 
-            "stroke-width": 1,
-            'stroke' : '#036'
-          },
-          'stateHoverStyles': {
-            fill: 'teal'
-          },
-          
-          'click' : function(event, data) {
-            $('#alert')
-              .text('Click '+data.name+' on map 2')
-              .stop()
-              .css('backgroundColor', '#af0')
-              .animate({backgroundColor: '#ddd'}, 1000);
-          }
-        });
-        
-        $('#over-md').click(function(event){
-          $('#map').usmap('trigger', 'MD', 'mouseover', event);
-        });
-        
-        $('#out-md').click(function(event){
-          $('#map').usmap('trigger', 'MD', 'mouseout', event);
-        });
-      });
-      </script>
-      <!-- <script type="text/javascript">
-           var options = {
-          series: [83],
-          chart: {
-          height: 200,
-          type: 'radialBar',
-          offsetY: -10
-        },
-        plotOptions: {
-          radialBar: {
-            startAngle: -135,
-            endAngle: 135,
-            dataLabels: {
-              name: {
-                fontSize: '16px',
-                color: undefined,
-                offsetY: 120
-              },
-              value: {
-                offsetY: 76,
-                fontSize: '22px',
-                color: undefined,
-                formatter: function (val) {
-                  return val + "%";
+            <!-- Page Content -->
+            <div class="page-content">
+                <div class="page-header">
+                    <div class="page-title">
+                        <h3>Dashboard</h3>
+                    </div>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card stats-card" style="background-color: #705ec8;">
+                            <div class="card-body">
+                                <div class="icon" style="background-color: rgba(255, 255, 255, 0.2);">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h3>2,456</h3>
+                                <p>Total Users</p>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card stats-card" style="background-color: #2dce89;">
+                            <div class="card-body">
+                                <div class="icon" style="background-color: rgba(255, 255, 255, 0.2);">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <h3>3,568</h3>
+                                <p>Total Orders</p>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card stats-card" style="background-color: #f5365c;">
+                            <div class="card-body">
+                                <div class="icon" style="background-color: rgba(255, 255, 255, 0.2);">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <h3>$12,876</h3>
+                                <p>Total Revenue</p>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card stats-card" style="background-color: #11cdef;">
+                            <div class="card-body">
+                                <div class="icon" style="background-color: rgba(255, 255, 255, 0.2);">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>54.8%</h3>
+                                <p>Conversion Rate</p>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Revenue Overview</h5>
+                                <div class="card-options">
+                                    <a href="#"><i class="fas fa-sync-alt"></i></a>
+                                    <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-container">
+                                    <canvas id="revenueChart" height="300"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Sales by Category</h5>
+                                <div class="card-options">
+                                    <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-container">
+                                    <canvas id="categoryChart" height="300"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Recent Orders</h5>
+                                <div class="card-options">
+                                    <a href="#">View All</a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Order ID</th>
+                                                <th>Customer</th>
+                                                <th>Amount</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>#ORD-1234</td>
+                                                <td>
+                                                    <img src="images/12.jpg" class="user-img" alt="User">
+                                                    John Doe
+                                                </td>
+                                                <td>$125.00</td>
+                                                <td><span class="badge bg-success">Completed</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>#ORD-1235</td>
+                                                <td>
+                                                    <img src="images/7.jpg" class="user-img" alt="User">
+                                                    Jane Smith
+                                                </td>
+                                                <td>$89.00</td>
+                                                <td><span class="badge bg-warning">Pending</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>#ORD-1236</td>
+                                                <td>
+                                                    <img src="images/4.jpg" class="user-img" alt="User">
+                                                    Robert john
+                                                </td>
+                                                <td>$156.00</td>
+                                                <td><span class="badge bg-danger">Cancelled</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>#ORD-1237</td>
+                                                <td>
+                                                    <img src="images/15.jpg" class="user-img" alt="User">
+                                                    Emily Davis
+                                                </td>
+                                                <td>$230.00</td>
+                                                <td><span class="badge bg-success">Completed</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Recent Activity</h5>
+                                <div class="card-options">
+                                    <a href="#">View All</a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="activity-timeline">
+                                    <div class="activity-item">
+                                        <div class="activity-date">Today, 10:30 AM</div>
+                                        <div class="activity-text">New order received #ORD-1234</div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-date">Today, 9:15 AM</div>
+                                        <div class="activity-text">Customer John Doe registered</div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-date">Yesterday, 5:45 PM</div>
+                                        <div class="activity-text">Product "Wireless Headphones" added</div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-date">Yesterday, 2:30 PM</div>
+                                        <div class="activity-text">Payment of $125.00 received</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JS -->
+    <script>
+        $(document).ready(function() {
+            // Toggle sidebar
+            $('.toggle-sidebar').click(function() {
+                $('.sidebar').toggleClass('active');
+                $('.main-content').toggleClass('active');
+            });
+
+            // Toggle submenu
+            $('.sidebar-menu li > a').click(function(e) {
+                if ($(this).parent().has('ul').length) {
+                    e.preventDefault();
+                    $(this).parent().toggleClass('active');
+                    $(this).next('.submenu').slideToggle(200);
                 }
-              }
-            }
-          }
-        },
-        fill: {
-          type: 'gradient',
-          gradient: {
-              shade: 'dark',
-              shadeIntensity: 0.15,
-              inverseColors: false,
-              opacityFrom: 1,
-              opacityTo: 1,
-              stops: [0, 50, 65, 91]
-          },
-        },
-        stroke: {
-          dashArray: 4
-        },
-        labels: [''],
-        };
+            });
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
-      </script> -->
-</body>
+            // Initialize dropdowns
+            $('.dropdown-toggle').click(function() {
+                $(this).next('.dropdown-menu').toggle();
+            });
+
+            // Close dropdowns when clicking outside
+            $(document).click(function(e) {
+                if (!$(e.target).closest('.dropdown-toggle').length) {
+                    $('.dropdown-menu').hide();
+                }
+            });
+
+            // Revenue Chart
+            const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+            const revenueChart = new Chart(revenueCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Revenue',
+                        data: [12000, 19000, 15000, 18000, 22000, 25000, 21000, 24000, 28000, 26000, 30000, 32000],
+                        backgroundColor: 'rgba(112, 94, 200, 0.1)',
+                        borderColor: '#705ec8',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                drawBorder: false
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Category Chart
+            const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+            const categoryChart = new Chart(categoryCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Electronics', 'Fashion', 'Home & Garden', 'Beauty', 'Sports'],
+                    datasets: [{
+                        data: [35, 25, 20, 10, 10],
+                        backgroundColor: [
+                            '#705ec8',
+                            '#2dce89',
+                            '#f5365c',
+                            '#11cdef',
+                            '#fb6340'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-    
-
-
- 

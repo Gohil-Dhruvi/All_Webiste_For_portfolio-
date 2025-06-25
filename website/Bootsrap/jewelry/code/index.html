@@ -3,604 +3,548 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Website</title>
+    <title>DiamondBD - Luxury Jewelry</title>
     
-    <link rel="stylesheet" type="" href="images/diamond.jpg">
-    <link rel="stylesheet"  type="text/css"  href="css/all.min.css"/>
-    <link rel="stylesheet"  type="text/css"  href="css/fonts.css"/>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <!-- Bootstrap CSS -->
+     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="css/responsive.css"/>
 </head>
 <body>
-        <!-- ========================================Header==================================== -->
-        <header class="navbar d-flex navbar-expand-lg ">
-            <div class="container ">
-                <div class="img">
-                    <img  src="images/Logo01.svg" alt="img"/>
-                </div>
-                <button class="navbar-toggler navbar-toggler-icon" data-bs-toggle="collapse" data-bs-target="#dhruvi" ></button>
-                <nav class="collapse navbar-collapse justify-content-center" id="dhruvi">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="javascript:void(0);" class="nav-link active text-warning fw-semibold text-uppercase">Home</a></li>
-                        <li class="nav-item"><a href="javascript:void(0);" class="nav-link fw-semibold text-uppercase">Collection</a></li>
-                        <div class="dropdown ">
-                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"></button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Earrings</a></li>
-                                <li><a class="dropdown-item" href="#">Bracelets</a></li>
-                                <li><a class="dropdown-item" href="#">Ring</a></li>
-                                <li><a class="dropdown-item" href="#">Engagements</a></li>
-                            </ul>
-                        </div>
-                        <li class="nav-item "><a href="javascript:void(0);" class="about nav-link fw-semibold text-uppercase ">About</a></li>
-                        <li class="nav-item"><a href="javascript:void(0);" class="about nav-link fw-semibold text-uppercase">Blog</a></li>
-                        <li class="nav-item"><a href="javascript:void(0);" class="about nav-link fw-semibold text-uppercase">Pages</a></li>
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"></button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">contact</a></li>
-                                <li><a class="dropdown-item" href="#">sign up</a></li>
-                                <li><a class="dropdown-item" href="#">terms and condition</a></li>
-                                <li><a class="dropdown-item" href="#">login</a></li>
-                                <li><a class="dropdown-item" href="#">privacy</a></li>
-                                <li><a class="dropdown-item" href="#">forgot password</a></li>
-                                <li><a class="dropdown-item" href="#">cookie policy</a></li>
-                                <li><a class="dropdown-item" href="#">password protected</a></li>
-                            </ul>
-                        </div>
-                    </ul>
-                </nav>
-                <div class="search-bar-icon search-bar-icon-lg">
-                    <img src="images/65a2556db52f089cc13805d7_search icon.svg" alt="" class="img"/>
-                </div>
-                <div class="slhas slhas-lg">/</div>
-                <div class="nav-card-icon nav-card-icon-lg ">
-                    <img src="images/65c2c424671812bcf6325883_shopping-cart.svg" alt="" class="img"/>
-                </div>
-                <div class="zero zero-lg">0</div>
-                <div class="slhas slhas-lg">/</div>
-                <div class="login-button login-button-lg inline-block text-left position-relative text-uppercase">
-                    <a href="index.html" class="navbar-brand">login</a>
+    <!-- Header Section -->
+    <header class="navbar navbar-expand-lg bg-white sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/Logo01.svg" alt="DiamondBD Logo" height="40"/>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-warning fw-semibold text-uppercase" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-uppercase" href="#">Collection</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-semibold text-uppercase" href="#" id="jewelryDropdown" role="button" data-bs-toggle="dropdown">
+                            Jewelry
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Earrings</a></li>
+                            <li><a class="dropdown-item" href="#">Bracelets</a></li>
+                            <li><a class="dropdown-item" href="#">Rings</a></li>
+                            <li><a class="dropdown-item" href="#">Engagements</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-uppercase" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-uppercase" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-semibold text-uppercase" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Contact</a></li>
+                            <li><a class="dropdown-item" href="#">Sign Up</a></li>
+                            <li><a class="dropdown-item" href="#">Terms and Conditions</a></li>
+                            <li><a class="dropdown-item" href="#">Login</a></li>
+                            <li><a class="dropdown-item" href="#">Privacy</a></li>
+                            <li><a class="dropdown-item" href="#">Forgot Password</a></li>
+                            <li><a class="dropdown-item" href="#">Cookie Policy</a></li>
+                            <li><a class="dropdown-item" href="#">Password Protected</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="#" class="text-dark me-3"><i class="fas fa-search"></i></a>
+                    <span class="text-muted mx-2">/</span>
+                    <div class="position-relative me-3">
+                        <a href="#" class="text-dark"><i class="fas fa-shopping-cart"></i></a>
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-warning rounded-circle">0</span>
+                    </div>
+                    <span class="text-muted mx-2">/</span>
+                    <a href="#" class="text-uppercase text-dark fw-semibold">Login</a>
                 </div>
             </div>
-        </header>
-        <!-- ==============================banner===================================== -->
-        <section class="container-1">
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="py-5 py-lg-7">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="display-4 fw-bold mb-4">Choose jewelry with heart & feelings</h1>
+                    <p class="lead mb-4">Welcome to a realm of timeless beauty and unparalleled craftsmanship. At DiamondBD, we invite you to adorn yourself in the finest expressions of luxury.</p>
+                    <p class="mb-5">Embrace the allure of our jewelry and make a statement that echoes sophistication, individuality, and everlasting elegance. Unveil the extraordinary with DiamondBD</p>
+                    <button class="btn btn-dark btn-lg text-uppercase px-4">Explore Collections</button>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <img src="images/65a25e0b7a94950c7e4ac1fd_Hero Image one.png" alt="Luxury Jewelry" class="img-fluid rounded mb-3">
+                        <img src="images/65a25e0b568c1e716d1e4319_Hero Image two.png" alt="Elegant Ring" class="img-fluid rounded position-absolute top-0 end-0" style="width: 40%; transform: translateY(-50%);">
+                        <img src="images/65a25e0bb68f50c20ab5fee5_Hero Image three.svg" alt="Diamond Ring" class="img-fluid position-absolute bottom-0 start-0" style="width: 30%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diamond Story Section -->
+    <section class="py-5 py-lg-7 bg-light position-relative">
+        <div class="container">
             <div class="row">
-                <div class="col-7 ">
-                    <div class="head">
-                        <h1 class="heading">Choose jewelry with heart & feelings
-                            <div class="ring ">
-                                <img src="" alt="">
-                            </div>
-                        </h1>
-                        <div class="data">
-                            <p class="demo">Welcome to a realm of timeless beauty and unparalleled craftsmanship. At DiamondBD, we invite you to adorn yourself in the finest expressions of luxury. Our curated selection showcases meticulously designed pieces that seamlessly blend tradition with contemporary allure</p>
-                            <p class="demo">Embrace the allure of our jewelry and make a statement that echoes sophistication, individuality, and everlasting elegance. Unveil the extraordinary with DiamondBD</p>
-                            <div class="but">
-                                <button type="button" class="btn text-uppercase btn-dark">explore collections</button>
-                            </div>
-                        </div>
-                    </div> 
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <img src="images/65a25e08b68f50c20ab5fd83_About Image.webp" alt="DiamondBD Story" class="img-fluid rounded">
                 </div>
-                <div class="col-lg-5 col-md-6 col-sm-12">
-                    <div class="row">
-                        <div class="hand-img-1 position-relative d-flex align-flex-end ">
-                            <img class="hand-img-1" src="images/65a25e0b7a94950c7e4ac1fd_Hero Image one.png" alt=""/>
-                        </div>
-                        <div class="hand-img-2">
-                            <img  class="hand-img-2" src="images/65a25e0b568c1e716d1e4319_Hero Image two.png" alt=""/>
-                        </div>
-                        <div class="hand-img-3  d-flex align-flex-end inline-block">
-                            <img class="hand-img-3" src="images/65a25e0bb68f50c20ab5fee5_Hero Image three.svg" alt=""/>
-                        </div>
+                <div class="col-lg-5 bg-white p-4 p-lg-5 shadow">
+                    <h2 class="mb-4">DiamondBD Story</h2>
+                    <p class="mb-4">Established in 1920 consectetur adipiscing elit. Eget iaculis mauris elit non proin tellus. Quam dolor lacinia dictum faucibus fringilla sollicitudin ut egestas. Sapien nunc, justo, adipiscing ornare vehicula ornare.</p>
+                    <p class="mb-5">Molestie etiam volutpat arcu odio porttitor elit. Adipiscing enim lacinia sed in. Et nibh dui duis mauris magna velit nunc semper. Luctus dictum auctor urna, sed ultricies et lorem.</p>
+                    <a href="#" class="text-uppercase fw-bold text-decoration-none">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+                    <div class="mt-5 pt-4">
+                        <img src="images/65a37084cf52ccbdc442db3e_Signature.png" alt="Signature" class="img-fluid" style="max-width: 150px;">
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- ========================================Diamond Story============================================= -->
-        <section class="container-2">
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="py-5 py-lg-7">
+        <div class="container">
+            <h2 class="text-center mb-5">Explore our Collections</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0">
+                        <img src="images/65a216127d17dc5aea821e92_Ceatgory Image01.png" class="card-img-top" alt="Collection 1">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0">
+                        <img src="images/65a218e7a1957cdecb7ad0f8_Ceatgory Image03.png" class="card-img-top" alt="Collection 2">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0">
+                        <img src="images/65a216a33a064c4ad40792fd_Ceatgory Image04.png" class="card-img-top" alt="Collection 3">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0">
+                        <img src="images/659fc5d1b1368aa39781ba39_Ceatgory Image02.png" class="card-img-top" alt="Collection 4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crafting Diamond Section -->
+    <section class="py-5 py-lg-7 bg-dark text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <h2 class="mb-4">Crafting diamond-shaped love stories time after time.</h2>
+                    <p class="mb-5">Indulge in the opulence of handcrafted necklaces, bracelets, earrings, and rings, each a masterpiece in its own right. Immerse yourself in the sparkle of meticulously selected gemstones and precious metals, expertly fashioned to create pieces that transcend trends and stand the test of time.</p>
+                    <a href="#" class="btn btn-outline-light text-uppercase">Shop New Collections <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <img src="images/65a25e0bb68f50c20ab5fee5_Hero Image three.svg" alt="Diamond Ring" class="img-fluid" style="max-width: 300px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Collection Section -->
+    <section class="py-5 py-lg-7">
+        <div class="container">
+            <h2 class="mb-5">Our new collection of jewelry & accessories</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0">
+                        <img src="images/65aa136ea25ab3de7a91cc88_Produat image.png" class="card-img-top" alt="Product 1">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0">
+                        <img src="images/65aa133926783da5fc49cae5_product image02.png" class="card-img-top" alt="Product 2">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0">
+                        <img src="images/65aa12e5cf8694a6ba8f65aa_product image03.png" class="card-img-top" alt="Product 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6 col-md-4 col-lg-2 text-center mb-4 mb-lg-0">
+                    <img src="images/65a25e0ab68f50c20ab5fe69_Brand logo 01.svg" alt="Brand 1" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center mb-4 mb-lg-0">
+                    <img src="images/65a25e0a604428bacd1d8918_Brand logo 02.svg" alt="Brand 2" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center mb-4 mb-lg-0">
+                    <img src="images/65a25e0afc7dec3e8e2dcb6c_Brand logo 03.svg" alt="Brand 3" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center mb-4 mb-lg-0">
+                    <img src="images/65a25e0af23e0308abe2b7cf_Brand logo 04.svg" alt="Brand 4" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center mb-4 mb-lg-0">
+                    <img src="images/65a25e0afa5edfde7768051a_Brand logo 05.svg" alt="Brand 5" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <img src="images/65a25e0a604428bacd1d8997_Brand logo 06.svg" alt="Brand 6" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 py-lg-7 bg-black text-white">
+        <div class="container">
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner text-center">
+                    <div class="carousel-item active">
+                        <h2 class="mb-4">What Clients Say</h2>
+                        <p class="mb-4 mx-auto" style="max-width: 600px;">Epsum dolor sit amet, consectetur adipiscing elit. Sodales cursus sem convallis orci vel. Diam id morbi ultrices placerat.</p>
+                        <div class="border-top border-warning w-25 mx-auto mb-4"></div>
+                        <p class="mb-5 mx-auto" style="max-width: 800px;">"A good chain in Bangladesh for having diamond jewellery. Staffs are quite friendly and helpful. It is big showroom with enough space to accommodate good number of customers at once. Well decorated and nicely designed store. Each section is divided and every section has it's own expert to serve the client. If you can time properly you can get deals as they offer deals frequently."</p>
+                        <img src="images/65a25e0753a920f4f8ef90d8_avater 5.png" alt="Client" class="img-fluid rounded-circle mb-3" style="width: 80px;">
+                        <h5 class="mb-1">John Doe</h5>
+                        <p class="text-muted">Happy Customer</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h2 class="mb-4">What Clients Say</h2>
+                        <p class="mb-4 mx-auto" style="max-width: 600px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales cursus sem convallis orci vel.</p>
+                        <div class="border-top border-warning w-25 mx-auto mb-4"></div>
+                        <p class="mb-5 mx-auto" style="max-width: 800px;">"Excellent service and beautiful jewelry collection. The quality is outstanding and the designs are unique. Highly recommend DiamondBD for anyone looking for premium jewelry."</p>
+                        <img src="images/65a25e0753a920f4f8ef90d8_avater 5.png" alt="Client" class="img-fluid rounded-circle mb-3" style="width: 80px;">
+                        <h5 class="mb-1">Jane Smith</h5>
+                        <p class="text-muted">Satisfied Client</p>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                <div class="carousel-indicators position-static mt-4">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active bg-white"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" class="bg-white"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 py-lg-7">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4">
+                        <img src="images/65a3b722b68f50c20a65e47c_222.svg" alt="Free Shipping" class="mb-3" style="height: 40px;">
+                        <h5 class="mb-3">Free Shipping</h5>
+                        <p class="text-muted">Pasum dolor sit amet, consectetur adipiscing elit. In rhoncus aliquam nibh ultricies in etiam integer diam tortor. Rhoncus mauris risus duis non.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4">
+                        <img src="images/65a25e0cf23e0308abe2b8eb_Icon02.svg" alt="Flexible Payment" class="mb-3" style="height: 40px;">
+                        <h5 class="mb-3">Flexible Payment</h5>
+                        <p class="text-muted">Pasum dolor sit amet, consectetur adipiscing elit. In rhoncus aliquam nibh ultricies in etiam integer diam tortor. Rhoncus mauris risus duis non.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4">
+                        <img src="images/65a25e0c3a064c4ad42eebd0_Icon03.svg" alt="30 Day Returns" class="mb-3" style="height: 40px;">
+                        <h5 class="mb-3">30 Day Returns</h5>
+                        <p class="text-muted">Pasum dolor sit amet, consectetur adipiscing elit. In rhoncus aliquam nibh ultricies in etiam integer diam tortor. Rhoncus mauris risus duis non.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4">
+                        <img src="images/65a25e0ca1957cdecb9f7299_Icon04.svg" alt="Online Store" class="mb-3" style="height: 40px;">
+                        <h5 class="mb-3">Buy in Online Store</h5>
+                        <p class="text-muted">Pasum dolor sit amet, consectetur adipiscing elit. In rhoncus aliquam nibh ultricies in etiam integer diam tortor. Rhoncus mauris risus duis non.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4">
+                        <img src="images/65a25e0c604428bacd1d8b2f_Icon05.svg" alt="Bonuses & Sales" class="mb-3" style="height: 40px;">
+                        <h5 class="mb-3">Bonuses & Sales</h5>
+                        <p class="text-muted">Pasum dolor sit amet, consectetur adipiscing elit. In rhoncus aliquam nibh ultricies in etiam integer diam tortor. Rhoncus mauris risus duis non.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4">
+                        <img src="images/65a25e0c7eb6560d9280d65c_Icon06.svg" alt="Ecology Process" class="mb-3" style="height: 40px;">
+                        <h5 class="mb-3">Ecology Process</h5>
+                        <p class="text-muted">Pasum dolor sit amet, consectetur adipiscing elit. In rhoncus aliquam nibh ultricies in etiam integer diam tortor. Rhoncus mauris risus duis non.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 py-lg-7 bg-light">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-6 col-sm-12">
-                    <div class="flos-img">
-                        <img src="images/65a25e08b68f50c20ab5fd83_About Image.webp" alt=""/>
-                    </div>
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <h2 class="mb-4">Frequently Asked Questions</h2>
+                    <p class="mb-5">Embark on a journey of knowledge as we address the most common queries about our exquisite jewelry collection. From understanding the quality of our materials to caring for your cherished pieces, our FAQ section is a treasure trove of information.</p>
+                    <a href="#" class="text-uppercase fw-bold text-decoration-none">All Questions <i class="fas fa-arrow-right ms-2"></i></a>
                 </div>
-                <div class="diamon-about col-4 col-md-6 col-sm-12 d-flex bg-light position-absolute align-flex-start">
-                    <div class="about-content">
-                        <h2>Diamondbd Story</h2>
-                    </div>
-                    <div class="diamon-data">
-                        <p>Established in 1920 consectetur adipiscing elit. Eget iaculis mauris elit non proin tellus. Quam dolor lacinia dictum faucibus fringilla sollicitudin ut egestas. Sapien nunc, justo, adipiscing ornare vehicula ornare. Molestie etiam volutpat arcu odio porttitor elit. Adipiscing enim lacinia sed in. Et nibh dui duis mauris magna velit nunc semper. Luctus dictum auctor urna, sed ultricies et lorem.</p>
-                    </div>
-                    <div class="learn text-uppercase d-block">learn more
-                        <div class="learn-img ">
-                            <img src="images/65a25e0ca1957cdecb9f72a3_Iline.svg" alt=""/>
-                        </div>
-                    </div>
-                    <div class="sign-img position-absolute inline-block">
-                        <img src="images/65a37084cf52ccbdc442db3e_Signature.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- =====================================================Explore our Collections============================== -->
-        <section class="container-3">
-            <div class="explore">
-                <h3>Explore our Collections</h3>
-            </div>
-            <div class="row">
-                <div class="col-lg-3  col-md-6 col-sm-12">
-                    <div class="expl inline-block">
-                        <img src="images/65a216127d17dc5aea821e92_Ceatgory Image01.png" class="none position-relative align-center d-flex" alt=""/>
-                    </div>
-                </div>
-                <div class="col-lg-3  col-md-6 col-sm-12">
-                    <div class="expl inline-block">
-                        <img src="images/65a218e7a1957cdecb7ad0f8_Ceatgory Image03.png" class="none position-relative align-center d-flex" alt=""/>
-                    </div>
-                </div>
-                <div class="col-lg-3  col-md-6 col-sm-12">
-                    <div class="expl inline-block">
-                        <img src="images/65a216a33a064c4ad40792fd_Ceatgory Image04.png" class="none position-relative align-center d-flex" alt=""/>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12"> 
-                    <div class="expl inline-block">
-                        <img src="images/659fc5d1b1368aa39781ba39_Ceatgory Image02.png" class="none position-relative align-center d-flex" alt=""/>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ====================================Crafting diamond===================================== -->
-        <section class="container-4 position-absolute">
-            <div class="row">
-                <div class="col-7">
-                    <div class="crafting-diamond">
-                        <h4>Crafting diamond-shaped love stories time after time.</h4>
-                    </div>
-                    <div class="crafting-diamond-data">
-                        <p>Indulge in the opulence of handcrafted necklaces, bracelets, earrings, and rings, each a masterpiece in its own right. Immerse yourself in the sparkle of meticulously selected gemstones and precious metals, expertly fashioned to create pieces that transcend trends and stand the test of time.</p>
-                    </div>
-                    <div class="shop-collections text-white d-block text-uppercase">shop new collections
-                        <div class="shop-img inline-block">
-                            <img src="images/65a25e0cc1bb1e608c642b51_Icon white.svg" alt=""/>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <div class="collections-img position-absolute inline-block">
-                        <img src="images/65a25e0bb68f50c20ab5fee5_Hero Image three.svg" alt=""/>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- =================================================jewelry & accessories===============================================-->
-        <section class="container-5 d-block">
-            <div class="row">
-                <div class="col-7  col-sm-12">
-                    <div class="head-access"><h2>Our new collection of jewelry & accessories</h2></div>
-                </div>
-            </div> 
-        </section>
-        <section class="container-6">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <img class="prod-img" src="images/65aa136ea25ab3de7a91cc88_Produat image.png" alt=""/>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <img class="prod-img" src="images/65aa133926783da5fc49cae5_product image02.png" alt=""/>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <img class="prod-img-1" src="images/65aa12e5cf8694a6ba8f65aa_product image03.png" alt=""/>
-                </div>
-            </div>
-        </section>
-        <!-- ======================================Brand============================================ -->
-        <section class="container-7">
-            <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-12"> 
-                    <div class="brand-img">
-                        <img src="images/65a25e0ab68f50c20ab5fe69_Brand logo 01.svg" alt=""/>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-12"> 
-                    <div class="brand-img">
-                        <img src="images/65a25e0a604428bacd1d8918_Brand logo 02.svg" alt=""/>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-12"> 
-                    <div class="brand-img">
-                        <img src="images/65a25e0afc7dec3e8e2dcb6c_Brand logo 03.svg" alt=""/>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-12"> 
-                    <div class="brand-img">
-                        <img src="images/65a25e0af23e0308abe2b7cf_Brand logo 04.svg" alt=""/>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-12"> 
-                    <div class="brand-img">
-                        <img src="images/65a25e0afa5edfde7768051a_Brand logo 05.svg" alt=""/>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-12"> 
-                    <div class="brand-img">
-                        <img src="images/65a25e0a604428bacd1d8997_Brand logo 06.svg" alt=""/>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- =======================================Client=================================== -->
-        <section class="container-8">
-            <img src="" alt="">
-            <div class="carousel slide carousel-fade" id="dhruvi" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" id="hitu" data-bs-interval="1000">
-                        <div class="carousel">
-                            <h2 class="client-head text-center d-block">What Clients Say</h2>
-                            <p class="client-detail text-center d-block">Epsum dolor sit amet, consectetur adipiscing elit. Sodales cursus sem convallis orci vel. Diam id morbi ultrices placerat.</p>
-                            <div class="line border border-warning d-block"></div>
-                            <p class="client-deta text-center d-block">“A good chain in Bangladesh for having diamond jewellery. Staffs are quite friendly and helpful. It is big showroom with enough space to accommodate good number of customers at once. Well decorated and nicely designed store. Each section is divided and every section has it's own expert to serve the client. If you can time properly you can get deals as they offer deals frequently.”</p>
-                        </div>
-                        <img class="tengan-img mb-5 " src="images/65a25e0753a920f4f8ef90d8_avater 5.png" alt=""/>  
-                    </div>
-                    <button class=" carousel-control-prev bg-dark type="button data-bs-target="#dhru" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next bg-dark type="button data-bs-target="#dhru" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
-                    <div class="carousel-indicators">
-                        <button data-bs-target="#hitu" data-bs-slide-to="0" class="bg-dark"></button>
-                        <button data-bs-target="#hitu" data-bs-slide-to="1" class="bg-dark"></button>
-                        <button data-bs-target="#hitu" data-bs-slide-to="2" class="bg-dark"></button>
-                        <button data-bs-target="#hitu" data-bs-slide-to="3" class="bg-dark"></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ===============================Global======================================= -->
-        <section class="container-9">
-            <div class="row">
-                <div class="col-lg-4 mt-5 col-md-6 col-sm-12">
-                    <div class="global">
-                        <img class="global-img" src="images/65a3b722b68f50c20a65e47c_222.svg" alt=""/>
-                        <h5 class="global-head">Free Shiping</h5>
-                        <p class="global-data inline-block">Pasum dolor sit amet, consectetur adipiscing elit. In rhoncus aliquam nibh ultricies in etiam integer diam tortor. Rhoncus mauris risus duis non.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-5 col-md-6 col-sm-12">
-                    <div class="global">
-                        <img class="global-img" src="images/65a25e0cf23e0308abe2b8eb_Icon02.svg" alt=""/>
-                        <h5 class="global-he">Flexible payment</h5>
-                        <p class="global-data">Pasum dolor sit amet, consectetur adipiscing elit. In rhoncus aliquam nibh ultricies in etiam integer diam tortor. Rhoncus mauris risus duis non.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-5 col-md-6 col-sm-12">
-                    <div class="global">
-                        <img class="global-img" class="glo-img" src="images/65a25e0c3a064c4ad42eebd0_Icon03.svg" alt=""/>
-                        <h5 class="global-he">30day returns</h5>
-                        <p class="global-data">Pasum dolor sit amet, consectetur adipiscing elit. In rhoncus aliquam nibh ultricies in etiam integer diam tortor. Rhoncus mauris risus duis non.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-5 mb-5 col-md-6 col-sm-12">
-                    <div class="global">
-                        <img class="global-img" src="images/65a25e0ca1957cdecb9f7299_Icon04.svg" alt=""/>
-                        <h5 class="global-head">Buy in online store </h5>
-                        <p class="global-data">Pasum dolor sit amet, consectetur adipiscing elit. In rhoncus aliquam nibh ultricies in etiam integer diam tortor. Rhoncus mauris risus duis non.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-5 mb-5 col-md-6 col-sm-12">
-                    <div class="global">
-                        <img class="global-img" src="images/65a25e0c604428bacd1d8b2f_Icon05.svg" alt=""/>
-                        <h5 class="global-he">Bonuses & sales</h5>
-                        <p class="global-data">Pasum dolor sit amet, consectetur adipiscing elit. In rhoncus aliquam nibh ultricies in etiam integer diam tortor. Rhoncus mauris risus duis non.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-5 mb-5 col-md-6 col-sm-12">
-                    <div class="global">
-                        <img class="global-img" class="glo-img" src="images/65a25e0c7eb6560d9280d65c_Icon06.svg" alt=""/>
-                        <h5 class="global-he">Ecology process</h5>
-                        <p class="global-data">Pasum dolor sit amet, consectetur adipiscing elit. In rhoncus aliquam nibh ultricies in etiam integer diam tortor. Rhoncus mauris risus duis non.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- =======================================Asked Questions======================================= -->
-        <section class="container-10">
-            <img src="" alt="">
-            <div class="row">
-                <div class="col-6">
-                    <h2 class="ask-ques ">Frequently Asked Questions</h2>
-                    <p class="ask-data">Embark on a journey of knowledge as we address the most common queries about our exquisite jewelry collection. From understanding the quality of our materials to caring for your cherished pieces, our FAQ section is a treasure trove of information.</p>
-                    <div class="que-data d-block text-uppercase">all questions
-                        <img class="ask-img inline-block " src="images/65a25e0ca1957cdecb9f72a3_Iline.svg" alt=""/>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="container my-5">
-                        <div class="accordion" id="jnl">
-                            <div class="accordion-item-1 mb-5">
-                                <button class="accordion-button " data-bs-target="#dhruvi" data-bs-toggle="collapse"> <h5 class="ask-fema">Designed To Match Your Lifestyle ?</h5>
+                <div class="col-lg-7">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    Designed To Match Your Lifestyle?
                                 </button>
-                                <div class="accordiom-collapse collapse" id="dhruvi" data-bs-parent="#jnl">
-                                    <div class="accordion-body">
-                                        <p>In case your ring does not fit well, we will be happy to resize.The resizing can be done throughout the life.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item mb-5">
-                                <button class="accordion-button" data-bs-target="#hitu" data-bs-toggle="collapse"> <h5 class="ask-fema">Diamond Jewelry Shopping?</h5></button>
-                                <div class="accordiom-collapse collapse" id="hitu" data-bs-parent="#jnl">
-                                    <div class="accordion-body">
-                                        <p>Your jewellery will arrive in exclusive Diamond World gift box sealed in a tamper-proof packing.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item mb-5">
-                                <button class="accordion-button" data-bs-target="#jay" data-bs-toggle="collapse"><h5 class="ask-fema">Gold Jewelry Shopping at Diamond BD</h5></button>
-                                <div class="accordiom-collapse collapse" id="jay" data-bs-parent="#jnl">
-                                    <div class="accordion-body">
-                                        <p>There are different shapes of Diamond like Round , Princess, Emerald, Asscher, Pear, Radiant,Oval,Cushion, Heart, Marquise,Trillion. Round Brillinant is used the maximum.Prices definitely varies based on shapes but every shape has the same value for money.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item mb-5 ">
-                                <button class="accordion-button" data-bs-target="#dhru" data-bs-toggle="collapse"> <h5 class="ask-fema">Can I re-size my Ring?</h5></button>
-                                <div class="accordiom-collapse collapse" id="dhru" data-bs-parent="#jnl">
-                                    <div class="accordion-body">
-                                        <p>Discounts are seasonal and depend on items to items and also on occasions. In online business where we have no overheads , so the price is always cheaper ,. We are able to pass on this benefit to all our customers by way of honest and competitive prices.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item mb-5">
-                                <button class="accordion-button" data-bs-target="#hitanshi" data-bs-toggle="collapse"> <h5 class="ask-fema">What if I don't know the ring size?</h5></button>
-                                <div class="accordiom-collapse collapse" id="hitanshi" data-bs-parent="#jnl">
-                                    <div class="accordion-body">
-                                        <p>You can find out if delivers to your PIN Code using the courier serviceability tool located on the right side on all product detail pages. Please enter your PIN code into the tool and choose your mode of payment to get this information.</p>
-                                    </div>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    In case your ring does not fit well, we will be happy to resize. The resizing can be done throughout the life.
                                 </div>
                             </div>
                         </div>
-                    </div> 
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Diamond Jewelry Shopping?
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Your jewellery will arrive in exclusive Diamond World gift box sealed in a tamper-proof packing.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Gold Jewelry Shopping at Diamond BD
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    There are different shapes of Diamond like Round, Princess, Emerald, Asscher, Pear, Radiant, Oval, Cushion, Heart, Marquise, Trillion. Round Brillinant is used the maximum. Prices definitely varies based on shapes but every shape has the same value for money.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    Can I re-size my Ring?
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Discounts are seasonal and depend on items to items and also on occasions. In online business where we have no overheads, so the price is always cheaper. We are able to pass on this benefit to all our customers by way of honest and competitive prices.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h3 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                    What if I don't know the ring size?
+                                </button>
+                            </h3>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    You can find out if delivers to your PIN Code using the courier serviceability tool located on the right side on all product detail pages. Please enter your PIN code into the tool and choose your mode of payment to get this information.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section> 
-        <!-- ================================== Inform================================= -->
-        <section class="container">
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-5 py-lg-7">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <h2>Stay informed on our latest news</h2>
+                <a href="#" class="text-uppercase fw-bold text-decoration-none">View More</a>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 h-100">
+                        <img src="images/659fbe404dab2896dfdeb71a_Blog Thubmanil image 02.png" class="card-img-top" alt="Blog Post">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="text-muted">January 19, 2024</span>
+                                <span class="mx-2 text-muted">|</span>
+                                <span class="text-muted">By Sajib Hossain</span>
+                            </div>
+                            <h5 class="card-title">Diamond World Jewellery Eid Special Collection Sale 2024</h5>
+                            <a href="#" class="text-decoration-none mt-3 d-inline-block">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 h-100">
+                        <img src="images/65a50cf2736b28beba1b5caa_Blog Thubmanil image 01.png" class="card-img-top" alt="Blog Post">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="text-muted">January 4, 2024</span>
+                                <span class="mx-2 text-muted">|</span>
+                                <span class="text-muted">By Mufrat Nir</span>
+                            </div>
+                            <h5 class="card-title">How To Measure Ring Size at Home? Diamond World</h5>
+                            <a href="#" class="text-decoration-none mt-3 d-inline-block">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 h-100">
+                        <img src="images/659fbbbeedb58f232338cf85_Blog Thubmanil image 03.png" class="card-img-top" alt="Blog Post">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="text-muted">January 3, 2024</span>
+                                <span class="mx-2 text-muted">|</span>
+                                <span class="text-muted">By Nila Akter</span>
+                            </div>
+                            <h5 class="card-title">An Investment that Only Brings Prosperity and Growth</h5>
+                            <a href="#" class="text-decoration-none mt-3 d-inline-block">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">InstagramWall</h2>
+            <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <img src="images/65a65952528ae0b98e352346_14.webp" alt="Instagram Post" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <img src="images/65a65b2a1e2448d5547b592b_Instagram Image02.png" alt="Instagram Post" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <img src="images/65a65b2c63fb3634600d3137_Instagram Image03.png" alt="Instagram Post" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <img src="images/65a65b29ad376843aa9c8e13_Instagram Image04.png" alt="Instagram Post" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <img src="images/65a65b291a5d2647f9b9ab35_Instagram Image05.png" alt="Instagram Post" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <img src="images/65a65b290c165c192c83476b_Instagram Image06.png" alt="Instagram Post" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5 py-lg-7 bg-dark text-white">
+        <div class="container text-center">
+            <p class="mb-2">Be the first to know our diamondbd news</p>
+            <h2 class="mb-5">Join Us Now</h2>
+            <form class="mx-auto" style="max-width: 500px;">
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control bg-transparent text-white border-secondary" placeholder="Enter your email" required>
+                    <button class="btn btn-warning text-uppercase px-4" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-black text-white py-5 py-lg-7">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3">
+                    <img src="images/65a25e0ead502dd94af8dbf4_logo white.svg" alt="DiamondBD Logo" class="mb-4" style="height: 40px;">
+                    <p class="text-muted mb-4">Interdum tristique sed dictum tempor est euismod. Ut vehicula tempus vitae, odio.</p>
+                    <div class="d-flex">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <h5 class="text-uppercase mb-4">Menu</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Shop</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Blog</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <h5 class="text-uppercase mb-4">Information</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Terms and conditions</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Cookie Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">License Info</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Style Guide</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <h5 class="text-uppercase mb-4 invisible">Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">404 Not Found</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Password Protected</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Changelog</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Sign Up</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Sign In</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <h5 class="text-uppercase mb-4">CMS Pages</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Shop Category</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Single Product</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Single Blog Post</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-5 bg-secondary">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h2 class="info">Stay informed on our latest news</h2>
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="text-muted mb-0">Copyright © DiamondBD</p>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12"><h5 class="inform text-end text-uppercase">view more</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card">
-                        <img class="inform-img inline-block align-center" src="images/659fbe404dab2896dfdeb71a_Blog Thubmanil image 02.png" alt=""/>
-                        <div class="row">
-                            <div class="col-lg-5">
-                                <div class="date mt-3 ">January 19, 2024</div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="border border-dark w-75 bg-dark d-block d-flex"></div>
-                            </div>
-                            <div class="col-lg-lg-5">
-                                <div class="name">By Sajib Hossain</div>
-                            </div>
-                        </div>
-                        <h2 class="inform-head">Diamond World Jewellery Eid Special Collection Sale 2024</h2>
-                        <p class="inform-da">Read more</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card">
-                        <img class="inform-img" src="images/65a50cf2736b28beba1b5caa_Blog Thubmanil image 01.png" alt=""/>
-                        <div class="row">
-                            <div class="col-lg-5">
-                                <div class="date mt-3 ">January 4, 2024</div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="border  border-dark w-75"></div>
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="name">By Mufrat Nir</div>
-                            </div>
-                        </div>
-                        <h2 class="inform-head">How To Measure Ring Size at Home? Diamond World</h2>
-                        <p class="inform-da">Read more</p>
-                    </div>
-                </div> 
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card">
-                        <img class="inform-img" src="images/659fbbbeedb58f232338cf85_Blog Thubmanil image 03.png" alt=""/>
-                        <div class="row">
-                            <div class="col-lg-5">
-                                <div class="date mt-3 ">January 3, 2024</div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="border  border-dark w-75"></div>
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="name">By Nila Akter</div>
-                            </div>
-                        </div>
-                        <h2 class="inform-head">An Investment that Only Brings Prosperity and Growth</h2>
-                        <p class="inform-da">Read more</p>
-                    </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-muted mb-0">Designed by WebOcean | Powered by Webflow</p>
                 </div>
             </div>
-        </section>
-        <section class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h2 class="info">Stay informed on our latest news</h2>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h5 class="inform text-end text-uppercase">view more</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card">
-                        <img class="inform-img" src="images/659fbe404dab2896dfdeb71a_Blog Thubmanil image 02.png" alt=""/>
-                        <div class="row">
-                            <div class="col-lg-5 col-md-5 col-sm-5">
-                                <div class="date mt-3">January 19, 2024</div>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-2">
-                                <div class="border border-dark w-75 bg-dark d-block d-flex"></div>
-                            </div>
-                            <div class="col-lg-5 col-md-5 col-sm-5">
-                                <div class="name">By Sajib Hossain</div>
-                            </div>
-                        </div>
-                        <h2 class="inform-head">Diamond World Jewellery Eid Special Collection Sale 2024</h2>
-                        <p class="inform-da">Read more</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card">
-                        <img class="inform-img" src="images/65a50cf2736b28beba1b5caa_Blog Thubmanil image 01.png" alt=""/>
-                        <div class="row">
-                            <div class="col-lg-5 col-md-5 col-sm-5">
-                                <div class="date mt-3">January 4, 2024</div>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-2">
-                                <div class="border border-dark w-75"></div>
-                            </div>
-                            <div class="col-lg-5 col-md-5 col-sm-5">
-                                <div class="name">By Mufrat Nir</div>
-                            </div>
-                        </div>
-                        <h2 class="inform-head">How To Measure Ring Size at Home? Diamond World</h2>
-                        <p class="inform-da">Read more</p>
-                    </div>
-                </div> 
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card">
-                        <img class="inform-img" src="images/659fbbbeedb58f232338cf85_Blog Thubmanil image 03.png" alt=""/>
-                        <div class="row">
-                            <div class="col-lg-5 col-md-5 col-sm-5">
-                                <div class="date mt-3">January 3, 2024</div>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-2">
-                                <div class="border border-dark w-75"></div>
-                            </div>
-                            <div class="col-lg-5 col-md-5 col-sm-5">
-                                <div class="name">By Nila Akter</div>
-                            </div>
-                        </div>
-                        <h2 class="inform-head">An Investment that Only Brings Prosperity and Growth</h2>
-                        <p class="inform-da">Read more</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ====================================InstagramWall======================================= -->
-        <section class="container">
-            <h1 class="insta-head">InstagramWall</h1>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <img class="insta-img d-flex" src="images/65a65952528ae0b98e352346_14.webp" alt=""/>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <img class="insta-img d-flex" src="images/65a65b2a1e2448d5547b592b_Instagram Image02.png" alt=""/>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <img class="insta-img d-flex" src="images/65a65b2c63fb3634600d3137_Instagram Image03.png" alt=""/>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <img class="insta-img d-flex mt-5" src="images/65a65b29ad376843aa9c8e13_Instagram Image04.png " alt=""/>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <img class="insta-img d-flex mt-5" src="images/65a65b291a5d2647f9b9ab35_Instagram Image05.png" alt=""/>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <img class="insta-img d-flex mt-5" src="images/65a65b290c165c192c83476b_Instagram Image06.png" alt=""/>
-                </div>
-            </div>
-        </section>
-        <!-- ============================================Form============================================= -->
-        <section class="container mt-5 pt-5 ">
-            <div class="form">
-                <p class="form-p text-light text-center">Be the first to know our diamondbd news</p>
-                <h2 class="form-head text-light text-center">Join Us Now</h2>
-                <form class="col-lg-4 offset-4">
-                    <div class="mb-5 d-block">
-                        <label class="mb-2  form-floating "></label>
-                        <input type="email"  class="mt-4 w-75 text-white bg-transparent border-warning" placeholder="Enter your email"/> 
-                        <button class="btn btn-warning  mt-3 " type="submit">submit</button>
-                     </div>
-                </form>
-            </div>
-        </section>
-        <!-- =====================================Footer=========================================== -->
-         <footer class="container-12 d-flex mt-5 ">
-            <div class="footer">
-                <img class="footer-img" src="images/65a25e0ead502dd94af8dbf4_logo white.svg" alt=""/>
-                <p class="footer-p ">Interdum tristique sed dictum tempor est euismod. Ut vehicula tempus vitae, odio.</p>
-                <img class="foot-img inline-block" src="images/65a795b6b97bc492818e9b8a_Socal Icon02.svg" alt=""/>
-                <img class="foot-img inline-block" src="images/65a25e0f4621b6acf86662ed_Socal Icon03.svg" alt=""/>
-                <img class="foot-img inline-block" src="images/65a795d762faf696045bf670_Socal Icon04.svg" alt=""/>
-                <img class="foot-img inline-block" src="images/65a25e0f53a920f4f8ef95b9_Socal Icon01.svg" alt=""/>
-            </div>
-            <div class="foot">
-                <h5 class="foot-head text-uppercase text-white">Menu</h5>
-                <a href="" class="footer-link text-warning active">Home</a>
-                <a href="" class="footer-link">About</a>
-                <a href="" class="footer-link">Shop</a>
-                <a href="" class="footer-link">Blog</a>
-                <a href="" class="footer-link">Contact</a>
-            </div>
-            <div class="foo">
-                <h5 class="foo-head text-uppercase text-white">information</h5>
-                <a href="" class="foo-link d-block">Terms and conditions</a>
-                <a href="" class="foo-link d-block">Privacy Policy</a>
-                <a href="" class="foo-link d-block">Cookie Policy</a>
-                <a href="" class="foo-link d-block">License Info</a>
-                <a href="" class="foo-link d-block">Style Guide</a>
-                <a href="" class="foo-link d-block">404 Not Found</a>
-            </div>
-            <div class="foote">
-                <a href="" class="foote-link d-block">Password Protected</a>
-                <a href="" class="foote-link d-block">Changelog</a>
-                <a href="" class="foote-link d-block">Sign Up</a>
-                <a href="" class="foote-link d-block">Sign In</a>
-                <a href="" class="foote-link d-block">Forgot Password</a>
-            </div>
-            <div class="fo">
-                <h5 class="fo-head text-uppercase text-white">cms Pages</h5>
-                <a href="" class="fo-link d-block">Shop Category</a>
-                <a href="" class="fo-link d-block">Single Product</a>
-                <a href="" class="fo-link d-block">Single Blog Post</a>
-            </div>
-        </footer>
-        <section>
-            <div class="last">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 d-flex">
-                            <div class="last-copy ">Copyright © </div>
-                            <div class="text-white ">Diamondbd</div>
-                        </div>
-                        <div class="last-ocen col-lg-4 d-flex">
-                            <div class="last-design mt-3 mr-5">Designed by </div>
-                            <div class="text-white">WebOcean</div>
-                        </div>
-                        <div class="last-section col-lg-4 d-flex justify-content-end">
-                            <div class="last-prowered">Prowered by </div>
-                            <div class="web text-white">Webflow</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> 
-<script src="js/bootstrap.bundle.min.js"></script>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>        
+</html>

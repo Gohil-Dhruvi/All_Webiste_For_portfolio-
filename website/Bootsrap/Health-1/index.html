@@ -5,36 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Center</title>
-    <link href="img/favicon.icon" rel="icon" />
-    <link href="font/fonts/remixicon.css" rel="stylesheet" type="text/css" />
-    <link href="font/lato/stylesheet.css" rel="stylesheet" type="text/css" />
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link href="css/min-width.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link href="img/favicon.icon" rel="icon">
 </head>
 
 <body>
-
     <!-- HEADER -->
-
-    <header>
+    <header class="bg-white border-bottom py-2 d-none d-lg-block">
         <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <p>Welcome to a Professional Health Care</p>
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <p class="mb-0">Welcome to a Professional Health Care</p>
                 </div>
-                <div class="col-8">
-                    <div class="header-info">
-                        <span class="phone-icon">
-                            <i class="ri-phone-fill"></i>
+                <div class="col-md-8">
+                    <div class="d-flex justify-content-end">
+                        <span class="me-3">
+                            <i class="ri-phone-fill text-success me-1"></i>
                             010-060-0160
                         </span>
-                        <span class="date-icon">
-                            <i class="ri-calendar-close-fill"></i>
+                        <span class="me-3 border-start border-end px-3">
+                            <i class="ri-calendar-close-fill text-success me-1"></i>
                             6:00 AM - 10:00 PM (Mon-Fri)
                         </span>
-                        <span class="email-icon">
-                            <i class="ri-mail-fill"></i>
-                            <a href="javascript:void(0)">info@company.com</a>
+                        <span>
+                            <i class="ri-mail-fill text-success me-1"></i>
+                            <a href="mailto:info@company.com" class="text-decoration-none">info@company.com</a>
                         </span>
                     </div>
                 </div>
@@ -42,357 +43,337 @@
         </div>
     </header>
 
-    <!-- MENU -->
-
-    <section class="menu-info">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
         <div class="container">
-            <div class="row">
-                <div class="menu-header">
-                    <a href="javscript:void(0)" class="menu-head">
-                        <h2>Health Center</h2>
-                    </a>
-                </div>
-                <nav class="menu">
-                    <ul class="d-flex">
-                        <li>
-                            <a href="javascript:void(0)">Home</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">About Us</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">Doctors</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">News</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="appointment-btn">
-                    <a href="javascript:void(0)" class="button">Make an appointment</a>
-                </div>
-                <div>
-                    <a href="javascript:void(0)"><i class="ri-menu-line"></i></a>
-                </div>
+            <a class="navbar-brand fw-bold" href="#">
+                <span class="bg-success text-white rounded px-2">H</span>ealth Center
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="ri-menu-line"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-success px-4">Make an appointment</a>
             </div>
         </div>
-    </section>
+    </nav>
 
     <!-- BANNER -->
-
-    <section class="banner d-flex align-items-center">
+    <section class="banner d-flex align-items-center" style="background-image: url('img/slider1.jpg'); min-height: 100vh; background-size: cover;">
         <div class="container">
-            <div class="row">
-                <div class="banner-data">
-                    <h3>Let's make your life happier</h3>
-                    <h1>Healthy Living</h1>
-                    <button class="btn"><a href="javascript:void(0)">Meet Our Doctors</a></button>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center text-white">
+                    <h3 class="text-uppercase letter-spacing-3 mb-3">Let's make your life happier</h3>
+                    <h1 class="display-3 fw-bold mb-4">Healthy Living</h1>
+                    <a href="#" class="btn btn-success btn-lg px-5 py-3">Meet Our Doctors</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ABOUT -->
-
-    <main>
-        <section class="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="about-info">
-                            <h2>Welcome to Your <i class="ri-heading"></i> Health Center</h2>
-                            <p>Aenean luctus lobortis tellus, vel ornare enim molestie condimentum. Curabitur lacinia
-                                nisi vitae velit volutpat venenatis.</p>
-                            <p>Sed a dignissim lacus. Quisque fermentum est non orci commodo, a luctus urna mattis. Ut
-                                placerat, diam a tempus vehicula.</p>
+    <section class="py-5 py-lg-7" style="background: url('img/about-bg.jpg') no-repeat center center; background-size: cover;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="display-5 fw-bold mb-4">Welcome to Your <span class="bg-dark text-white px-2 rounded">Health Center</span></h2>
+                    <p class="text-muted mb-4">Aenean luctus lobortis tellus, vel ornare enim molestie condimentum. Curabitur lacinia nisi vitae velit volutpat venenatis.</p>
+                    <p class="text-muted">Sed a dignissim lacus. Quisque fermentum est non orci commodo, a luctus urna mattis. Ut placerat, diam a tempus vehicula.</p>
+                    
+                    <div class="d-flex align-items-center mt-5">
+                        <img src="img/author-image.jpg" alt="Dr. Neil Jackson" class="rounded-circle me-3" width="80" height="80">
+                        <div>
+                            <h4 class="mb-1">Dr. Neil Jackson</h4>
+                            <p class="text-muted mb-0">General Principal</p>
                         </div>
-                        <div class="author-img d-flex">
-                            <img src="img/author-image.jpg" alt="author" title="author" />
-                            <div>
-                                <h4>Dr.Neil Jackson</h4>
-                                <p>General Principal</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Additional content or image can go here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOCTORS -->
+    <section class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold">Our Doctors</h2>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="img/team-image1.jpg" class="card-img-top" alt="Dr. Nate Baston">
+                        <div class="card-body text-center">
+                            <h3 class="h4 mb-2">Nate Baston</h3>
+                            <p class="text-muted mb-4">General Principal</p>
+                            
+                            <div class="border-top pt-3">
+                                <p class="mb-1"><i class="ri-phone-fill text-success me-2"></i>010-020-0120</p>
+                                <p class="mb-0"><i class="ri-mail-fill text-success me-2"></i>general@company.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="img/team-image2.jpg" class="card-img-top" alt="Dr. Nate Baston">
+                        <div class="card-body text-center">
+                            <h3 class="h4 mb-2">Nate Baston</h3>
+                            <p class="text-muted mb-4">General Principal</p>
+                            
+                            <div class="border-top pt-3">
+                                <p class="mb-1"><i class="ri-phone-fill text-success me-2"></i>010-070-0170</p>
+                                <p class="mb-0"><i class="ri-mail-fill text-success me-2"></i>pregnancy@company.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="img/team-image3.jpg" class="card-img-top" alt="Dr. Nate Baston">
+                        <div class="card-body text-center">
+                            <h3 class="h4 mb-2">Nate Baston</h3>
+                            <p class="text-muted mb-4">General Principal</p>
+                            
+                            <div class="border-top pt-3">
+                                <p class="mb-1"><i class="ri-phone-fill text-success me-2"></i>010-040-0140</p>
+                                <p class="mb-0"><i class="ri-mail-fill text-success me-2"></i>cardio@company.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- TEAM -->
-
-        <section class="team">
-            <div class="container">
-                <h2>Our Doctors</h2>
-                <div class="row">
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <img src="img/team-image1.jpg" title="image-1" alt="">
-                        <div class="team-info">
-                            <h3>Nate Baston</h3>
-                            <p>General Principal</p>
-                            <div class="team-contact">
-                                <p><i class="ri-phone-fill"></i><a href="javascript:void(0)">010-020-0120</a></p>
-                                <p><i class="ri-mail-fill"></i><a href="javascript:void(0)">general@company.com</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <img src="img/team-image2.jpg" title="image-2" alt="">
-                        <div class="team-info">
-                            <h3>Nate Baston</h3>
-                            <p>General Principal</p>
-                            <div class="team-contact">
-                                <p><i class="ri-phone-fill"></i><a href="javascript:void(0)">010-070-0170</a></p>
-                                <p><i class="ri-mail-fill"></i><a href="javascript:void(0)">pregnancy@company.com</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <img src="img/team-image3.jpg" title="image-3" alt="">
-                        <div class="team-info">
-                            <h3>Nate Baston</h3>
-                            <p>General Principal</p>
-                            <div class="team-contact">
-                                <p><i class="ri-phone-fill"></i><a href="javascript:void(0)">010-040-0140</a></p>
-                                <p><i class="ri-mail-fill"></i><a href="javascript:void(0)">cardio@company.com</a></p>
-                            </div>
-                        </div>
-                    </div>
+    <!-- NEWS -->
+    <section class="py-5 py-lg-7">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold">Latest News</h2>
                 </div>
             </div>
-        </section>
-        <!-- NEWS -->
-        <section class="news-section">
-            <div class="container">
-                <h2>Latest News</h2>
-                <div class="row">
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <div class="news">
-                            <a href="javascript:void(0)">
-                                <img src="img/news-image1.jpg" alt="news" title="news" width="360px" height="240px" />
-                            </a>
-                            <div class="news-info">
-                                <span>March 08,2018</span>
-                                <h3>
-                                    <a href="javascript:void(0)">About Amazing Technology</a>
-                                </h3>
-                                <p>Maecenas risus neque, placerat volutpat tempor ut, vehicula et felis.</p>
-                                <div class="author d-flex">
-                                    <img src="img/author-image.jpg" alt="author" title="author" />
-                                    <div class="author-info">
-                                        <h5>Jeremie Carlson</h5>
-                                        <p>CEO / Founder</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <div class="news">
-                            <a href="javascript:void(0)">
-                                <img src="img/news-image2.jpg" alt="news" title="news" width="360px" height="240px" />
-                            </a>
-                            <div class="news-info">
-                                <span>February 20, 2018</span>
-                                <h3>
-                                    <a href="javascript:void(0)">Introducing a new healing process</a>
-                                </h3>
-                                <p>Fusce vel sem finibus, rhoncus massa non, aliquam velit. Nam et est ligula.</p>
-                                <div class="author d-flex">
-                                    <img src="img/author-image.jpg" alt="author" title="author" />
-                                    <div class="author-info">
-                                        <h5>Jason Stewart</h5>
-                                        <p>General Director</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <div class="news">
-                            <a href="javascript:void(0)">
-                                <img src="img/news-image3.jpg" alt="news" title="news" width="360px" height="240px" />
-                            </a>
-                            <div class="news-info">
-                                <span>January 27, 2018</span>
-                                <h3>
-                                    <a href="javascript:void(0)">Review Annual Medical Research</a>
-                                </h3>
-                                <p>Vivamus non nulla semper diam cursus maximus. Pellentesque dignissim.</p>
-                                <div class="author d-flex">
-                                    <img src="img/author-image.jpg" alt="author" title="author" class="img" />
-                                    <div class="author-info">
-                                        <h5>Andrio Abero</h5>
-                                        <p>Online Advertising</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- MAKE AN APPOINTMENT -->
-        <section class="make-appointment">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-xl-6 col-lg-12">
-                        <img src="img/appointment-image.jpg" alt="appointment" title="appointment" height="723px" />
-                    </div>
-                    <div class="col-12 col-xl-6 col-lg-12">
-                        <form>
-                            <div class="appointement-title">
-                                <h2>Make an appointment</h2>
-                            </div>
-                            <div class="appointement-info">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <label>Name</label>
-                                        <input type="text" class="form-control" placeholder="Full Name" />
-                                    </div>
-                                    <div class="col-6">
-                                        <label>Email</label>
-                                        <input type="email" class="form-control" placeholder="Enter Your Email" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <label>Select Date</label>
-                                        <input type="date" class="form-control" />
-                                    </div>
-                                    <div class="col-6">
-                                        <label>Select Department</label>
-                                        <select class="form-control">
-                                            <option>General Health</option>
-                                            <option>Cardiology</option>
-                                            <option>Dental</option>
-                                            <option>Medical Research</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <label>Phone Number</label>
-                                    <input type="tel" placeholder="Phone" class="form-control" />
-                                </div>
-                                <div class="col-6">
-                                    <label>Additional Message</label>
-                                    <textarea class="form-control" placeholder="Message"></textarea>
-                                </div>
-                                <button type="submit">Submit Button</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- GOOGLE MAP -->
-
-        <section id="google-map">
-            <div class="col-12">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945"
-                    width="100%" height="350" frameborder="0" style="border:0" allowfullscreen=""></iframe>
-            </div>
-        </section>
-
-        <main>
-
-            <!-- FOOTER -->
-
-            <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-xl-4 col-md-6">
-                            <div class="footer-thumb">
-                                <h4>Contact Info</h4>
-                                <p>Fusce at libero iaculis, venenatis augue quis, pharetra lorem. Curabitur ut dolor eu
-                                    elit
-                                    consequat ultricies.</p>
-                                <div class="contact-information">
-                                    <p>
-                                        <i class="ri-phone-fill"></i>
-                                        010-070-0170
-                                    </p>
-                                    <p>
-                                        <i class="ri-mail-fill"></i>
-                                        <a href="javascript:viod(0)">info@company.com</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl-4 col-md-6">
-                            <div class="footer-thumb">
-                                <h4>Latest News</h4>
-                                <div class="latest-stories d-flex">
-                                    <div class="stories-image">
-                                        <a href="javascript:void(0)">
-                                            <img src="img/news-image.jpg" class="img-responsive" alt=""></a>
-                                    </div>
-                                    <div class="stories-info">
-                                        <a href="javascript:void(0)">
-                                            <h5>Amazing Technology</h5>
-                                        </a>
-                                        <span>March 08, 2018</span>
-                                    </div>
-                                </div>
-                                <div class="latest-stories d-flex">
-                                    <div class="stories-image">
-                                        <a href="javascript:void(0)"><img src="img/news-image.jpg"
-                                                class="img-responsive" alt=""></a>
-                                    </div>
-                                    <div class="stories-info">
-                                        <a href="javascript:void(0)">
-                                            <h5>New Healing Process</h5>
-                                        </a>
-                                        <span>February 20, 2018</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-xl-4 col-md-6">
-                            <div class="Opening-section">
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="img/news-image1.jpg" class="card-img-top" alt="News Image">
+                        <div class="card-body">
+                            <span class="d-block text-muted mb-2">March 08, 2018</span>
+                            <h3 class="h4"><a href="#" class="text-decoration-none text-dark">About Amazing Technology</a></h3>
+                            <p class="text-muted mb-4">Maecenas risus neque, placerat volutpat tempor ut, vehicula et felis.</p>
+                            
+                            <div class="border-top pt-3 d-flex align-items-center">
+                                <img src="img/author-image.jpg" alt="Author" class="rounded-circle me-3" width="60" height="60">
                                 <div>
-                                    <h4>Opening Hours</h4>
-                                    <p>Monday - Friday <span>06:00 AM - 10:00 PM</span></p>
-                                    <p>Saturday <span>09:00 AM - 08:00 PM</span></p>
-                                    <p>Sunday <span>Closed</span></p>
-                                </div>
-                                <ul class="social-icon">
-                                    <i class="ri-facebook-circle-fill"></i>
-                                    <i class="ri-twitter-fill"></i>
-                                    <i class="ri-instagram-line"></i>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-between align-items-center border-top">
-                            <div class="col-12 col-xl-4">
-                                <div class="copyright-text">
-                                    <p>Copyright © 2017 Your Company
-                                        <a href="javascript:void(0)">Tooplate</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-12 col-xl-4 col-md-6">
-                                <div class="footer-link d-flex">
-                                    <a href="javascript:void(0)">Laboratory Tests</a>
-                                    <a href="javascript:void(0)">Departments</a>
-                                    <a href="javascript:void(0)">Insurance Policy</a>
-                                    <a href="javascript:void(0)">Careers</a>
-                                </div>
-                            </div>
-                            <div class="col-12 col-xl-4 col-md-6">
-                                <div class="up-btn">
-                                    <a href="javascript:void(0)"><i class="ri-arrow-up-s-line"></i></a>
+                                    <h5 class="mb-0">Jeremie Carlson</h5>
+                                    <p class="text-muted small mb-0">CEO / Founder</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </footer>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="img/news-image2.jpg" class="card-img-top" alt="News Image">
+                        <div class="card-body">
+                            <span class="d-block text-muted mb-2">February 20, 2018</span>
+                            <h3 class="h4"><a href="#" class="text-decoration-none text-dark">Introducing a new healing process</a></h3>
+                            <p class="text-muted mb-4">Fusce vel sem finibus, rhoncus massa non, aliquam velit. Nam et est ligula.</p>
+                            
+                            <div class="border-top pt-3 d-flex align-items-center">
+                                <img src="img/author-image.jpg" alt="Author" class="rounded-circle me-3" width="60" height="60">
+                                <div>
+                                    <h5 class="mb-0">Jason Stewart</h5>
+                                    <p class="text-muted small mb-0">General Director</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="img/news-image3.jpg" class="card-img-top" alt="News Image">
+                        <div class="card-body">
+                            <span class="d-block text-muted mb-2">January 27, 2018</span>
+                            <h3 class="h4"><a href="#" class="text-decoration-none text-dark">Review Annual Medical Research</a></h3>
+                            <p class="text-muted mb-4">Vivamus non nulla semper diam cursus maximus. Pellentesque dignissim.</p>
+                            
+                            <div class="border-top pt-3 d-flex align-items-center">
+                                <img src="img/author-image.jpg" alt="Author" class="rounded-circle me-3" width="60" height="60">
+                                <div>
+                                    <h5 class="mb-0">Andrio Abero</h5>
+                                    <p class="text-muted small mb-0">Online Advertising</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPOINTMENT -->
+    <section class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <img src="img/appointment-image.jpg" alt="Appointment" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-4">Make an appointment</h2>
+                    
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Name</label>
+                                <input type="text" class="form-control py-3" placeholder="Full Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control py-3" placeholder="Enter Your Email">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Select Date</label>
+                                <input type="date" class="form-control py-3">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Select Department</label>
+                                <select class="form-select py-3">
+                                    <option>General Health</option>
+                                    <option>Cardiology</option>
+                                    <option>Dental</option>
+                                    <option>Medical Research</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control py-3" placeholder="Phone">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Additional Message</label>
+                                <textarea class="form-control py-3" rows="3" placeholder="Message"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-success w-100 py-3">Submit Button</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="bg-white">
+        <div class="container-fluid p-0">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-5 py-lg-7 bg-white">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="h5 fw-bold mb-4">Contact Info</h4>
+                    <p class="text-muted mb-4">Fusce at libero iaculis, venenatis augue quis, pharetra lorem. Curabitur ut dolor eu elit consequat ultricies.</p>
+                    
+                    <div class="text-muted">
+                        <p class="mb-2"><i class="ri-phone-fill text-success me-2"></i>010-070-0170</p>
+                        <p class="mb-0"><i class="ri-mail-fill text-success me-2"></i><a href="mailto:info@company.com" class="text-decoration-none">info@company.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="h5 fw-bold mb-4">Latest News</h4>
+                    
+                    <div class="d-flex mb-3">
+                        <img src="img/news-image.jpg" alt="News" class="rounded-circle me-3" width="60" height="60">
+                        <div>
+                            <a href="#" class="text-decoration-none text-dark"><h5 class="mb-1">Amazing Technology</h5></a>
+                            <span class="text-muted small">March 08, 2018</span>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex">
+                        <img src="img/news-image.jpg" alt="News" class="rounded-circle me-3" width="60" height="60">
+                        <div>
+                            <a href="#" class="text-decoration-none text-dark"><h5 class="mb-1">New Healing Process</h5></a>
+                            <span class="text-muted small">February 20, 2018</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="h5 fw-bold mb-4">Opening Hours</h4>
+                    
+                    <div class="mb-4">
+                        <p class="mb-2 d-flex justify-content-between"><span>Monday - Friday</span> <span>06:00 AM - 10:00 PM</span></p>
+                        <p class="mb-2 d-flex justify-content-between"><span>Saturday</span> <span>09:00 AM - 08:00 PM</span></p>
+                        <p class="mb-0 d-flex justify-content-between"><span>Sunday</span> <span>Closed</span></p>
+                    </div>
+                    
+                    <div class="d-flex">
+                        <a href="#" class="text-dark me-3"><i class="ri-facebook-fill fs-5"></i></a>
+                        <a href="#" class="text-dark me-3"><i class="ri-twitter-fill fs-5"></i></a>
+                        <a href="#" class="text-dark"><i class="ri-instagram-line fs-5"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-top mt-5 pt-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <p class="text-muted small mb-0">Copyright © 2017 Your Company | Design: <a href="#" class="text-decoration-none">Tooplate</a></p>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="d-flex flex-wrap">
+                            <a href="#" class="text-muted small me-3 mb-2 mb-md-0">Laboratory Tests</a>
+                            <a href="#" class="text-muted small me-3 mb-2 mb-md-0">Departments</a>
+                            <a href="#" class="text-muted small me-3 mb-2 mb-md-0">Insurance Policy</a>
+                            <a href="#" class="text-muted small">Careers</a>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-md-end">
+                        <a href="#" class="btn btn-outline-dark btn-sm rounded-circle"><i class="ri-arrow-up-line"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -1,194 +1,105 @@
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    overflow-x: hidden;
+/* Hover Effects Only */
+
+/* Navigation Hovers */
+.nav-link:hover {
+    color: #ffc107 !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Prata', serif;
-    font-weight: 400;
-}
-
-a {
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-a:hover {
+.dropdown-item:hover {
+    background-color: rgba(255, 193, 7, 0.1);
     color: #ffc107;
 }
 
-.btn {
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 12px 30px;
-    transition: all 0.3s ease;
-}
-
+/* Button Hovers */
 .btn-dark:hover {
     background-color: #333;
     border-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .btn-outline-light:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 
-/* Header Styles */
-.navbar {
-    padding: 15px 0;
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+    transform: translateY(-2px);
 }
 
-.navbar-brand img {
-    height: 40px;
+/* Card Hovers */
+.card:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.nav-link {
-    letter-spacing: 1px;
-    padding: 8px 15px;
+/* Collection Image Hovers */
+.collection-card img:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
 }
 
-.dropdown-menu {
-    border: none;
+/* Instagram Image Hovers */
+.instagram-post img:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+    opacity: 0.9;
+}
+
+/* Blog Card Hover */
+.card.border-0:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Hero Section */
-.hero-section {
-    padding: 100px 0;
+/* Footer Link Hovers */
+.footer a:hover {
+    color: #ffc107 !important;
 }
 
-@media (max-width: 991.98px) {
-    .hero-section {
-        padding: 60px 0;
-    }
+/* Social Icon Hovers */
+.fab:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+    color: #ffc107 !important;
 }
 
-/* Diamond Story Section */
-.diamond-story {
-    position: relative;
-    padding: 100px 0;
-}
-
-.story-content {
-    background: white;
-    padding: 50px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1;
-}
-
-@media (max-width: 991.98px) {
-    .story-content {
-        margin-top: 30px;
-    }
-}
-
-/* Collections Section */
-.collection-card {
-    overflow: hidden;
-}
-
-.collection-card img {
-    transition: transform 0.5s ease;
-}
-
-.collection-card:hover img {
-    transform: scale(1.05);
-}
-
-/* Testimonials Section */
-.testimonial-section {
-    background-color: #0d6efd;
-    color: white;
-    padding: 100px 0;
-}
-
-.testimonial-section .carousel-indicators button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: 0 5px;
-}
-
-/* Features Section */
-.feature-box {
-    padding: 30px;
+/* Read More Link Hover */
+.text-decoration-none:hover {
+    color: #ffc107 !important;
+    padding-left: 5px;
     transition: all 0.3s ease;
 }
 
-.feature-box:hover {
-    transform: translateY(-10px);
+/* FAQ Accordion Item Hover */
+.accordion-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* FAQ Section */
-.accordion-button:not(.collapsed) {
-    background-color: white;
-    color: #333;
-    box-shadow: none;
-}
-
-.accordion-button:focus {
-    box-shadow: none;
-    border-color: rgba(0,0,0,.125);
-}
-
-/* Instagram Section */
-.instagram-post {
-    overflow: hidden;
-}
-
-.instagram-post img {
-    transition: transform 0.5s ease;
-}
-
-.instagram-post:hover img {
+/* Shopping Cart Icon Hover */
+.fa-shopping-cart:hover {
+    color: #ffc107 !important;
     transform: scale(1.1);
+    transition: all 0.3s ease;
 }
 
-/* Newsletter Section */
-.newsletter-section {
-    background-color: #212529;
-    padding: 80px 0;
+/* Search Icon Hover */
+.fa-search:hover {
+    color: #ffc107 !important;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
 
-/* Footer Styles */
-.footer {
-    background-color: #000;
-    color: white;
+/* Learn More Arrow Hover */
+.fa-arrow-right:hover {
+    transform: translateX(3px);
+    transition: all 0.3s ease;
 }
 
-.footer a {
-    color: #adb5bd;
-}
-
-.footer a:hover {
-    color: white;
-}
-
-.footer h5 {
-    margin-bottom: 20px;
-    font-size: 16px;
-    letter-spacing: 1px;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 767.98px) {
-    .navbar-collapse {
-        padding-top: 20px;
-    }
-    
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-    
-    .testimonial-section {
-        padding: 60px 0;
-    }
-    
-    .feature-box {
-        margin-bottom: 20px;
-    }
+/* Brand Logo Hover (optional) */
+.img-fluid:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }

@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #f0f4f8;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Features Section */
+.feature-icon {
+    color: #4e73df;
+}
+
+/* How It Works Section */
+.step-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: #4e73df;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+/* Tickets Page Styles */
+.sidebar {
+    background-color: #fff;
+    min-height: calc(100vh - 56px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.list-group-item {
+    border: none;
+    padding: 12px 20px;
+    color: #5a5c69;
+}
+
+.list-group-item.active {
+    background-color: #f8f9fc;
+    color: #4e73df;
+    font-weight: 600;
+    border-left: 4px solid #4e73df;
+}
+
+.list-group-item i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        text-align: center;
+    }
+    
+    .hero-section img {
+        margin-top: 30px;
+    }
+    
+    .step-card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Badge Styles */
+.badge.bg-primary {
+    background-color: #4e73df !important;
+}
+
+.badge.bg-success {
+    background-color: #1cc88a !important;
+}
+
+.badge.bg-info {
+    background-color: #36b9cc !important;
+}
+
+.badge.bg-warning {
+    background-color: #f6c23e !important;
+}
+
+.badge.bg-danger {
+    background-color: #e74a3b !important;
+}
+
+/* Table Styles */
+.table-hover tbody tr:hover {
+    background-color: #f8f9fc;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+    border-color: #2e59d9;
+}

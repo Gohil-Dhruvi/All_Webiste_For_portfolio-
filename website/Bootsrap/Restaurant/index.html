@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NiceRestaurant - Fine Dining Experience</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #cda45e;
+            --secondary-color: #1a1814;
+            --text-color: #aaaaaa;
+            --light-color: #fff;
+            --dark-color: #0c0b09;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--light-color);
+        }
+
+        a {
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+
+        .section-title p {
+            margin-bottom: 0;
+            font-size: 18px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header */
+        .top-bar {
+            background-color: var(--dark-color);
+            padding: 10px 0;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .top-bar .contact-info i {
+            color: var(--primary-color);
+            margin-right: 5px;
+        }
+
+        .top-bar .social-links a {
+            color: var(--text-color);
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .top-bar .social-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        /* Navbar */
+        .navbar {
+            padding: 15px 0;
+            background-color: rgba(12, 11, 9, 0.8) !important;
+            backdrop-filter: blur(5px);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--light-color) !important;
+        }
+
+        .navbar-brand span {
+            color: var(--primary-color);
+        }
+
+        .nav-link {
+            color: var(--light-color) !important;
+            font-weight: 500;
+            padding: 10px 15px !important;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::before {
+            width: 100%;
+        }
+
+        .nav-link.active::before {
+            width: 100%;
+        }
+
+        .navbar-toggler {
+            border-color: var(--primary-color);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28205, 164, 94, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .btn-book {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 8px 25px;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .btn-book:hover {
+            background-color: #d4b46a;
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+
+        /* Hero Section */
+        #hero {
+            width: 100%;
+            height: 100vh;
+            background: url('https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/hero-bg.jpg') top center;
+            background-size: cover;
+            position: relative;
+        }
+
+        #hero::before {
+            content: '';
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        #hero .container {
+            position: relative;
+            padding-top: 110px;
+        }
+
+        #hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--light-color);
+        }
+
+        #hero h1 span {
+            color: var(--primary-color);
+        }
+
+        #hero h2 {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+        }
+
+        .hero-btn {
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: var(--transition);
+            margin: 10px;
+        }
+
+        .btn-menu {
+            color: var(--light-color);
+            border: 2px solid var(--primary-color);
+            background-color: transparent;
+        }
+
+        .btn-menu:hover {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        .btn-book-hero {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-book-hero:hover {
+            background-color: transparent;
+            color: var(--light-color);
+        }
+
+        /* About Section */
+        #about {
+            padding: 100px 0;
+            background-color: var(--dark-color);
+        }
+
+        #about .content h3 {
+            font-weight: 600;
+            font-size: 26px;
+        }
+
+        #about .content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #about .content ul li {
+            padding-bottom: 10px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        #about .content ul li i {
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .about-img {
+            position: relative;
+            margin: 30px 0;
+        }
+
+        .about-img img {
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .about-img:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Why Us Section */
+        #why-us {
+            padding: 100px 0;
+            background-color: var(--secondary-color);
+        }
+
+        .why-us-box {
+            padding: 30px;
+            background: var(--dark-color);
+            transition: var(--transition);
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        .why-us-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .why-us-box h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 20px 0 15px;
+        }
+
+        .why-us-box p {
+            margin-bottom: 0;
+        }
+
+        .icon-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(205, 164, 94, 0.1);
+            margin-bottom: 15px;
+        }
+
+        .icon-box i {
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+
+        /* Menu Section */
+        #menu {
+            padding: 100px 0;
+            background-color: var(--dark-color);
+        }
+
+        .menu-item {
+            margin-bottom: 30px;
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-img {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .menu-img img {
+            transition: var(--transition);
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-item:hover .menu-img img {
+            transform: scale(1.1);
+        }
+
+        .menu-content {
+            padding: 20px;
+        }
+
+        .menu-content h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .menu-content p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .menu-content .price {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Specials Section */
+        #specials {
+            padding: 100px 0;
+            background-color: var(--secondary-color);
+        }
+
+        .specials-nav {
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .specials-nav .nav-link {
+            background: none;
+            border: 0;
+            padding: 12px 15px;
+            color: var(--light-color);
+            border-radius: 0;
+            font-weight: 600;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .specials-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -1px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .specials-nav .nav-link:hover::before {
+            width: 100%;
+        }
+
+        .specials-nav .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .specials-nav .nav-link.active::before {
+            width: 100%;
+        }
+
+        .tab-pane {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .special-item {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .special-img {
+            flex: 0 0 100px;
+            margin-right: 20px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .special-img img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .special-item:hover .special-img img {
+            transform: scale(1.1);
+        }
+
+        .special-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .special-content .price {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .special-content p {
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+
+        /* Events Section */
+        #events {
+            padding: 100px 0;
+            background-color: var(--dark-color);
+        }
+
+        .event-item {
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .event-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .event-img {
+            overflow: hidden;
+        }
+
+        .event-img img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .event-item:hover .event-img img {
+            transform: scale(1.1);
+        }
+
+        .event-content {
+            padding: 20px;
+        }
+
+        .event-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .event-content .price {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .event-content p {
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            padding: 100px 0;
+            background-color: var(--secondary-color);
+        }
+
+        .testimonial-item {
+            background-color: var(--dark-color);
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-item .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-item .stars {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .testimonial-item .user {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-item .user img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .testimonial-item .user h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-item .user span {
+            font-size: 14px;
+            color: var(--text-color);
+        }
+
+        /* Gallery Section */
+        #gallery {
+            padding: 100px 0;
+            background-color: var(--dark-color);
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-links {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-links {
+            opacity: 1;
+        }
+
+        .gallery-links a {
+            color: var(--light-color);
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(205, 164, 94, 0.8);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+
+        .gallery-links a:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        /* Chefs Section */
+        #chefs {
+            padding: 100px 0;
+            background-color: var(--secondary-color);
+        }
+
+        .chef-member {
+            margin-bottom: 30px;
+            background-color: var(--dark-color);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .chef-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .member-img {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .member-img img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .chef-member:hover .member-img img {
+            transform: scale(1.1);
+        }
+
+        .member-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .member-info h4 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .member-info span {
+            display: block;
+            font-size: 14px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .member-info p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .social {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social a {
+            color: var(--light-color);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+
+        .social a:hover {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 100px 0;
+            background-color: var(--dark-color);
+        }
+
+        .info-item {
+            background-color: var(--secondary-color);
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            height: 100%;
+            transition: var(--transition);
+        }
+
+        .info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-item i {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .info-item h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .info-item p {
+            margin-bottom: 0;
+        }
+
+        .contact-form .form-control {
+            background-color: var(--secondary-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-color);
+            height: 50px;
+            border-radius: 5px;
+            padding: 10px 15px;
+            transition: var(--transition);
+        }
+
+        .contact-form .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+
+        .contact-form textarea.form-control {
+            height: 150px;
+            resize: none;
+        }
+
+        .contact-form .btn-submit {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 10px 30px;
+            border-radius: 50px;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .contact-form .btn-submit:hover {
+            background-color: #d4b46a;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        #footer {
+            background-color: var(--secondary-color);
+            padding: 60px 0 30px;
+            color: var(--light-color);
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--light-color);
+        }
+
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+
+        .footer-info p {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .footer-social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light-color);
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-social-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        .footer-links h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            padding: 8px 0;
+        }
+
+        .footer-links ul li a {
+            color: var(--text-color);
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .footer-newsletter h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-newsletter h4::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-newsletter p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form input {
+            background-color: var(--dark-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-color);
+            height: 45px;
+            border-radius: 50px;
+            padding: 10px 15px;
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        .newsletter-form input:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+
+        .newsletter-form button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 45px;
+            width: 45px;
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            border: none;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background-color: #d4b46a;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .credits {
+            font-size: 13px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .credits a {
+            color: var(--primary-color);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: #d4b46a;
+            color: var(--dark-color);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1199.98px) {
+            #hero h1 {
+                font-size: 56px;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            #hero {
+                height: auto;
+                padding: 120px 0 60px;
+            }
+
+            #hero h1 {
+                font-size: 48px;
+            }
+
+            #hero h2 {
+                font-size: 20px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            #hero h1 {
+                font-size: 36px;
+            }
+
+            #hero h2 {
+                font-size: 18px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .section-title p {
+                font-size: 16px;
+            }
+
+            .special-item {
+                flex-direction: column;
+            }
+
+            .special-img {
+                margin-right: 0;
+                margin-bottom: 15px;
+                flex: 0 0 auto;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            #hero h1 {
+                font-size: 28px;
+            }
+
+            .hero-btn {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .section-title h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="contact-info d-flex">
+                        <div class="me-4">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+1 5589 55488 55</span>
+                        </div>
+                        <div>
+                            <i class="far fa-clock"></i>
+                            <span>Mon-Sat: 11AM - 23PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <div class="social-links text-end">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Nice<span>Restaurant</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#specials">Specials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#events">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#chefs">Chefs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <a href="#book-a-table" class="btn-book ms-lg-3">Book a Table</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Column: Text Content -->
+      <div class="col-md-6">
+        <h1>Enjoy Your Healthy Delicious Food</h1>
+        <h2>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</h2>
+        <div class="d-flex gap-3 mt-3">
+          <a href="#menu" class="hero-btn btn-menu">Our Menu</a>
+          <a href="#book-a-table" class="hero-btn btn-book-hero">Book a Table</a>
+        </div>
+      </div>
+
+      <!-- Right Column: Image -->
+      <div class="col-md-6 text-center">
+        <img src="img/square-1.webp" alt="Delicious Food" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>Learn more about our restaurant and our passion for food</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <div class="about-img">
+                        <img src="img/about.jpg"
+                            class="img-fluid" alt="About Us">
+                    </div>
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                    <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                    <p class="fst-italic">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore
+                        magna aliqua.
+                    </p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate
+                            velit.</li>
+                        <li><i class="fas fa-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu
+                            fugiat nulla pariatur.</li>
+                    </ul>
+                    <p>
+                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Restaurant</h2>
+                <p>Here are some reasons why our customers keep coming back</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="why-us-box">
+                        <div class="icon-box">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h4>Quality Food</h4>
+                        <p>We use only the freshest ingredients to prepare our dishes, ensuring the highest quality and
+                            taste in every bite.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="why-us-box">
+                        <div class="icon-box">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h4>Diverse Menu</h4>
+                        <p>Our menu features a wide variety of dishes to satisfy all tastes, from traditional favorites
+                            to innovative creations.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="why-us-box">
+                        <div class="icon-box">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Passionate Chefs</h4>
+                        <p>Our talented chefs pour their heart and soul into every dish, creating culinary masterpieces
+                            that delight the senses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Check Our Tasty Menu</h2>
+                <p>Explore our delicious offerings</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="menu-item">
+                        <div class="menu-img">
+                            <img src="img/starter-2.webp"
+                                alt="Lobster Bisque">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Lobster Bisque</h4>
+                            <p>Lorem, deren, trataro, filede, nerada</p>
+                            <span class="price">$5.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-img">
+                            <img src="img/starter-5.webp"
+                                alt="Bread Barrel">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Bread Barrel</h4>
+                            <p>Lorem, deren, trataro, filede, nerada</p>
+                            <span class="price">$6.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-img">
+                            <img src="img/main-1.webp"
+                                alt="Crab Cake">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Crab Cake</h4>
+                            <p>A delicate crab cake served on a toasted roll with lettuce and tartar sauce</p>
+                            <span class="price">$7.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-img">
+                            <img src="img/main-3.webp"
+                                alt="Caesar Selections">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Caesar Selections</h4>
+                            <p>Lorem, deren, trataro, filede, nerada</p>
+                            <span class="price">$8.95</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="menu-item">
+                        <div class="menu-img">
+                            <img src="img/main-4.webp"
+                                alt="Tuscan Grilled">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Tuscan Grilled</h4>
+                            <p>Grilled chicken with provolone, artichoke hearts, and roasted red pesto</p>
+                            <span class="price">$9.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-img">
+                            <img src="img/main-7.webp"
+                                alt="Mozzarella Stick">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Mozzarella Stick</h4>
+                            <p>Lorem, deren, trataro, filede, nerada</p>
+                            <span class="price">$4.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-img">
+                            <img src="img/drink-3.webp"
+                                alt="Greek Salad">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Greek Salad</h4>
+                            <p>Fresh spinach, crisp romaine, tomatoes, and Greek olives</p>
+                            <span class="price">$9.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-img">
+                            <img src="img/drink-8.webp"
+                                alt="Spinach Salad">
+                        </div>
+                        <div class="menu-content">
+                            <h4>Spinach Salad</h4>
+                            <p>Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette</p>
+                            <span class="price">$9.95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specials Section -->
+    <section id="specials" class="specials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Specials</h2>
+                <p>Check out our chef's recommendations</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <ul class="nav nav-tabs flex-column specials-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Modi sit est</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Unde praesentium sed</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Pariatur explicabo vel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Nostrum qui quasi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Iusto ut expedita aut</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-9 mt-4 mt-lg-0">
+                    <div class="tab-content">
+                        <div class="tab-pane active show" id="tab-1">
+                            <div class="row">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Architecto ut aperiam autem id</h3>
+                                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila
+                                        parde sonata raqer a videna mareta paulona marka</p>
+                                    <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum
+                                        eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat
+                                        minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui
+                                        similique accusamus nostrum rem vero</p>
+                                </div>
+                                <div class="col-lg-4 text-center order-1 order-lg-2">
+                                    <img src="img/main-7.webp"
+                                        alt="" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <div class="section-title">
+                <h2>Organize Your Events</h2>
+                <p>Celebrate your special moments with us</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="event-item">
+                        <div class="event-img">
+                            <img src="img/event-1.webp"
+                                class="img-fluid" alt="Birthday Parties">
+                        </div>
+                        <div class="event-content">
+                            <h3>Birthday Parties</h3>
+                            <span class="price">$189</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="event-item">
+                        <div class="event-img">
+                            <img src="img/showcase-7.webp"
+                                class="img-fluid" alt="Private Parties">
+                        </div>
+                        <div class="event-content">
+                            <h3>Private Parties</h3>
+                            <span class="price">$290</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="event-item">
+                        <div class="event-img">
+                            <img src="img/event-5.webp"
+                                class="img-fluid" alt="Custom Events">
+                        </div>
+                        <div class="event-content">
+                            <h3>Custom Events</h3>
+                            <span class="price">$99</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials py-5">
+  <div class="container">
+    <div class="section-title text-center mb-4">
+      <h2>Testimonials</h2>
+      <p>What our customers say about us</p>
+    </div>
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Testimonial 1 -->
+        <div class="carousel-item active">
+          <div class="testimonial-item text-center">
+            <div class="quote-icon">
+              <i class="fas fa-quote-right fa-2x text-muted"></i>
+            </div>
+            <p class="px-4">
+              <i class="fas fa-quote-left"></i> Proin iaculis purus consequat sem cure digni ssim donec
+              porttitora entum suscipit rhoncus...
+              <i class="fas fa-quote-right"></i>
+            </p>
+            <div class="stars text-warning mb-2">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="user d-flex align-items-center justify-content-center">
+              <img src="img/person-f-12.webp" class="rounded-circle me-3" width="60" alt="">
+              <div>
+                <h5 class="mb-0">Saul Goodman</h5>
+                <small>Ceo & Founder</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="carousel-item">
+          <div class="testimonial-item text-center">
+            <div class="quote-icon">
+              <i class="fas fa-quote-right fa-2x text-muted"></i>
+            </div>
+            <p class="px-4">
+              <i class="fas fa-quote-left"></i> Export tempor illum tamen malis malis eram quae irure esse...
+              <i class="fas fa-quote-right"></i>
+            </p>
+            <div class="stars text-warning mb-2">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="user d-flex align-items-center justify-content-center">
+              <img src="img/person-m-12.webp" class="rounded-circle me-3" width="60" alt="">
+              <div>
+                <h5 class="mb-0">Sara Wilsson</h5>
+                <small>Designer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="carousel-item">
+          <div class="testimonial-item text-center">
+            <div class="quote-icon">
+              <i class="fas fa-quote-right fa-2x text-muted"></i>
+            </div>
+            <p class="px-4">
+              <i class="fas fa-quote-left"></i> Enim nisi quem export duis labore cillum quae magna...
+              <i class="fas fa-quote-right"></i>
+            </p>
+            <div class="stars text-warning mb-2">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="user d-flex align-items-center justify-content-center">
+              <img src="img/person-m-13.webp" class="rounded-circle me-3" width="60" alt="">
+              <div>
+                <h5 class="mb-0">Jena Karlis</h5>
+                <small>Store Owner</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="carousel-item">
+          <div class="testimonial-item text-center">
+            <div class="quote-icon">
+              <i class="fas fa-quote-right fa-2x text-muted"></i>
+            </div>
+            <p class="px-4">
+              <i class="fas fa-quote-left"></i> Fugiat enim eram quae cillum dolore dolor amet nulla...
+              <i class="fas fa-quote-right"></i>
+            </p>
+            <div class="stars text-warning mb-2">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="user d-flex align-items-center justify-content-center">
+              <img src="img/person-m-9.webp" class="rounded-circle me-3" width="60" alt="">
+              <div>
+                <h5 class="mb-0">Matt Brandon</h5>
+                <small>Freelancer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gallery</h2>
+                <p>Some photos from Our Restaurant</p>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row g-0">
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <img src="img/gallery-1.jpg"
+                            class="img-fluid" alt="">
+                        <div class="gallery-links">
+                            <a href="img/gallery-1.jpg"
+                                data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gallery 1"><i
+                                    class="fas fa-plus"></i></a>
+                            <a href="#" title="More Details"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <img src="img/gallery-2.jpg"
+                            class="img-fluid" alt="">
+                        <div class="gallery-links">
+                            <a href="img/gallery-2.jpg"
+                                data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gallery 2"><i
+                                    class="fas fa-plus"></i></a>
+                            <a href="#" title="More Details"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <img src="img/gallery-3.jpg"
+                            class="img-fluid" alt="">
+                        <div class="gallery-links">
+                            <a href="img/gallery-3.jpg"
+                                data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gallery 3"><i
+                                    class="fas fa-plus"></i></a>
+                            <a href="#" title="More Details"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <img src="img/gallery-4.jpg"
+                            class="img-fluid" alt="">
+                        <div class="gallery-links">
+                            <a href="img/gallery-4.jpg"
+                                data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gallery 4"><i
+                                    class="fas fa-plus"></i></a>
+                            <a href="#" title="More Details"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <img src="img/gallery-5.jpg"
+                            class="img-fluid" alt="">
+                        <div class="gallery-links">
+                            <a href="img/gallery-5.jpg"
+                                data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gallery 5"><i
+                                    class="fas fa-plus"></i></a>
+                            <a href="#" title="More Details"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <img src="img/gallery-6.jpg"
+                            class="img-fluid" alt="">
+                        <div class="gallery-links">
+                            <a href="img/gallery-6.jpg"
+                                data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gallery 6"><i
+                                    class="fas fa-plus"></i></a>
+                            <a href="#" title="More Details"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <img src="img/gallery-7.jpg"
+                            class="img-fluid" alt="">
+                        <div class="gallery-links">
+                            <a href="img/gallery-7.jpg"
+                                data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gallery 7"><i
+                                    class="fas fa-plus"></i></a>
+                            <a href="#" title="More Details"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <img src="img/gallery-8.jpg"
+                            class="img-fluid" alt="">
+                        <div class="gallery-links">
+                            <a href="img/gallery-8.jpg"
+                                data-gallery="portfolioGallery" class="portfolio-lightbox" title="Gallery 8"><i
+                                    class="fas fa-plus"></i></a>
+                            <a href="#" title="More Details"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chefs Section -->
+    <section id="chefs" class="chefs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Proffesional Chefs</h2>
+                <p>Meet our talented culinary team</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="chef-member">
+                        <div class="member-img">
+                            <img src="img/chef-3.webp"
+                                class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4>Walter White</h4>
+                            <span>Master Chef</span>
+                            <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum
+                                exercitationem iure minima enim corporis et voluptate.</p>
+                            <div class="social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="chef-member">
+                        <div class="member-img">
+                            <img src="img/chef-2.webp"
+                                class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4>Sarah Jhonson</h4>
+                            <span>Patissier</span>
+                            <p>Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit
+                                corporis. Voluptate sed quas reiciendis animi neque sapiente.</p>
+                            <div class="social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="chef-member">
+                        <div class="member-img">
+                            <img src="img/chef-4.webp"
+                                class="img-fluid" alt="">
+                        </div>
+                        <div class="member-info">
+                            <h4>William Anderson</h4>
+                            <span>Cook</span>
+                            <p>Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates
+                                enim aut architecto porro aspernatur molestiae modi.</p>
+                            <div class="social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact</h2>
+                <p>Get in touch with us</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-lg-4">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Location:</h3>
+                        <p>A108 Adam Street, New York, NY 535022</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email:</h3>
+                        <p>info@example.com</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Call:</h3>
+                        <p>+1 5589 55488 55</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2s!4v1623847724455!5m2!1sen!2s"
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <form class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                    required>
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                                required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                                required></textarea>
+                        </div>
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn-submit">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-info">
+                        <h3 class="footer-logo">Nice<span>Restaurant</span></h3>
+                        <p>
+                            A108 Adam Street <br>
+                            NY 535022, USA<br><br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+                        <div class="footer-social-links">
+                            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Product Management</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 footer-newsletter">
+                    <h4>Our Newsletter</h4>
+                    <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                    <form class="newsletter-form position-relative">
+                        <input type="email" name="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>NiceRestaurant</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

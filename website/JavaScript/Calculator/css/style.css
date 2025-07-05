@@ -1,0 +1,243 @@
+ :root {
+   --bg-color: #1a1a1a;
+   --display-bg: #2a2a2a;
+   --btn-dark: #333;
+   --btn-light: #4d4d4d;
+   --btn-orange: #ff9500;
+   --btn-orange-hover: #ffaa33;
+   --btn-red: #ff3b30;
+   --btn-red-hover: #ff5e55;
+   --text-light: #fff;
+   --text-dark: #000;
+   --text-gray: #aaa;
+ }
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+   user-select: none;
+ }
+
+ body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background: var(--bg-color);
+   color: var(--text-light);
+ }
+
+ .calculator {
+   width: 375px;
+   max-width: 100%;
+   background: var(--bg-color);
+   border-radius: 30px;
+   overflow: hidden;
+   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+   position: relative;
+   transition: all 0.3s ease;
+ }
+
+ .display {
+   padding: 80px 25px 25px;
+   text-align: right;
+   background: var(--display-bg);
+   color: var(--text-light);
+   min-height: 200px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   position: relative;
+ }
+
+ .previous-operand {
+   font-size: 1.5rem;
+   color: var(--text-gray);
+   min-height: 30px;
+   word-wrap: break-word;
+   opacity: 0.8;
+   transition: all 0.2s;
+ }
+
+ .current-operand {
+   font-size: 3.5rem;
+   font-weight: 300;
+   word-wrap: break-word;
+   margin-top: 10px;
+   transition: all 0.2s;
+ }
+
+ .button-grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 12px;
+   padding: 20px;
+ }
+
+ .scientific-grid {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   gap: 10px;
+   padding: 0 20px 20px;
+ }
+
+ button {
+   border: none;
+   outline: none;
+   height: 70px;
+   border-radius: 50%;
+   font-size: 1.8rem;
+   cursor: pointer;
+   transition: all 0.1s;
+   background: var(--btn-dark);
+   color: var(--text-light);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   overflow: hidden;
+ }
+
+ button::after {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 5px;
+   height: 5px;
+   background: rgba(255, 255, 255, 0.5);
+   opacity: 0;
+   border-radius: 100%;
+   transform: scale(1, 1) translate(-50%, -50%);
+   transform-origin: 50% 50%;
+ }
+
+ button:active::after {
+   animation: ripple 0.6s ease-out;
+ }
+
+ @keyframes ripple {
+   0% {
+     transform: scale(0, 0);
+     opacity: 0.5;
+   }
+
+   100% {
+     transform: scale(20, 20);
+     opacity: 0;
+   }
+ }
+
+ button:hover {
+   opacity: 0.9;
+ }
+
+ button:active {
+   transform: scale(0.95);
+ }
+
+ .light-gray {
+   background: var(--btn-light);
+   color: var(--text-dark);
+ }
+
+ .operator,
+ .equals {
+   background: var(--btn-orange);
+   color: var(--text-light);
+ }
+
+ .operator.active {
+   background: var(--text-light);
+   color: var(--btn-orange);
+ }
+
+ .operator:hover,
+ .equals:hover {
+   background: var(--btn-orange-hover);
+ }
+
+ .clear,
+ .delete {
+   background: var(--btn-red);
+   color: var(--text-light);
+ }
+
+ .clear:hover,
+ .delete:hover {
+   background: var(--btn-red-hover);
+ }
+
+ .zero {
+   grid-column: span 2;
+   border-radius: 35px;
+   justify-content: flex-start;
+   padding-left: 30px;
+ }
+
+ .scientific-btn {
+   background: var(--btn-dark);
+   color: var(--text-light);
+   font-size: 1.3rem;
+   height: 50px;
+   padding: 5px;
+   border-radius: 10px;
+   margin-top: 10px;
+ }
+
+ .mode-toggle {
+   position: absolute;
+   top: 25px;
+   left: 25px;
+   background: transparent;
+   color: var(--text-light);
+   border: 1px solid var(--text-gray);
+   border-radius: 15px;
+   padding: 5px 15px;
+   font-size: 0.9rem;
+   cursor: pointer;
+   z-index: 10;
+   opacity: 0.7;
+   transition: all 0.2s;
+ }
+
+ .mode-toggle:hover {
+   opacity: 1;
+   background: rgba(255, 255, 255, 0.1);
+ }
+
+ .hidden {
+   display: none;
+ }
+
+ .secondary-fn {
+   position: absolute;
+   top: 5px;
+   left: 50%;
+   transform: translateX(-50%);
+   font-size: 0.7rem;
+   color: var(--text-gray);
+ }
+
+ @media (max-width: 400px) {
+   .calculator {
+     width: 100%;
+     border-radius: 0;
+     height: 100vh;
+   }
+
+   .display {
+     min-height: 30vh;
+     padding-bottom: 15vh;
+   }
+
+   button {
+     height: 60px;
+   }
+
+   .current-operand {
+     font-size: 3rem;
+   }
+ }

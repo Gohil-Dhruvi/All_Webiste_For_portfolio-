@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Scientific Calculator</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+    <div class="calculator">
+        <button class="mode-toggle" id="mode-toggle">Scientific</button>
+
+        <div class="display">
+            <div class="previous-operand" id="previous-operand"></div>
+            <div class="current-operand" id="current-operand">0</div>
+        </div>
+
+        <!-- Standard Calculator Buttons -->
+        <div class="button-grid" id="standard-buttons">
+            <button class="light-gray" data-action="clear">AC</button>
+            <button class="light-gray" data-action="toggle-sign">+/-</button>
+            <button class="light-gray" data-action="percentage">%</button>
+            <button class="operator" data-action="operation">÷</button>
+
+            <button data-action="number">7</button>
+            <button data-action="number">8</button>
+            <button data-action="number">9</button>
+            <button class="operator" data-action="operation">×</button>
+
+            <button data-action="number">4</button>
+            <button data-action="number">5</button>
+            <button data-action="number">6</button>
+            <button class="operator" data-action="operation">-</button>
+
+            <button data-action="number">1</button>
+            <button data-action="number">2</button>
+            <button data-action="number">3</button>
+            <button class="operator" data-action="operation">+</button>
+
+            <button data-action="number" class="zero">0</button>
+            <button data-action="number">.</button>
+            <button class="equals" data-action="equals">=</button>
+        </div>
+
+        <!-- Scientific Calculator Buttons -->
+        <div class="scientific-grid hidden" id="scientific-buttons">
+            <button class="scientific-btn" data-action="sin">
+                <span class="secondary-fn">sin</span>sin
+            </button>
+            <button class="scientific-btn" data-action="cos">
+                <span class="secondary-fn">cos</span>cos
+            </button>
+            <button class="scientific-btn" data-action="tan">
+                <span class="secondary-fn">tan</span>tan
+            </button>
+            <button class="scientific-btn" data-action="log">log</button>
+            <button class="scientific-btn" data-action="ln">ln</button>
+
+            <button class="scientific-btn" data-action="sinh">sinh</button>
+            <button class="scientific-btn" data-action="cosh">cosh</button>
+            <button class="scientific-btn" data-action="tanh">tanh</button>
+            <button class="scientific-btn" data-action="exp">e^x</button>
+            <button class="scientific-btn" data-action="ten-pow">10^x</button>
+
+            <button class="scientific-btn" data-action="square">x²</button>
+            <button class="scientific-btn" data-action="cube">x³</button>
+            <button class="scientific-btn" data-action="pow">x^y</button>
+            <button class="scientific-btn" data-action="sqrt">√x</button>
+            <button class="scientific-btn" data-action="cbrt">∛x</button>
+
+            <button class="scientific-btn" data-action="fact">x!</button>
+            <button class="scientific-btn" data-action="inverse">1/x</button>
+            <button class="scientific-btn" data-action="abs">|x|</button>
+            <button class="scientific-btn" data-action="floor">floor</button>
+            <button class="scientific-btn" data-action="ceil">ceil</button>
+
+            <button class="scientific-btn" data-action="deg-rad">DEG</button>
+            <button class="scientific-btn" data-action="rand">RAND</button>
+            <button class="scientific-btn" data-action="mem-clear">MC</button>
+            <button class="scientific-btn" data-action="mem-recall">MR</button>
+            <button class="scientific-btn" data-action="mem-add">M+</button>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
